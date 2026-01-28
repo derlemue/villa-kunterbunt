@@ -1,25 +1,59 @@
-# Die Villa Kunterbunt
-## Korrespondenz Epos
+<div align="center">
 
-> **Eine Korrespondenz über Phasenausfälle, Remote-Voodoo und die Suche nach der dritten Phase**
+# 🎪 Die Villa Kunterbunt
+### Das Korrespondenz Epos
 
-Dieses Ebook dokumentiert die tragikomische Saga eines Phasenausfalls, bei dem Phase L3 beschloss, unangekündigten Urlaub zu machen - und nie wirklich zurückkehrte.
-
-Eine Sammlung authentischer (und leicht verzweifelter) Korrespondenzen über:
-*   Die Kunst der 66-prozentigen Arbeitsleistung
-*   "Service made in Germany" in seiner reinsten Form
-*   Den Kampf gegen die Windmühlen der Bürokratie (und Bayernwerk/E.ON)
-*   Rechnungen für 15 Minuten Arbeit, die teurer sind als ein Wellness-Wochenende
-
-*"Für alle, die schon einmal vergeblich auf die dritte Phase gewartet haben."*
-
-### Das Ebook
-
-Das vollständige Ebook finden Sie hier: [PDF Download](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
-
-### Buchcover
+*Eine satirische Odysee durch die Welt der Phasenausfälle, des "Remote-Voodoo" und der Suche nach der verlorenen dritten Phase.*
 
 <p align="center">
-  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Front.png" width="45%" alt="Cover Front">
-  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Back.png" width="45%" alt="Cover Back">
+  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Front.png" width="45%" alt="Cover Front" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Back.png" width="45%" alt="Cover Back" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
 </p>
+
+[![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
+[![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
+[![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
+
+</div>
+
+---
+
+## 📖 Über dieses Ebook
+
+> *"Für alle, die schon einmal vergeblich auf die dritte Phase gewartet haben."*
+
+Dieses Dokument ist mehr als nur ein Beschwerdebrief. Es ist das Protokoll einer **administrativen Tragikomödie**. Was als simpler technischer Defekt – ein fehlender Anschluss der Phase L3 nach einem Zählertausch – begann, entwickelte sich schnell zu einer philosophischen Reise in das Herz der deutschen Bürokratie.
+
+Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräten und physikalischen Fakten gegen ein "Service-Universum" antritt, in dem andere Naturgesetze zu gelten scheinen.
+
+## 🎭 Die Akte der Tragödie
+
+### Akt I-III: Die Kunst der 66-prozentigen Arbeitsleistung
+Wenn man 170,87 EUR pro 15 Minuten berechnet, darf man dann erwarten, dass alle drei Kabel angeschlossen werden? Oder ist "2 aus 3" (66%) ein akzeptabler neuer Industriestandard?
+
+### Akt IV: Remote-Voodoo
+In dem physikalische Messungen vor Ort durch telepathische Ferndiagnosen von "Manager-Technikern" ersetzt werden. Warum messen, wenn man *fühlen* kann, dass der Strom fließt?
+
+### Das Finale: Die Initiativbewerbung
+Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil davon werden. Eine förmliche Bewerbung für eine Karriere in der "Villa Kunterbunt", einem Ort, geschützt durch Monopole und Quetschsiegel, wo Effizienz ein "Nice-to-have" ist.
+
+---
+
+## ⚡ Technische Details (Der "Beweis")
+
+Für die technisch Interessierten (und die Zweifler im Callcenter):
+*   **Symptom:** Herd und Teile der Wohnung spannungslos.
+*   **Diagnose:** FI-Testtasten ohne Funktion.
+*   **Ausschlussverfahren:** Zähler zeigt L1, L2, L3 eingangsseitig an.
+*   **Fazit:** Der Fehler liegt *zwingend* an der Abgangsklemme. Ein klassischer "Kabel-nicht-drin"-Fehler.
+
+## 📥 Download
+
+Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man mit Humor gegen Windmühlen kämpft.
+
+[**📄 Ebook als PDF herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
+
+---
+<div align="center">
+<i>"Man lernt nie aus. Wären Sie nicht in mein Leben getrampelt, ich würde noch heute denken, klassische Erwerbstätigkeit wäre alternativlos."</i>
+</div>
