@@ -11,6 +11,7 @@
 </p>
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
+[![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.epub)
 [![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
 [![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
 
@@ -67,7 +68,9 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 
 [**📄 Ebook als PDF herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
 <br>
-[**📄 Begleitschreiben als PDF herunterladen**](assets/E.ON-Report_%20Datenübergabe.pdf)
+[**📄 Ebook als ePub herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.epub)
+<br>
+[**📂 Begleitschreiben als PDF herunterladen**](assets/E.ON-Report_%20Datenübergabe.pdf)
 
 ---
 <div align="center">
