@@ -27,6 +27,8 @@ Dieses Dokument ist mehr als nur ein Beschwerdebrief. Es ist das Protokoll einer
 
 Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräten und physikalischen Fakten gegen ein "Service-Universum" antritt, in dem andere Naturgesetze zu gelten scheinen.
 
+[![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf) [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
+
 ---
 
 ## 💡 Warum? Wie kommt es zu diesem Repository?
