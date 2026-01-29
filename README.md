@@ -67,11 +67,11 @@ Für die technisch Interessierten (und die Zweifler im Callcenter):
 
 Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man mit Humor gegen Windmühlen kämpft.
 
-[**📄 Ebook als PDF herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
+[**📄 Ebook als PDF herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf?raw=true)
 <br>
-[**📄 Ebook als ePub herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
+[**📄 Ebook als ePub herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub?raw=true)
 <br>
-[**📂 Begleitschreiben als PDF herunterladen**](assets/E.ON-Report_%20Datenübergabe.pdf)
+[**📂 Begleitschreiben als PDF herunterladen**](assets/E.ON-Report_%20Datenübergabe.pdf?raw=true)
 
 ---
 <div align="center">
