@@ -1,0 +1,29 @@
+<div align="center">
+
+# 🎨 Illustrationen & Impressionen
+### Die visuelle Galerie
+
+*Eine Sammlung der grafischen Impressionen aus der "Villa Kunterbunt".*
+
+[![Zurück](https://img.shields.io/badge/Zurück_zum_Hauptmenü-grey?style=for-the-badge&logo=github)](../../README.md)
+
+</div>
+
+---
+
+<div align="center">
+
+| | | | |
+|:---:|:---:|:---:|:---:|
+| <img src="Die Villa Kunterbunt_001.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_002.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_003.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_004.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_005.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_006.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_007.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_008.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_009.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_010.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_011.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_012.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_013.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_014.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_015.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_016.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_017.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_018.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_019.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_020.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_021.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_022.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_023.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_024.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_025.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_026.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_027.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_028.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_029.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_030.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_031.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_032.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_033.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_034.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_035.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_036.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> |
+| <img src="Die Villa Kunterbunt_037.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | <img src="Die Villa Kunterbunt_038.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"> | | | 
+
+</div>

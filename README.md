@@ -63,6 +63,12 @@ Für die technisch Interessierten (und die Zweifler im Callcenter):
 *   **Ausschlussverfahren:** Zähler zeigt L1, L2, L3 eingangsseitig an.
 *   **Fazit:** Der Fehler liegt *zwingend* an der Abgangsklemme. Ein klassischer "Kabel-nicht-drin"-Fehler.
 
+## 🤡 Memes & Illustrationen
+
+Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Memes und Impressionen gesammelt in einer Galerie.
+
+[![Galerie](https://img.shields.io/badge/Galerie-Memes_%26_Illustrationen-purple?style=for-the-badge&logo=github)](assets/illustrations/README.md)
+
 ## 📥 Download
 
 Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man mit Humor gegen Windmühlen kämpft.
