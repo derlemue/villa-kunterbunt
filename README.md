@@ -70,6 +70,8 @@ In dem physikalische Messungen vor Ort durch telepathische Ferndiagnosen von "Ma
 ### Das Finale: Die Initiativbewerbung
 Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil davon werden. Eine förmliche Bewerbung für eine Karriere in der "Villa Kunterbunt", einem Ort, geschützt durch Monopole und Quetschsiegel, wo Effizienz ein "Nice-to-have" ist.
 
+---
+
 ## ⚡ Technische Details (Der "Beweis")
 
 Für die technisch Interessierten (und die Zweifler im Callcenter):
