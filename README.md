@@ -44,6 +44,15 @@ Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräte
 >[![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/S) [![Systemanalytische Studie und Bewertung Download](https://img.shields.io/badge/Download-Systemanalytische_Studie_und_Bewertung-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf)
 >
 
+### 🏢 Hinweis für Unternehmen
+
+Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozessen** oder ähnlichem protokollieren, über den normalen Prozess zur Aufnahme in das Repository angefragt werden können. Diese werden nach erfolgreicher Prüfung prominent in der README platziert.
+
+> [!WARNING]
+> Stellungnahmen, Erklärungsversuche und andere bloße Symbole sind ausdrücklich davon ausgenommen und werden abgelehnt.
+
+[![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
+
 ---
 
 ## 🎭 Die Akte der Tragödie
