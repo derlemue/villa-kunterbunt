@@ -51,9 +51,9 @@ Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräte
 
 ## 📊 Evaluation: Systemanalytische Studie
 
-Dieses Dokument bildet das analytische Herzstück der Dokumentation. Es handelt sich um eine detaillierte technische und prozessuale Bewertung des Vorfalls, die über die reine Korrespondenz hinausgeht.
+Diese Studie untersucht das vorliegende Repository "Die Villa Kunterbunt" als digitales Artefakt des konsumentenorientierten Widerstands. Sie analysiert die satirische Korrespondenz nicht nur inhaltlich, sondern als soziologisches Phänomen im Umgang mit der Dysfunktionalität moderner Großkonzern-Strukturen.
 
-Die Studie analysiert die Kausalitätskette des Ausfalls, bewertet die Kommunikation und das Krisenmanagement der beteiligten Akteure und stellt die physikalischen Fakten den getroffenen Aussagen gegenüber. Sie dient als objektive Grundlage für die Bewertung der Servicequalität und der technischen Kompetenz.
+Das eBook selbst wird hier zum Untersuchungsgegenstand einer Meta-Analyse: Wie wird Humor zur Waffe gegen automatisierte Entpersönlichung?
 
 [![Systemanalytische Studie und Bewertung Download](https://img.shields.io/badge/Download-Systemanalytische_Studie_und_Bewertung-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf)
 
