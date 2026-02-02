@@ -1,0 +1,47 @@
+name: Deploy Github Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: [self-hosted, vps-debian]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fix permissions
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # STATT JEKYLL: Wir nutzen die vorhandenen Dateien direkt
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Punkt bedeutet: Das gesamte Repository-Verzeichnis hochladen
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: [self-hosted, vps-debian]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
