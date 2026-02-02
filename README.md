@@ -1,10 +1,7 @@
 <div align="right">
   <a href="CHANGELOG.md">
     <img src="https://img.shields.io/badge/VERSION-v.1.1.0--RC-orange?style=for-the-badge&logo=none&labelColor=36454F" alt="Version 1.0-rc"><br>
-    <img src="https://img.shields.io/badge/TAG-066%2F100__170__e0nBw-FFB74D?style=flat&logo=none&labelColor=36454F" alt="Build Tag" height="16"><br>
-  </a>
-  <a href="https://github.com/lemueIO/villa-kunterbunt/">
-    <img src="https://github.com/lemueIO/villa-kunterbunt/actions/workflows/sync-fork.yml/badge.svg?branch=main" alt="Fork Sync" height="16">
+    <img src="https://img.shields.io/badge/TAG-066%2F100__170__e0nBw-FFB74D?style=flat&logo=none&labelColor=36454F" alt="Build Tag" height="16">
   </a>
 </div>
 
@@ -16,8 +13,8 @@
 *Eine satirische Odysee durch die Welt der Phasenausfälle, des "Remote-Voodoo" und der Suche nach der verlorenen dritten Phase.*
 
 <p align="center">
-  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Front.png" width="45%" alt="Cover Front" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
-  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Back.png" width="45%" alt="Cover Back" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Front_HQ_thumb.png" width="45%" alt="Cover Front" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Back_HQ_thumb.png" width="45%" alt="Cover Back" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
 </p>
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
