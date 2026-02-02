@@ -1,0 +1,43 @@
+name: Sync Fork
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Alle 15 Minuten
+  workflow_dispatch: # Ermöglicht manuelles Starten
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Sync with Upstream
+        run: |
+          # ⚠️ WICHTIG: Ersetze die folgende URL mit dem Repository, von dem du forken möchtest!
+          UPSTREAM_URL="https://github.com/derlemue/villa-kunterbunt.git"
+          
+          echo "Füge Upstream hinzu: $UPSTREAM_URL"
+          git remote add upstream "$UPSTREAM_URL" || git remote set-url upstream "$UPSTREAM_URL"
+          
+          echo "Fetch Upstream..."
+          git fetch upstream
+          
+          echo "Merge Upstream/main..."
+          # Wir nutzen --allow-unrelated-histories falls nötig, meistens aber nicht
+          git merge upstream/main --no-edit
+          
+          echo "Push zu Origin..."
+          git push origin main
