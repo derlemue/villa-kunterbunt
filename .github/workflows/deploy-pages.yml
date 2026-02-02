@@ -24,21 +24,16 @@ jobs:
       - name: Fix permissions
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          mkdir -p ./_site
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-
+      # STATT JEKYLL: Wir nutzen die vorhandenen Dateien direkt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site/
+          # Punkt bedeutet: Das gesamte Repository-Verzeichnis hochladen
+          path: .
 
   deploy:
     needs: build
