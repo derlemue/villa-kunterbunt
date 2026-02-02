@@ -1,6 +1,7 @@
 <div align="right">
   <a href="CHANGELOG.md">
-    <img src="https://img.shields.io/badge/v.1.1.0--RC-066%2F100__170__e0nBw-orange?style=for-the-badge&logo=none" alt="Version 1.0-rc">
+    <img src="https://img.shields.io/badge/Version-v.1.1.0--RC-orange?style=for-the-badge&logo=none" alt="Version 1.0-rc"><br>
+    <img src="https://img.shields.io/badge/Code-066%2F100__170__e0nBw-36454F?style=flat&logo=none" alt="Build Code" height="18">
   </a>
 </div>
 
