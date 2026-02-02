@@ -3,14 +3,14 @@ name: Sync Fork
 on:
   schedule:
     - cron: '*/15 * * * *' # Alle 15 Minuten
-
+  workflow_dispatch: # Erlaubt den manuellen Start zum Testen
 
 permissions:
   contents: write
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, vps-debian]
     if: github.repository != 'derlemue/villa-kunterbunt' # Verhindert Ausführung im Original-Repo (derlemue)
     steps:
       - name: Checkout
