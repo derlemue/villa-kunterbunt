@@ -2,7 +2,7 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # Tipp: Nutzen Sie unterschiedliche Minuten für verschiedene Forks (z.B. 7, 22, 37...)
+    - cron: '7,22,37,52 * * * *' # Updated to minimize scheduler congestion (originally */15)
   workflow_dispatch:
 
 # FIX 1: Concurrency verhindert, dass zwei Sync-Jobs für dasselbe Repo gleichzeitig laufen
