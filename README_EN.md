@@ -76,7 +76,7 @@ The eBook itself becomes here the object of a meta-analysis: how does humour bec
 
 [![System-Analytical Study and Evaluation Download](https://img.shields.io/badge/Download-System--Analytical_Study_and_Evaluation-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analysis_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/dossier.html)
 
-> | Note: Please be aware that some documents in this section are currently available in the original German version only.
+> Note: Please be aware that some documents in this section are currently available in the original German version only.
 
 ---
 
@@ -155,7 +155,7 @@ Download here the complete correspondence and experience how one combats windmil
 <br>
 [**🗂️ Download Complete Dataset as ZIP**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
-> | Note: Please be aware that the documents in this section are currently available in the original German version only.
+> Note: Please be aware that the documents in this section are currently available in the original German version only.
 
 ---
 <div align="center">
