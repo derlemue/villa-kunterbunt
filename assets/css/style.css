@@ -132,10 +132,17 @@ nav {
 }
 
 .hero-forks {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  flex-wrap: wrap;
   align-items: center;
+}
+
+@media (max-width: 450px) {
+  .hero-forks {
+    grid-template-columns: 1fr;
+    /* Stack on very small screens if needed */
+  }
 }
 
 @media (max-width: 1150px) and (min-width: 769px) {
