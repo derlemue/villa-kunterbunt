@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa Kunterbunt - Memes & Illustrationen Galerie</title>
-    <meta name="description"
-        content="Visuelle Galerie der Memes und Illustrationen aus der Villa Kunterbunt - Das Korrespondenz Epos">
+    <title>Villa Kunterbunt - Bilder & Zeichnungen</title>
+    <meta name="description" content="Bilder-Galerie der Villa Kunterbunt - Einfache Sprache">
     <style>
         * {
             margin: 0;
@@ -319,17 +318,17 @@
 <body>
     <div class="container">
         <header>
-            <h1>🤡 Memes & Illustrationen</h1>
-            <p class="subtitle">Die visuelle Galerie der Villa Kunterbunt</p>
+            <h1>🤡 Bilder & Zeichnungen</h1>
+            <p class="subtitle">Die Bilder-Galerie der Villa Kunterbunt</p>
         </header>
 
         <div class="status-bar" id="statusBar">
-            Galerie geladen • 40 Illustrationen
+            Galerie ist da • 40 Bilder
         </div>
 
         <div class="controls">
             <div class="control-group">
-                <button id="playPauseBtn">▶ Autoplay</button>
+                <button id="playPauseBtn">▶ Automatisch abspielen</button>
                 <select id="autoplaySpeed">
                     <option value="5000" selected>5 Sekunden</option>
                     <option value="6000">6 Sekunden</option>
@@ -339,15 +338,17 @@
                     <option value="10000">10 Sekunden</option>
                 </select>
             </div>
-            <button id="fullscreenBtn">⛶ Vollbild</button>
-            <button id="downloadSelectedBtn" disabled>⬇ Ausgewählte laden (<span id="selectedCount">0</span>)</button>
+            <button id="fullscreenBtn">⛶ Großes Bild</button>
+            <button id="downloadSelectedBtn" disabled>⬇ Bilder herunterladen (<span
+                    id="selectedCount">0</span>)</button>
         </div>
 
         <div class="gallery" id="gallery"></div>
 
         <div style="text-align: center;">
-            <a href="https://github.com/derlemue/villa-kunterbunt/tree/main?tab=readme-ov-file#-memes--illustrationen"
-                class="back-link">← Zurück zum Hauptmenü</a>
+            <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README_DE2.md#-bilder--illustrationen"
+                class="back-link">← Zurück
+                zur Übersicht</a>
         </div>
     </div>
 
@@ -359,8 +360,8 @@
         <div class="lightbox-content">
             <img id="lightboxImg" src="" alt="Illustration">
             <div class="lightbox-controls">
-                <button id="downloadCurrentBtn">⬇ Download</button>
-                <button id="lightboxFullscreenBtn">⛶ Vollbild</button>
+                <button id="downloadCurrentBtn">⬇ Herunterladen</button>
+                <button id="lightboxFullscreenBtn">⛶ Großes Bild</button>
             </div>
         </div>
         <div class="image-counter" id="imageCounter">1 / 40</div>
@@ -534,14 +535,14 @@
             playPauseBtn.textContent = '⏸ Pause';
             const speed = parseInt(autoplaySpeed.value);
             autoplayInterval = setInterval(nextImage, speed);
-            statusBar.textContent = `Autoplay aktiv • ${speed / 1000} Sekunden`;
+            statusBar.textContent = `Automatisch abspielen läuft • ${speed / 1000} Sekunden`;
         }
 
         function stopAutoplay() {
             isPlaying = false;
-            playPauseBtn.textContent = '▶ Autoplay';
+            playPauseBtn.textContent = '▶ Automatisch abspielen';
             clearInterval(autoplayInterval);
-            statusBar.textContent = `Galerie geladen • ${images.length} Illustrationen`;
+            statusBar.textContent = `Galerie ist da • ${images.length} Bilder`;
         }
 
         function toggleAutoplay() {
