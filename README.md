@@ -9,9 +9,12 @@
 
 <div align="center">
 
+<br>
+<br>
 <a href="https://derlemue.github.io/villa-kunterbunt/site/">
-  <img src="https://img.shields.io/badge/Website-Visit_Page-2ea44f?style=for-the-badge&logo=github" height="35" alt="Visit Website">
+  <img src="https://img.shields.io/badge/Website-Jetzt_erleben-2ea44f?style=for-the-badge&logo=github" height="35" alt="Visit Website">
 </a>
+<br>
 <br>
 
 # 🎪 Die Villa Kunterbunt

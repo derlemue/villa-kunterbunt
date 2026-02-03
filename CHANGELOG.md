@@ -58,7 +58,7 @@
 *   **Stability:** Implementierung manueller HTML-Anker in allen READMEs zur Sicherstellung robuster Deep-Links (Fix für Browser-Cache/GitHub-Rendering Issues).
 *   **Mobile Support:** Implementierung von High-Resolution Flaggen (Base64 SVG) für perfekte Darstellung auf allen mobilen Geräten (iOS/Android) ohne Rendering-Fehler.
 *   **Download Links:** Umstellung aller Dokumenten-Links auf absolute Pfade (GitHub Pages) zur Stabilisierung externer Referenzen.
-*   **Header Design:** Optimierung des Layouts: Versions-Badges oben rechts, zentraler Website-Button (vergrößert) über dem Titel.
+*   **Header Design:** Optimierung des Layouts: Versions-Badges oben rechts, zentraler Website-Button (vergrößert, Label "Jetzt erleben") über dem Titel mit verbessertem Spacing.
 
 #### ⚙️ Infrastructure & Workflows
 *   **Workflow Fixes:** Vollständige Implementierung von `sync-fork`, `deploy-pages` und `automerge` mit korrekten Berechtigungen.
