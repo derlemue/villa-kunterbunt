@@ -16,7 +16,7 @@
 
 ## v.1.1.0-RC (Release Candidate)
 ### "Druckfertige Ausgabe - Die Rakete ist in der Luft"
-*2. Februar 2026*
+*3. Februar 2026*
 
 > **Status:** Versand an Hauptdarsteller ausgelöst. Private Spende. :P
 
