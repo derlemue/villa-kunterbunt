@@ -11,11 +11,9 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+
 
 jobs:
   call-deploy-pages:
-    uses: lemueIO/.github/workflows/deploy-pages.yml@main
+    uses: lemueIO/.github/.github/workflows/deploy-pages.yml@main
     secrets: inherit
