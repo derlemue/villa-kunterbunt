@@ -31,7 +31,7 @@
 
 <div align="center">
 
-[🇩🇪 Deutsch](README.md) | [🇩🇪 Einfache Sprache](README_DE2.md) | **🇬🇧 English**
+<sub>[🇩🇪 Deutsch](README.md) | [🇩🇪 Einfache Sprache](README_DE2.md) | **🇬🇧 English**</sub>
 
 </div>
 
@@ -61,6 +61,7 @@ It chronicles the desperate struggle of a customer who, armed with logic, measur
 >
 > [![Cover Letter Download](https://img.shields.io/badge/Download-Cover_Letter_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
 >
+> *Note: Please be aware that the document in this section is currently available in the original German version only.*
 
 ---
 
@@ -72,6 +73,8 @@ The eBook itself becomes here the object of a meta-analysis: how does humour bec
 
 [![System-Analytical Study and Evaluation Download](https://img.shields.io/badge/Download-System--Analytical_Study_and_Evaluation-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analysis_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/dossier.html)
 
+> *Note: Please be aware that some documents in this section are currently available in the original German version only.*
+
 ---
 
 ## 🏢 Notice for the Participating Companies
@@ -82,7 +85,7 @@ There exists the possibility that documents which chronicle an **improvement of 
 > Statements, attempted explanations, and other mere symbols are expressly excluded from this and shall be rejected.
 
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
-[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/upload-guide/)
+[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/upload-guide/index_en.html)
 
 ---
 
@@ -148,6 +151,8 @@ Download here the complete correspondence and experience how one combats windmil
 [**🎧 Download Zupftest Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/audio/Die%20Villa%20Kunterbunt%20–%20Zupftest.mp3?raw=true)
 <br>
 [**🗂️ Download Complete Dataset as ZIP**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
+
+> *Note: Please be aware that the documents in this section are currently available in the original German version only.*
 
 ---
 <div align="center">
