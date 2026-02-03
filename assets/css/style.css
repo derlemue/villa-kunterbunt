@@ -6,8 +6,10 @@
   --card-border: rgba(148, 163, 184, 0.1);
   --primary: #3b82f6;
   --primary-hover: #2563eb;
-  --accent: #f59e0b; /* Kunterbunt Orange */
-  --accent-2: #ef4444; /* Kunterbunt Red */
+  --accent: #f59e0b;
+  /* Kunterbunt Orange */
+  --accent-2: #ef4444;
+  /* Kunterbunt Red */
   --font-main: 'Outfit', sans-serif;
   --max-width: 1200px;
 }
@@ -24,7 +26,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
 }
@@ -59,6 +61,7 @@ nav {
   font-weight: 700;
   background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -91,6 +94,7 @@ nav {
 .gradient-text {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -103,6 +107,14 @@ nav {
 .hero-buttons {
   display: flex;
   gap: 1rem;
+}
+
+.hero-forks {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .btn {
@@ -244,21 +256,28 @@ footer {
   .hero-content h1 {
     font-size: 2.5rem;
   }
-  
+
   .hero-buttons {
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
+  .hero-forks {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
   .hero-image {
     max-width: 80%;
     margin: 0 auto;
   }
-  
+
   .hero-image img {
     transform: none;
   }
-  
+
   nav {
     flex-direction: column;
     gap: 1rem;
@@ -281,7 +300,7 @@ footer {
   .section-title {
     font-size: 2rem;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
