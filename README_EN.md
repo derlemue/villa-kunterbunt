@@ -46,7 +46,7 @@ This document is rather more than a mere letter of complaint. It is the protocol
 It chronicles the desperate struggle of a customer who, armed with logic, measuring instruments, and physical facts, sets forth to battle against a "service universe" where, it appears, rather different natural laws hold sway.
 
 
-> | Note: Please be aware that the document in this section is currently available in the original German version only.
+> Note: Please be aware that the document in this section is currently available in the original German version only.
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf) [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
 
@@ -64,7 +64,7 @@ It chronicles the desperate struggle of a customer who, armed with logic, measur
 >
 > [![Cover Letter Download](https://img.shields.io/badge/Download-Cover_Letter_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
 
-> | Note: Please be aware that the document in this section is currently available in the original German version only.
+> Note: Please be aware that the document in this section is currently available in the original German version only.
 
 ---
 
