@@ -21,7 +21,7 @@
 | :--- | :--- | :--- |
 | **derlemue** | **Stakeholder Management:** SPOC (Single Point of Contact) für E.ON / Bayernwerk. Koordination und Prüfung eingereichter Prozess-Dokumente. | *ongoing* |
 | **Ph0x** | **SEO-Strategie:** Laufende Optimierung der Inhalte für maximale Auffindbarkeit in Suchmaschinen. | *ongoing* |
-| **Cipher** | **Accessibility & Translation:** Erstellung der `README_DE2.md` (Leichte Sprache) und `README_EN.md` (1:1 Übersetzung). | *03/2026* |
+| **Cipher** | **Accessibility & Translation:** Erstellung der `README_DE2.md` (Leichte Sprache) und `README_EN.md` (1:1 Übersetzung). Prüfung Ebook-Übersetzung (EN). | *Q2/2026* |
 | **m3l** | **Education Edition:** Kommentierte Fassung des eBooks mit Erläuterungen für fachfremde Leser ohne elektrotechnische Vorkenntnisse. | *Q2/2026* |
 
 <br>
@@ -45,10 +45,11 @@
 *   **Layout:** Optimierung der README für satirischen "Premium-Dokumentations-Stil".
 *   **Navigation:** Verbesserte Verlinkungen zwischen den Dokumenten und Playern.
 
-#### ⚙️ Infrastructure
-*   **Self-Hosted CI/CD:** Fork-Sync und Pages Deployment laufen jetzt auf Self-Hosted Runners.
-*   **Sync Optimization:** Anpassung des Fork-Sync-Zeitplans auf alle 15 Minuten (*/15) via externem Cronjob-Trigger.
-*   **External Trigger:** Implementierung und Test von manuellen Triggern für Workflow-Validierung.
+#### ⚙️ Infrastructure & Workflows
+*   **Workflow Fixes:** Vollständige Implementierung von `sync-fork`, `deploy-pages` und `automerge` mit korrekten Berechtigungen.
+*   **Automerge:** Aktiviert für Whitelist-User (derlemue, m3l1nda, osint-inc, Cipher-Pup).
+*   **Self-Hosted CI/CD:** Optimierung für Self-Hosted Runner und Vermeidung von Deadlocks.
+
 
 
 ---
