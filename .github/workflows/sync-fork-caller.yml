@@ -5,7 +5,11 @@ on:
     - cron: '00 */2 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+
 jobs:
   call-sync-fork:
-    uses: lemueIO/.github/workflows/sync-fork.yml@main
+    uses: lemueIO/.github/.github/workflows/sync-fork.yml@main
     secrets: inherit
