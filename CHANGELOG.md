@@ -61,6 +61,7 @@
 *   **Automerge:** Aktiviert für Whitelist-User (derlemue, m3l1nda, osint-inc, Cipher-Pup).
 *   **Self-Hosted CI/CD:** Optimierung für Self-Hosted Runner und Vermeidung von Deadlocks.
 *   **Fixes:** Mermaid-Diagramm-Syntax in Upload-Guides gehärtet (Kompatibilitäts-Fix).
+*   **Sync & Cleanup:** Finaler Sync und Bereinigung der Repository-Stände nach Auflösung von Divergenzen.
 
 
 
