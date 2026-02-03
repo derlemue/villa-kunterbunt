@@ -110,11 +110,18 @@ nav {
 }
 
 .hero-forks {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   align-items: center;
+}
+
+@media (max-width: 1150px) and (min-width: 769px) {
+  .hero-forks {
+    max-width: 450px;
+    /* Constrain width to force 2x2 grid if they wrap, instead of 3x1 */
+  }
 }
 
 .btn {
