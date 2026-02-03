@@ -561,6 +561,42 @@
                 </div>
             </article>
 
+            <!-- Episode 6 -->
+            <article class="episode-card fade-in-up delay-2">
+                <img src="../assets/images/Die Villa Kunterbunt - Korrespondez Epos Cover Front_HQ_thumb.png"
+                    alt="Cover Art" class="cover-art">
+                <div class="episode-content">
+                    <div class="episode-tag">Episode 06</div>
+                    <h2 class="episode-title">Die Studie</h2>
+                    <div class="episode-description">
+                        Die <strong>systemanalytische Untersuchung</strong> einer fehlerhaften Reparatur an einer
+                        defekten Stromphase (L3) und die humorvolle Entlarvung technischer Inkompetenz im Kundenservice.
+                    </div>
+
+                    <div class="player-controls">
+                        <button class="play-btn" onclick="togglePlay(6)" id="play-btn-6" aria-label="Play Episode 6">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                        <div class="progress-wrapper">
+                            <div class="progress-bar-bg" id="progress-container-6">
+                                <div class="progress-fill" id="progress-fill-6"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time-6">0:00</span>
+                                <span id="duration-6">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <audio id="audio-player-6" src="../assets/audio/Die Villa Kunterbunt - Systemanalyse.mp3"
+                        preload="metadata"></audio>
+                </div>
+                <div style="margin-top: 15px; text-align: right;">
+                    <a href="systemanalyse.html" class="action-link">Zur Folge</a>
+                </div>
+            </article>
+
         </div>
 
         <footer>
@@ -640,18 +676,19 @@
             const audio = document.getElementById(`audio-player-${id}`);
             const btn = document.getElementById(`play-btn-${id}`);
 
-            // Should dynamic find all other players to pause them? 
-            // For now we just check 1 vs 2 as we only have 2.
-            const otherId = id === 1 ? 2 : 1;
-            const otherAudio = document.getElementById(`audio-player-${otherId}`);
-            const otherBtn = document.getElementById(`play-btn-${otherId}`);
+            // Loop through all potential players (1 to 6)
+            for (let i = 1; i <= 6; i++) {
+                if (i !== id) {
+                    const otherAudio = document.getElementById(`audio-player-${i}`);
+                    const otherBtn = document.getElementById(`play-btn-${i}`);
+                    if (otherAudio && !otherAudio.paused) {
+                        otherAudio.pause();
+                        otherBtn.innerHTML = playIcon;
+                    }
+                }
+            }
 
             if (audio.paused) {
-                // Pause other player if playing
-                if (!otherAudio.paused) {
-                    otherAudio.pause();
-                    otherBtn.innerHTML = playIcon;
-                }
                 audio.play();
                 btn.innerHTML = pauseIcon;
             } else {
@@ -667,6 +704,7 @@
             initPlayer(3);
             initPlayer(4);
             initPlayer(5);
+            initPlayer(6);
         });
     </script>
 </body>
