@@ -39,13 +39,19 @@
 
 ## 📖 Über dieses Buch
 
-> *„Die Villa Kunterbunt zeigt: Man kann auch bei Strom-Problemen den Humor behalten. Es ist ein Plädoyer für mehr Menschlichkeit in einer automatisierten Welt."*
+> *„Die Villa Kunterbunt zeigt: Man kann den Humor behalten. Auch wenn es Probleme gibt. Das Buch zeigt: Menschen sind wichtig. Auch in einer Welt mit viel Technik."*
 
-Dieses Dokument ist mehr als nur eine Beschwerde. Es ist das Protokoll einer **Tragi-Komödie**. 
+Dieses Dokument ist mehr als eine Beschwerde.
+Es ist eine lustige und traurige Geschichte zugleich.
 
-Was begann als einfacher Fehler – ein fehlendes Kabel nach dem Zähler-Wechsel – wurde zu einer philosophischen Reise durch die deutsche Bürokratie.
+Was als einfacher Fehler begann, wurde zu einem großen Problem.
+Ein Kabel fehlte nach dem Zähler-Wechsel.
+Daraus wurde eine lange Reise durch die Bürokratie.
 
-Es zeigt den verzweifelten Kampf eines Kunden. Er kämpft mit Logik, Mess-Geräten und Fakten gegen ein Service-System, das nach anderen Regeln spielt.
+Es zeigt den Kampf eines Kunden.
+Er kämpft mit Fakten und Mess-Geräten.
+Aber das Service-System arbeitet anders.
+Es folgt anderen Regeln.
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf) [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
 
@@ -55,33 +61,43 @@ Es zeigt den verzweifelten Kampf eines Kunden. Er kämpft mit Logik, Mess-Gerät
 
 > [!NOTE] 
 >
-> Nach vielen Tagen ohne Erfolg wurde die Strategie geändert. Weg vom Bittsteller, hin zum **Reporting für das Qualitäts-Management**.
+> Lange Zeit gab es keinen Erfolg.
+> Deshalb wurde die Strategie geändert.
+> Alle Informationen wurden als langes Buch aufgeschrieben.
+> So muss man alles lesen, um es zu verstehen.
 >
-> Damit die Informationen auch gelesen werden, wurden alle Details als **langes eBook** übergeben. Wer den Inhalt verstehen will, muss lesen.
->
-> Der Datensatz wurde dem Unternehmen zusammen mit einem Begleitschreiben übergeben.
+> Das Buch wurde an die Firma geschickt.
+> Mit einem offiziellen Begleit-Brief.
 >
 > [![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
 >
 
 ---
 
-## 📊 Bewertung: Systemanalytische Studie
+## 📊 Die Bewertung: Eine Studie
 
-Diese Studie untersucht dieses Repository als digitales Zeichen des Widerstands. Sie analysiert die satirische Korrespondenz als soziologisches Phänomen.
+Diese Studie untersucht das Buch genau.
+Sie schaut sich an: Wie wehren sich Kunden?
+Wie nutzen sie Satire und Humor?
 
-Das eBook wird hier zum Untersuchungs-Gegenstand: Wie wird Humor zur Waffe gegen automatisierte Entpersönlichung?
+Die Frage ist: Kann Humor helfen?
+Kann man mit Humor gegen große Firmen kämpfen?
+Wenn diese Firmen nur noch automatisch arbeiten?
 
 [![Systemanalytische Studie und Bewertung Download](https://img.shields.io/badge/Download-Systemanalytische_Studie_und_Bewertung-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analyse_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/dossier.html)
 
 ---
 
-## 🏢 Hinweis für die Unternehmen
+## 🏢 Hinweis für die Firmen
 
-Es ist möglich, dass Dokumente über **Prozess-Verbesserungen** hier aufgenommen werden. Diese werden nach Prüfung prominent in der README.md platziert.
+Die Firmen können Dokumente einreichen.
+Zum Beispiel: Dokumente über Verbesserungen.
+Diese Dokumente werden geprüft.
+Wenn sie gut sind, werden sie hier veröffentlicht.
 
 > [!WARNING]
-> Stellungnahmen und Erklärungsversuche werden abgelehnt.
+> Nur leere Worte werden nicht akzeptiert.
+> Es muss echte Verbesserung sein.
 
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
 
@@ -89,30 +105,38 @@ Es ist möglich, dass Dokumente über **Prozess-Verbesserungen** hier aufgenomme
 
 ## 🎭 Die Geschichte
 
-### Teil I-III: Die 66-Prozent-Arbeit
-Wenn man 170,87 EUR für 15 Minuten bezahlt, darf man erwarten, dass alle drei Kabel angeschlossen werden? Oder ist „2 aus 3" (66%) ein neuer Standard?
+### Teil 1 bis 3: Nur zwei von drei Kabeln
+Der Techniker bekam 170,87 Euro für 15 Minuten Arbeit.
+Aber er hat nur 2 von 3 Kabeln angeschlossen.
+Das sind 66 Prozent.
+Ist das jetzt der neue Standard?
 
-### Teil IV: Fern-Diagnose
-Hier werden Messungen vor Ort durch telepathische Fern-Diagnosen ersetzt. Warum messen, wenn man *fühlen* kann, dass der Strom fließt?
+### Teil 4: Fern-Diagnose
+Der Techniker war nicht vor Ort.
+Er hat nicht gemessen.
+Aber er sagte: Alles funktioniert.
+Wie kann man das wissen, ohne zu messen?
 
-### Das Finale: Die Bewerbung
-Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil davon werden. Eine Bewerbung für eine Karriere in der „Villa Kunterbunt".
+### Das Ende: Die Bewerbung
+Wenn man das System nicht ändern kann, muss man mitmachen.
+Deshalb: Eine Bewerbung für einen Job in der „Villa Kunterbunt".
 
 ---
 
-## ⚡ Technische Details (Der Beweis)
+## ⚡ Die technischen Details
 
-Für die technisch Interessierten:
-*   **Problem:** Herd und Teile der Wohnung ohne Strom.
-*   **Diagnose:** FI-Schalter funktioniert nicht.
-*   **Analyse:** Zähler zeigt L1, L2, L3 am Eingang an.
-*   **Fazit:** Der Fehler liegt an der Ausgangs-Klemme. Ein klassischer „Kabel-nicht-drin"-Fehler.
+Hier die Fakten für alle, die es genau wissen wollen:
+*   **Das Problem:** Der Herd hatte keinen Strom. Auch Teile der Wohnung nicht.
+*   **Die Test-Taste:** Die Sicherung konnte nicht getestet werden.
+*   **Die Messung:** Der Zähler zeigte: Alle drei Phasen kommen an.
+*   **Das Ergebnis:** Ein Kabel war nicht angeschlossen. Ein einfacher Fehler.
 
 ---
 
 ## 🤡 Bilder & Illustrationen
 
-Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Bilder und Illustrationen in einer Galerie.
+Hier gibt es Bilder zur Geschichte.
+Alle Bilder sind in einer Galerie.
 
 <div align="center">
   <a href="assets/illustrations/Die Villa Kunterbunt_040.PNG">
@@ -128,7 +152,7 @@ Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Bilder und Illustra
 
 ## 📥 Download
 
-Laden Sie hier die vollständige Korrespondenz herunter.
+Hier können Sie alle Dokumente herunterladen.
 
 [**📄 Ebook als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf?raw=true)
 <br>
