@@ -153,7 +153,7 @@ Alle Bilder sind in einer Galerie.
 
 <br>
 
-[![Galerie](https://img.shields.io/badge/Galerie-Bilder_%26_Illustrationen-purple?style=for-the-badge&logo=github)](https://derlemue.github.io/villa-kunterbunt/gallery/)
+[![Galerie](https://img.shields.io/badge/Galerie-Bilder_%26_Illustrationen-purple?style=for-the-badge&logo=github)](https://derlemue.github.io/villa-kunterbunt/gallery/index_de2.html)
 
 ---
 
