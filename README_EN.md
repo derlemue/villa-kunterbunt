@@ -80,6 +80,7 @@ The eBook itself becomes here the object of a meta-analysis: how does humour bec
 
 ---
 
+<a id="companies-en"></a>
 ## 🏢 Notice for the Participating Companies
 
 There exists the possibility that documents which chronicle an **improvement of processes** or the like may be requested for inclusion in the repository through the normal procedure. These shall, upon successful review, be placed prominently here in the README.md.

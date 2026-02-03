@@ -93,6 +93,7 @@ Wenn diese Firmen nur noch automatisch arbeiten?
 
 ---
 
+<a id="firmen"></a>
 ## 🏢 Hinweis für die Firmen
 
 Die Firmen können Dokumente einreichen.

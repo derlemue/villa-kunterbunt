@@ -75,6 +75,7 @@ Das eBook selbst wird hier zum Untersuchungsgegenstand einer Meta-Analyse: Wie w
 
 ---
 
+<a id="companies"></a>
 ## 🏢 Hinweis für die teilnehmenden Unternehmen
 
 Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozessen** oder ähnlichem protokollieren, über den normalen Prozess zur Aufnahme in das Repository angefragt werden können. Diese werden nach erfolgreicher Prüfung prominent hier in der README.md platziert.
