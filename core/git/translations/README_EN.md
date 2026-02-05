@@ -82,7 +82,7 @@ This study examines the present repository "Villa Kunterbunt" as a digital artef
 
 The eBook itself becomes here the object of a meta-analysis: how does humour become a weapon against automated depersonalisation?
 
-[![System-Analytical Study and Evaluation Download](https://img.shields.io/badge/Download-System--Analytical_Study_and_Evaluation-blue?style=for-the-badge&logo=adobeacrobatreader)](https://derlemue.github.io/villa-kunterbunt/core/data/main/documents/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analysis_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](../../data/main/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](../../data/main/podcast/dossier.html)
+[![System-Analytical Study and Evaluation Download](https://img.shields.io/badge/Download-System--Analytical_Study_and_Evaluation-blue?style=for-the-badge&logo=adobeacrobatreader)](https://derlemue.github.io/villa-kunterbunt/core/data/meta/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analysis_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](../../data/main/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](../../data/main/podcast/dossier.html)
 
 > Note: Please be aware that some documents in this section are currently available in the original German version only.
 
@@ -150,7 +150,7 @@ Download here the complete correspondence and experience how one combats windmil
 <br>
 [**📄 Download Cover Letter as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/core/data/main/documents/E.ON-Report_%20Datenübergabe.pdf?raw=true)
 <br>
-[**📄 Download System-Analytical Study and Evaluation as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/core/data/main/documents/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf?raw=true)
+[**📄 Download System-Analytical Study and Evaluation as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/core/data/meta/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf?raw=true)
 <br>
 [**🎧 Download Analysis Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/core/data/main/audio/villa_kunterbunt_analyse_podcast.mp3?raw=true)
 <br>
