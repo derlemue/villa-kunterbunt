@@ -8,7 +8,7 @@
 
 Das Projekt wurde restrukturiert. Alle Inhalte befinden sich nun in der strukturierten Datenablage.
 
-👉 **[ZUM DATEN-VERZEICHNIS](data/project_core/)**
+👉 **[ZUM DATEN-VERZEICHNIS](core/)**
 
 👉 **[ZUR NEUEN WEBSEITE](index.html)**
 
