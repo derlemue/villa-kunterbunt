@@ -22,8 +22,8 @@
 *Eine lustige Geschichte über Strom-Probleme und die Suche nach der verlorenen dritten Phase.*
 
 <p align="center">
-  <img src="../../data/main/images/villa_kunterbunt_korrespondenz_epos_cover_front_hq_thumb.png" width="45%" alt="Cover Front" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
-  <img src="../../data/main/images/villa_kunterbunt_korrespondenz_epos_cover_back_hq_thumb.png" width="45%" alt="Cover Back" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <img src="../../website/main/images/villa_kunterbunt_korrespondenz_epos_cover_front_hq_thumb.png" width="45%" alt="Cover Front" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <img src="../../website/main/images/villa_kunterbunt_korrespondenz_epos_cover_back_hq_thumb.png" width="45%" alt="Cover Back" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
 </p>
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](https://derlemue.github.io/villa-kunterbunt/core/data/main/documents/villa_kunterbunt_korrespondenz_epos_derlemue.pdf)
