@@ -422,3 +422,58 @@ footer {
         justify-content: center;
     }
 }
+
+/* Collapsible Audio Player */
+.audio-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1.5rem;
+    border-right: 1px solid var(--card-border);
+    padding-right: 1.5rem;
+}
+
+.audio-wrapper .audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 0;
+    border-right: none;
+    padding-right: 0;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-width 0.4s ease, opacity 0.3s ease;
+}
+
+.audio-wrapper.expanded .audio-controls {
+    max-width: 200px; /* Adjust based on content width */
+    opacity: 1;
+}
+
+#toggle-player {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .audio-wrapper {
+        margin: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--card-border);
+        padding: 0 0 1rem 0;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .audio-wrapper .audio-controls {
+        max-height: 0;
+        max-width: 100%;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+
+    .audio-wrapper.expanded .audio-controls {
+        max-height: 60px;
+        opacity: 1;
+    }
+}
