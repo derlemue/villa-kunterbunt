@@ -10,7 +10,7 @@ Das Projekt wurde restrukturiert. Alle Inhalte befinden sich nun in der struktur
 
 👉 **[ZUM DATEN-VERZEICHNIS](core/)**
 
-👉 **[ZUR NEUEN WEBSEITE](index.html)**
+👉 **[ZUR NEUEN WEBSEITE](https://derlemue.github.io/villa-kunterbunt/)**
 
 ---
 *Created with frustration and ❤️.*

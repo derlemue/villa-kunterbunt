@@ -10,7 +10,7 @@
 <div align="center">
 
 <br>
-<a href="https://derlemue.github.io/villa-kunterbunt/site/">
+<a href="https://derlemue.github.io/villa-kunterbunt/">
   <img src="https://img.shields.io/badge/Website-Jetzt_erleben-2ea44f?style=for-the-badge&logo=github" height="40" alt="Visit Website">
 </a>
 <br>
