@@ -24,6 +24,25 @@
     <header>
         <nav>
             <div class="logo">🎪 Villa Kunterbunt</div>
+            <div class="audio-controls">
+                <button id="toggle-audio" class="btn-icon" aria-label="Play/Pause">
+                    <span id="icon-play">▶️</span>
+                    <span id="icon-pause" style="display:none;">⏸️</span>
+                </button>
+                <button id="toggle-mute" class="btn-icon" aria-label="Mute/Unmute">
+                    <span id="icon-sound">🔊</span>
+                    <span id="icon-mute" style="display:none;">🔇</span>
+                </button>
+                <div class="waveform" id="waveform">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <audio id="bg-music" loop muted autoplay>
+                <source src="core/website/global/audio/villa_kunterbunt_background_melody.mp3" type="audio/mpeg">
+            </audio>
             <div class="nav-links">
                 <a href="#about">Über das Projekt</a>
                 <a href="#downloads">Downloads</a>
@@ -180,6 +199,68 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('bg-music');
+            const playBtn = document.getElementById('toggle-audio');
+            const muteBtn = document.getElementById('toggle-mute');
+            const waveform = document.getElementById('waveform');
+            const iconPlay = document.getElementById('icon-play');
+            const iconPause = document.getElementById('icon-pause');
+            const iconSound = document.getElementById('icon-sound');
+            const iconMute = document.getElementById('icon-mute');
+
+            audio.volume = 0.9;
+
+            // Autoplay handling
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    updatePlayState(true);
+                }).catch(error => {
+                    console.log("Autoplay prevented");
+                    updatePlayState(false);
+                });
+            }
+
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    updatePlayState(true);
+                } else {
+                    audio.pause();
+                    updatePlayState(false);
+                }
+            });
+
+            muteBtn.addEventListener('click', () => {
+                audio.muted = !audio.muted;
+                updateMuteState(audio.muted);
+            });
+
+            function updatePlayState(isPlaying) {
+                if (isPlaying) {
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'inline';
+                    waveform.classList.add('playing');
+                } else {
+                    iconPlay.style.display = 'inline';
+                    iconPause.style.display = 'none';
+                    waveform.classList.remove('playing');
+                }
+            }
+
+            function updateMuteState(isMuted) {
+                if (isMuted) {
+                    iconSound.style.display = 'none';
+                    iconMute.style.display = 'inline';
+                } else {
+                    iconSound.style.display = 'inline';
+                    iconMute.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
