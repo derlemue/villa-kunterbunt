@@ -358,3 +358,67 @@ footer {
     justify-content: center;
   }
 }
+/* Audio Controls */
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 1.5rem;
+    border-right: 1px solid var(--card-border);
+    padding-right: 1.5rem;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.25rem;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.btn-icon:hover {
+    color: var(--primary);
+}
+
+.waveform {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 20px;
+}
+
+.bar {
+    width: 3px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    animation: wave 1s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.bar:nth-child(1) { height: 10px; animation-delay: 0.1s; }
+.bar:nth-child(2) { height: 16px; animation-delay: 0.2s; }
+.bar:nth-child(3) { height: 12px; animation-delay: 0.3s; }
+.bar:nth-child(4) { height: 8px; animation-delay: 0.4s; }
+
+.waveform.playing .bar {
+    animation-play-state: running;
+}
+
+@keyframes wave {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.5); }
+}
+
+@media (max-width: 768px) {
+    .audio-controls {
+        margin: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--card-border);
+        padding: 0 0 1rem 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
