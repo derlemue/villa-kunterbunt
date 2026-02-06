@@ -556,3 +556,52 @@ footer {
         margin-right: 0;
     }
 }
+
+/* Audio Player - Hanging below header */
+header {
+    position: sticky; /* Keep sticky */
+    /* Ensure relative positioning context if needed, but sticky acts as relative for children usually */
+}
+
+.audio-wrapper {
+    position: absolute;
+    top: 100%; /* Push completely below header */
+    right: 2rem; /* Align with right padding of header */
+    margin-right: 0;
+    
+    /* Reset previous styles just in case */
+    border-right: none;
+    border-left: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    border-top: none; /* Connect to header */
+    
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 12px 12px;
+    padding: 0.5rem 1rem;
+    
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 90;
+    
+    flex-direction: row-reverse; /* Button on right */
+}
+
+/* Ensure controls are hidden/shown correctly in this new context */
+.audio-wrapper .audio-controls {
+    margin-right: 0.5rem;
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--card-border);
+    
+    /* Animation props */
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-width 0.4s ease, opacity 0.3s ease;
+}
+
+.audio-wrapper.expanded .audio-controls {
+    max-width: 200px;
+    opacity: 1;
+}
