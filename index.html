@@ -31,23 +31,28 @@
                 <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README.md">GitHub</a>
             </div>
         </nav>
-        <div class="audio-wrapper expanded">
-            <button id="toggle-player" class="btn-icon" aria-label="Toggle Player">🎶</button>
-            <div class="audio-controls" id="audio-controls">
-                <button id="toggle-audio" class="btn-icon" aria-label="Play/Pause">
-                    <span id="icon-play">▶️</span>
-                    <span id="icon-pause" style="display:none;">⏸️</span>
-                </button>
-                <button id="toggle-mute" class="btn-icon" aria-label="Mute/Unmute">
-                    <span id="icon-sound">🔊</span>
-                    <span id="icon-mute" style="display:none;">🔇</span>
-                </button>
+        <div class="audio-widget expanded" id="audio-widget">
+            <div class="audio-trigger" id="audio-trigger" aria-label="Toggle Controls">
                 <div class="waveform" id="waveform">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
+            </div>
+            <div class="audio-controls-panel">
+                <div class="controls-row">
+                    <button id="toggle-audio" class="btn-icon" aria-label="Play/Pause">
+                        <span id="icon-play">▶️</span>
+                        <span id="icon-pause" style="display:none;">⏸️</span>
+                    </button>
+                    <button id="toggle-mute" class="btn-icon" aria-label="Mute/Unmute">
+                        <span id="icon-sound">🔊</span>
+                        <span id="icon-mute" style="display:none;">🔇</span>
+                    </button>
+                </div>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.4" class="volume-slider"
+                    aria-label="Volume">
             </div>
         </div>
         <audio id="bg-music" autoplay>
@@ -212,8 +217,62 @@
             const iconPause = document.getElementById('icon-pause');
             const iconSound = document.getElementById('icon-sound');
             const iconMute = document.getElementById('icon-mute');
+            const volumeSlider = document.getElementById('volume-slider');
+            const audioWidget = document.getElementById('audio-widget');
+            const audioTrigger = document.getElementById('audio-trigger');
 
-            audio.volume = 0.5;
+            // Init State
+            audio.volume = 0.4;
+
+            // Auto-collapse logic
+            let autoCollapseTimeout;
+            function startAutoCollapse() {
+                clearTimeout(autoCollapseTimeout);
+                autoCollapseTimeout = setTimeout(() => {
+                    audioWidget.classList.remove('expanded');
+                }, 4000);
+            }
+
+            // Start collapse timer on load
+            startAutoCollapse();
+
+            // Toggle Widget
+            audioTrigger.addEventListener('click', () => {
+                audioWidget.classList.toggle('expanded');
+            });
+
+            // Prevent collapse when interacting with controls
+            const controlsPanel = document.querySelector('.audio-controls-panel');
+            controlsPanel.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // Volume Slider
+            volumeSlider.addEventListener('input', (e) => {
+                audio.volume = e.target.value;
+                if (audio.volume > 0 && audio.muted) {
+                    audio.muted = false;
+                    updateMuteState(false);
+                }
+            });
+
+            // Play/Pause
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+
+            audio.addEventListener('play', () => updatePlayState(true));
+            audio.addEventListener('pause', () => updatePlayState(false));
+
+            // Mute/Unmute
+            muteBtn.addEventListener('click', () => {
+                audio.muted = !audio.muted;
+                updateMuteState(audio.muted);
+            });
 
             // Autoplay handling
             const playPromise = audio.play();
@@ -226,34 +285,11 @@
                 });
             }
 
-            playBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play();
-                    updatePlayState(true);
-                } else {
-                    audio.pause();
-                    updatePlayState(false);
-                }
-            });
-
-            muteBtn.addEventListener('click', () => {
-                audio.muted = !audio.muted;
-                updateMuteState(audio.muted);
-            });
-
-            const togglePlayerBtn = document.getElementById('toggle-player');
-            const audioWrapper = document.querySelector('.audio-wrapper');
-
-            togglePlayerBtn.addEventListener('click', () => {
-                audioWrapper.classList.toggle('expanded');
-            });
-
             function updatePlayState(isPlaying) {
                 if (isPlaying) {
                     iconPlay.style.display = 'none';
                     iconPause.style.display = 'inline';
                     waveform.classList.add('playing');
-                    audioWrapper.classList.add('expanded'); // Auto-expand on play
                 } else {
                     iconPlay.style.display = 'inline';
                     iconPause.style.display = 'none';
@@ -265,11 +301,16 @@
                 if (isMuted) {
                     iconSound.style.display = 'none';
                     iconMute.style.display = 'inline';
+                    audioWidget.classList.add('pulsing'); // Add pulse when muted
                 } else {
                     iconSound.style.display = 'inline';
                     iconMute.style.display = 'none';
+                    audioWidget.classList.remove('pulsing');
                 }
             }
+
+            // Initial Check
+            if (audio.muted) audioWidget.classList.add('pulsing');
         });
     </script>
 </body>
