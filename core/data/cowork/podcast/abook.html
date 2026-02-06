@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episode VI - aBook - Villa Kunterbunt Cowork</title>
+    <title>Die Villa Kunterbunt | Anthologie (Hörbuch)</title>
 
     <!-- SEO / Social Media -->
     <meta property="og:title" content="Die Villa Kunterbunt - Episode VI (aBook)">
@@ -595,7 +595,7 @@
     <div class="main-container">
         <header>
             <h1>Die Villa Kunterbunt</h1>
-            <div class="subtitle">Die Anthologie | Episode VI - Das Hörbuch (beta)</div>
+            <div class="subtitle">Die Villa Kunterbunt Anthologie | Das Hörbuch</div>
             <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                 <a href="../../main/podcast/index.html" class="action-link">🏰 Das Epos</a>
                 <a href="../../meta/podcast/index.html" class="action-link">🎙️ Das Kompendium</a>
@@ -623,7 +623,7 @@
                 </div>
             </div>
 
-            <div class="episode-tag">Episode VI - Das Hörbuch (beta)</div>
+            <div class="episode-tag">Die Villa Kunterbunt Anthologie (Hörbuch)</div>
 
             <div class="info-bar">
                 <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
@@ -773,7 +773,8 @@
                         oninput="setVolume(this.value)">
                 </div>
             </div>
-            <audio id="audio-player" src="../audio/villa_kunterbunt_episode_vi_abook.mp3" preload="metadata"></audio>
+            <audio id="audio-player" src="../audio/Die Villa Kunterbunt Anthologie - Das Hörbuch.mp3"
+                preload="metadata"></audio>
 
             <div class="nav-links"
                 style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 15px;">
@@ -850,9 +851,9 @@
             if ('mediaSession' in navigator) {
                 audio.addEventListener('play', () => {
                     navigator.mediaSession.metadata = new MediaMetadata({
-                        title: "Die Anthologie | Episode VI - Das Hörbuch (beta)",
+                        title: "Die Villa Kunterbunt Anthologie | Das Hörbuch",
                         artist: "Die Villa Kunterbunt",
-                        album: "Die Villa Kunterbunt",
+                        album: "Die Anthologie",
                         artwork: [
                             { src: new URL("../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                         ]

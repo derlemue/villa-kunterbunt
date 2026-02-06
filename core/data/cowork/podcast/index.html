@@ -635,7 +635,7 @@
     <div class="main-container">
         <header>
             <h1>Die Villa Kunterbunt</h1>
-            <div class="subtitle">Die Anthologie</div>
+            <div class="subtitle">Die Villa Kunterbunt Anthologie | Das Hörbuch</div>
 
 
             <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
@@ -669,8 +669,8 @@
                     </div>
                 </div>
                 <div class="episode-content">
-                    <div class="episode-tag">Episode VI - Das Hörbuch (beta)</div>
-                    <h2 class="episode-title">Das Hörbuch (beta)</h2>
+                    <div class="episode-tag">Die Villa Kunterbunt Anthologie (Hörbuch)</div>
+                    <h2 class="episode-title">Das Hörbuch</h2>
 
                     <div class="info-bar">
                         <button id="tts-btn-1" class="info-btn" onclick="toggleInfo(1)">TTS</button>
@@ -724,7 +724,7 @@
                                 oninput="setVolume(1, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-1" src="../audio/villa_kunterbunt_episode_vi_abook.mp3"
+                    <audio id="audio-player-1" src="../audio/Die Villa Kunterbunt Anthologie - Das Hörbuch.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
                         <a href="abook.html" class="action-link">Zur Folge</a>
@@ -802,9 +802,9 @@
                 const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
 
                 setupMediaSession(audio, {
-                    title: "Die Anthologie | Episode VI - Das Hörbuch (beta)",
+                    title: "Die Villa Kunterbunt Anthologie | Das Hörbuch",
                     artist: "Die Villa Kunterbunt",
-                    album: "Die Villa Kunterbunt",
+                    album: "Die Anthologie",
                     artwork: [
                         { src: absoluteArtworkUrl, sizes: '512x512', type: 'image/png' }
                     ]
