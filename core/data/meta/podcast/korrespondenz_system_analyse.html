@@ -742,51 +742,9 @@
                         oninput="setVolume(this.value)">
                 </div>
             </div>
-            const audio = document.getElementById('audio-player');
 
-            // Persistence
-            function getPersistenceKey(src) {
-            return 'vp_time_' + src.split('/').pop();
-            }
-
-            function setupPersistence(audio) {
-            const key = getPersistenceKey(audio.currentSrc || audio.src);
-            const savedTime = localStorage.getItem(key);
-            if (savedTime && !isNaN(savedTime)) {
-            audio.currentTime = parseFloat(savedTime);
-            }
-            audio.addEventListener('timeupdate', () => {
-            localStorage.setItem(key, audio.currentTime);
-            });
-            }
-
-            // MediaSession
-            function setupMediaSession(audio) {
-            if ('mediaSession' in navigator) {
-            audio.addEventListener('play', () => {
-            navigator.mediaSession.metadata = new MediaMetadata({
-            title: "Meta: Die Studie",
-            artist: "Villa Kunterbunt",
-            album: "Die Villa Kunterbunt",
-            artwork: [
-            { src: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", sizes: '512x512', type:
-            'image/png' }
-            ]
-            });
-            navigator.mediaSession.setActionHandler('play', () => audio.play());
-            navigator.mediaSession.setActionHandler('pause', () => audio.pause());
-            navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-            audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
-            });
-            navigator.mediaSession.setActionHandler('seekforward', (details) => {
-            audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
-            });
-            });
-            }
-            }
-
-            setupPersistence(audio);
-            setupMediaSession(audio);
+            <audio id="audio-player" src="../audio/villa_kunterbunt_meta_korrespondenz_analyse.mp3"
+                preload="metadata"></audio>
 
             <div class="nav-links"
                 style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center;">
@@ -818,6 +776,52 @@
         const currentTimeEl = document.getElementById('current-time');
         const durationEl = document.getElementById('duration');
         const playBtn = document.getElementById('play-btn');
+
+        // Persistence
+        function getPersistenceKey(src) {
+            return 'vp_time_' + src.split('/').pop();
+        }
+
+        function setupPersistence(audio) {
+            const key = getPersistenceKey(audio.currentSrc || audio.src);
+            const savedTime = localStorage.getItem(key);
+
+            if (savedTime && !isNaN(savedTime)) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem(key, audio.currentTime);
+            });
+        }
+
+        // MediaSession
+        function setupMediaSession(audio) {
+            if ('mediaSession' in navigator) {
+                audio.addEventListener('play', () => {
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: "Meta: Die Studie",
+                        artist: "Villa Kunterbunt",
+                        album: "Die Villa Kunterbunt",
+                        artwork: [
+                            { src: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                        ]
+                    });
+
+                    navigator.mediaSession.setActionHandler('play', () => audio.play());
+                    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+                    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                        audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
+                    });
+                    navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                        audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
+                    });
+                });
+            }
+        }
+
+        setupPersistence(audio);
+        setupMediaSession(audio);
 
         audio.addEventListener('timeupdate', () => {
             const { duration, currentTime } = audio;
