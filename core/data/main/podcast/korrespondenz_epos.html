@@ -46,7 +46,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('../../../website/data/main/images/die_villa_kunterbunt_podcast_thumb.png');
+            background-image: url('../../../website/data/main/images/thumbs/die_villa_kunterbunt_podcast_thumb.png');
             background-size: cover;
             background-position: center;
             filter: blur(60px) brightness(0.25) saturate(1.2);
@@ -338,6 +338,123 @@
             }
         }
 
+        /* Info & Source Buttons */
+        .info-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .info-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+        }
+
+        .info-btn.source-btn.no-source {
+            background: rgba(255, 50, 50, 0.15);
+            border-color: rgba(255, 50, 50, 0.3);
+            color: rgba(255, 100, 100, 0.8);
+            cursor: default;
+        }
+
+        .info-btn.source-btn.has-source:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--accent-gold);
+        }
+
+        .info-text {
+            display: none;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            border-left: 3px solid var(--accent-gold);
+            animation: fadeIn 0.3s ease;
+            text-align: left;
+        }
+
+        .info-text.visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Player Controls */
+        .control-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            color: var(--text-main);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 10px;
+        }
+
+        .volume-slider {
+            -webkit-appearance: none;
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .volume-slider:hover::-webkit-slider-thumb {
+            background: var(--accent-gold);
+        }
+
         /* SEO Cloak */
         .seo-cloud {
             position: absolute;
@@ -349,6 +466,7 @@
             clip: rect(0, 0, 0, 0);
             white-space: nowrap;
             border: 0;
+            clip-path: inset(50%);
         }
     </style>
 </head>
@@ -368,9 +486,22 @@
         </header>
 
         <article class="episode-card">
-            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Cover Art" class="cover-art">
+            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Cover Art" class="cover-art">
 
             <div class="episode-tag">Episode 07</div>
+
+            <div class="info-bar">
+                <button class="info-btn" onclick="toggleInfo()">TTS</button>
+                <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+            </div>
+
+            <div id="info-text" class="info-text">
+                Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage dienen
+                strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation extrahiert
+                wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder durch validiertes
+                Prompt-Engineering für Deep-Research-Modelle – und unterlag einer abschließenden manuellen
+                Qualitätsprüfung.
+            </div>
 
             <div class="episode-description">
                 Das vollständige <strong>Korrespondenz Epos</strong>. Eine Zusammenfassung der Ereignisse rund um die
@@ -378,11 +509,24 @@
             </div>
 
             <div class="player-controls">
+                <button class="control-btn" onclick="skip(-30)" title="-30s">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                    </svg>
+                </button>
+
                 <button class="play-btn" id="play-btn" aria-label="Play Episode">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M8 5v14l11-7z" />
                     </svg>
                 </button>
+
+                <button class="control-btn" onclick="skip(30)" title="+30s">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                    </svg>
+                </button>
+
                 <div class="progress-wrapper">
                     <div class="progress-bar-bg" id="progress-container">
                         <div class="progress-fill" id="progress-fill"></div>
@@ -391,6 +535,11 @@
                         <span id="current-time">0:00</span>
                         <span id="duration">0:00</span>
                     </div>
+                </div>
+
+                <div class="volume-control">
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                        oninput="setVolume(this.value)">
                 </div>
             </div>
             <audio id="audio-player" src="../audio/villa_kunterbunt_korrespondenz_epos.mp3" preload="metadata"></audio>
@@ -477,6 +626,25 @@
             const min = Math.floor(seconds / 60);
             const sec = Math.floor(seconds % 60);
             return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        function skip(seconds) {
+            audio.currentTime += seconds;
+        }
+
+        function setVolume(value) {
+            audio.volume = value;
+        }
+
+        function toggleInfo() {
+            const infoText = document.getElementById('info-text');
+            infoText.classList.toggle('visible');
+        }
+
+        function openSource(url) {
+            if (url) {
+                window.open(url, '_blank');
+            }
         }
 
         playBtn.addEventListener('click', () => {
