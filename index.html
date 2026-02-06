@@ -90,13 +90,16 @@
                         <span id="icon-sound">🔊</span>
                         <span id="icon-mute" style="display:none;">🔇</span>
                     </button>
-                    <button id="toggle-confetti" class="btn-icon confetti-active" aria-label="Toggle Confetti">
-                        🎉
-                    </button>
                 </div>
                 <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.4" class="volume-slider"
                     aria-label="Volume">
             </div>
+        </div>
+        <!-- Confetti Toggle Widget -->
+        <div class="confetti-widget" id="confetti-widget">
+            <button id="toggle-confetti" class="confetti-btn confetti-active" aria-label="Toggle Confetti">
+                🎉
+            </button>
         </div>
         <audio id="bg-music" autoplay muted loop>
             <source src="core/website/global/audio/villa_kunterbunt_background_melody.mp3" type="audio/mpeg">
