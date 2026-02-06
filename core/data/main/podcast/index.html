@@ -669,41 +669,13 @@
 
         <div class="episode-list">
 
-            <!-- Audiobook Highlight -->
-            <article class="episode-card fade-in-up"
-                style="border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.05);">
-                <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
-                    <div class="flipper">
-                        <div class="front">
-                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_front_thumb.png"
-                                alt="Audiobook Front">
-                        </div>
-                        <div class="back">
-                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png"
-                                alt="Audiobook Back">
-                        </div>
-                    </div>
-                </div>
-                <div class="episode-content">
-                    <div class="episode-tag">Das Hörbuch</div>
-                    <h2 class="episode-title">Die Villa Kunterbunt (Epos)</h2>
-                    <div class="episode-description">
-                        Die vollständige Dokumentation als zusammenhängendes Hörbuch. Erleben Sie das gesamte Audio-Epos
-                        in einer Fassung.
-                    </div>
-                    <div style="margin-top: 15px; text-align: center; width: 100%;">
-                        <a href="abook.html" class="action-link" style="background: rgba(212, 175, 55, 0.2);">Zum
-                            Hörbuch</a>
-                    </div>
-                </div>
-            </article>
-
             <!-- Episode 1 -->
             <article class="episode-card fade-in-up delay-1">
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_front_thumb.png"
+                                alt="Front Cover">
                         </div>
                         <div class="back">
                             <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png"
@@ -712,12 +684,13 @@
                     </div>
                 </div>
                 <div class="episode-content">
-                    <div class="episode-tag">Episode 01</div>
-                    <h2 class="episode-title">Die Satire</h2>
+                    <div class="episode-tag">Episode 01 <span class="badge">BETA</span></div>
+                    <h2 class="episode-title">Das Hörbuch (Epos)</h2>
 
                     <div class="info-bar">
                         <button class="info-btn" id="tts-btn-1" onclick="toggleInfo(1)">TTS</button>
-                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                        <button class="info-btn source-btn has-source"
+                            onclick="openSource('../documents/villa_kunterbunt_korrespondenz_epos_derlemue.pdf')">Quelle</button>
                     </div>
 
                     <div id="info-text-1" class="info-text">
@@ -733,9 +706,8 @@
                     </div>
 
                     <div class="episode-description">
-                        Das finale Kapitel: Die satirische Initiativbewerbung als Akt der subversiven Compliance. Wie
-                        man durch die Übernahme der <strong>E.ON</strong>-Sprache die Ineffizienz des Systems
-                        bloßstellt.
+                        Das vollständige Hörbuch: Die gesammelte Korrespondenz zum Projekt „Die Villa Kunterbunt“ als
+                        zusammenhängendes Audio-Erlebnis.
                     </div>
 
                     <div class="player-controls">
@@ -772,10 +744,10 @@
                                 oninput="setVolume(1, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-1" src="../audio/villa_kunterbunt_satire_podcast.mp3"
+                    <audio id="audio-player-1" src="../audio/Die Villa Kunterbunt - Das Hörbuch.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
-                        <a href="satire.html" class="action-link">Zur Folge</a>
+                        <a href="abook.html" class="action-link">Zur Folge</a>
                     </div>
                 </div>
             </article>
@@ -795,7 +767,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 02</div>
-                    <h2 class="episode-title">Die Analyse</h2>
+                    <h2 class="episode-title">Die Satire</h2>
 
                     <div class="info-bar">
                         <button class="info-btn" id="tts-btn-2" onclick="toggleInfo(2)">TTS</button>
@@ -815,8 +787,9 @@
                     </div>
 
                     <div class="episode-description">
-                        Die Analyse des satirischen E-Books "Die Villa Kunterbunt", in dem ein simpler Stromausfall
-                        durch <strong>E.ON</strong>s Inkompetenz zum literarischen Drama in vier Akten wird.
+                        Das finale Kapitel: Die satirische Initiativbewerbung als Akt der subversiven Compliance. Wie
+                        man durch die Übernahme der <strong>E.ON</strong>-Sprache die Ineffizienz des Systems
+                        bloßstellt.
                     </div>
 
                     <div class="player-controls">
@@ -849,14 +822,14 @@
                         </div>
 
                         <div class="volume-control">
-                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.4"
                                 oninput="setVolume(2, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-2" src="../audio/villa_kunterbunt_analyse_podcast.mp3"
+                    <audio id="audio-player-2" src="../audio/villa_kunterbunt_satire_podcast.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
-                        <a href="analyse.html" class="action-link">Zur Folge</a>
+                        <a href="satire.html" class="action-link">Zur Folge</a>
                     </div>
                 </div>
             </article>
@@ -877,7 +850,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 03</div>
-                    <h2 class="episode-title">Das Dossier</h2>
+                    <h2 class="episode-title">Die Analyse</h2>
 
                     <div class="info-bar">
                         <button class="info-btn" id="tts-btn-3" onclick="toggleInfo(3)">TTS</button>
@@ -897,8 +870,8 @@
                     </div>
 
                     <div class="episode-description">
-                        Das Dossier des Systemadministrators "derlemue", der einen Stromausfall zum Anlass für einen
-                        "Open Source Protest" auf GitHub nahm und die Bürokratie mit dem "FI-Beweis" aushebelte.
+                        Die Analyse des satirischen E-Books "Die Villa Kunterbunt", in dem ein simpler Stromausfall
+                        durch <strong>E.ON</strong>s Inkompetenz zum literarischen Drama in vier Akten wird.
                     </div>
 
                     <div class="player-controls">
@@ -935,10 +908,10 @@
                                 oninput="setVolume(3, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-3" src="../audio/villa_kunterbunt_dossier_podcast.mp3"
+                    <audio id="audio-player-3" src="../audio/villa_kunterbunt_analyse_podcast.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
-                        <a href="dossier.html" class="action-link">Zur Folge</a>
+                        <a href="analyse.html" class="action-link">Zur Folge</a>
                     </div>
                 </div>
             </article>
@@ -958,7 +931,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 04</div>
-                    <h2 class="episode-title">Der DeepDive</h2>
+                    <h2 class="episode-title">Das Dossier</h2>
 
                     <div class="info-bar">
                         <button class="info-btn" id="tts-btn-4" onclick="toggleInfo(4)">TTS</button>
@@ -966,16 +939,20 @@
                     </div>
 
                     <div id="info-text-4" class="info-text">
-                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
-                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
-                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
-                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
-                        abschließenden manuellen Qualitätsprüfung.
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                        Dokumentation extrahiert
+                        wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein
+                            manuelle Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                        <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen
+                        einer <strong>abschließenden manuellen
+                            Qualitätsprüfung</strong>.
                     </div>
 
                     <div class="episode-description">
-                        Analyse des Phänomens "Remote Voodoo": Der Konflikt zwischen perfekten digitalen Dashboards und
-                        der analogen Realität einer lockeren Schraube.
+                        Das Dossier des Systemadministrators "derlemue", der einen Stromausfall zum Anlass für einen
+                        "Open Source Protest" auf GitHub nahm und die Bürokratie mit dem "FI-Beweis" aushebelte.
                     </div>
 
                     <div class="player-controls">
@@ -1012,10 +989,10 @@
                                 oninput="setVolume(4, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-4" src="../audio/villa_kunterbunt_deepdive_podcast.mp3"
+                    <audio id="audio-player-4" src="../audio/villa_kunterbunt_dossier_podcast.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
-                        <a href="deepdive.html" class="action-link">Zur Folge</a>
+                        <a href="dossier.html" class="action-link">Zur Folge</a>
                     </div>
                 </div>
             </article>
@@ -1035,7 +1012,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 05</div>
-                    <h2 class="episode-title">Der Zupftest</h2>
+                    <h2 class="episode-title">Der DeepDive</h2>
 
                     <div class="info-bar">
                         <button class="info-btn" id="tts-btn-5" onclick="toggleInfo(5)">TTS</button>
@@ -1051,8 +1028,8 @@
                     </div>
 
                     <div class="episode-description">
-                        Der "Zupftest" als fragwürdige Diagnosemethode im Fokus. Die Diskrepanz zwischen moderner PR und
-                        realer infrastruktureller Schlamperei bei <strong>Bayernwerk</strong>.
+                        Analyse des Phänomens "Remote Voodoo": Der Konflikt zwischen perfekten digitalen Dashboards und
+                        der analogen Realität einer lockeren Schraube.
                     </div>
 
                     <div class="player-controls">
@@ -1089,15 +1066,15 @@
                                 oninput="setVolume(5, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-5" src="../audio/villa_kunterbunt_zupftest_podcast.mp3"
+                    <audio id="audio-player-5" src="../audio/villa_kunterbunt_deepdive_podcast.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
-                        <a href="zupftest.html" class="action-link">Zur Folge</a>
+                        <a href="deepdive.html" class="action-link">Zur Folge</a>
                     </div>
                 </div>
             </article>
 
-            <!-- Episode 6 -->
+            <!-- Episode 5 -->
             <article class="episode-card fade-in-up delay-2">
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
@@ -1112,7 +1089,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 06</div>
-                    <h2 class="episode-title">Die Studie</h2>
+                    <h2 class="episode-title">Der Zupftest</h2>
 
                     <div class="info-bar">
                         <button class="info-btn" id="tts-btn-6" onclick="toggleInfo(6)">TTS</button>
@@ -1128,8 +1105,8 @@
                     </div>
 
                     <div class="episode-description">
-                        Die <strong>systemanalytische Untersuchung</strong> einer fehlerhaften Reparatur an einer
-                        defekten Stromphase (L3) und die humorvolle Entlarvung technischer Inkompetenz im Kundenservice.
+                        Der "Zupftest" als fragwürdige Diagnosemethode im Fokus. Die Diskrepanz zwischen moderner PR und
+                        realer infrastruktureller Schlamperei bei <strong>Bayernwerk</strong>.
                     </div>
 
                     <div class="player-controls">
@@ -1166,15 +1143,15 @@
                                 oninput="setVolume(6, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-6" src="../audio/villa_kunterbunt_die_studie_podcast.mp3"
+                    <audio id="audio-player-6" src="../audio/villa_kunterbunt_zupftest_podcast.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
-                        <a href="systemanalyse.html" class="action-link">Zur Folge</a>
+                        <a href="zupftest.html" class="action-link">Zur Folge</a>
                     </div>
                 </div>
             </article>
 
-            <!-- Episode 7 -->
+            <!-- Episode 6 -->
             <article class="episode-card fade-in-up delay-2">
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
@@ -1189,7 +1166,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 07</div>
-                    <h2 class="episode-title">Das Korrespondenz Epos</h2>
+                    <h2 class="episode-title">Die Studie</h2>
 
                     <div class="info-bar">
                         <button class="info-btn" id="tts-btn-7" onclick="toggleInfo(7)">TTS</button>
@@ -1205,7 +1182,8 @@
                     </div>
 
                     <div class="episode-description">
-                        Das vollständige <strong>Korrespondenz Epos</strong>. Eine Zusammenfassung der Ereignisse.
+                        Die <strong>systemanalytische Untersuchung</strong> einer fehlerhaften Reparatur an einer
+                        defekten Stromphase (L3) und die humorvolle Entlarvung technischer Inkompetenz im Kundenservice.
                     </div>
 
                     <div class="player-controls">
@@ -1242,7 +1220,84 @@
                                 oninput="setVolume(7, this.value)">
                         </div>
                     </div>
-                    <audio id="audio-player-7" src="../audio/villa_kunterbunt_korrespondenz_epos.mp3"
+                    <audio id="audio-player-7" src="../audio/villa_kunterbunt_die_studie_podcast.mp3"
+                        preload="metadata"></audio>
+                    <div style="margin-top: 15px; text-align: right; width: 100%;">
+                        <a href="systemanalyse.html" class="action-link">Zur Folge</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 7 -->
+            <article class="episode-card fade-in-up delay-2">
+                <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                        </div>
+                        <div class="back">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png"
+                                alt="Back Cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-content">
+                    <div class="episode-tag">Episode 08</div>
+                    <h2 class="episode-title">Das Korrespondenz Epos</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" id="tts-btn-8" onclick="toggleInfo(8)">TTS</button>
+                        <button class="info-btn source-btn"
+                            onclick="openSource('../documents/villa_kunterbunt_korrespondenz_epos_derlemue.pdf')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-8" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
+                    <div class="episode-description">
+                        Das vollständige <strong>Korrespondenz Epos</strong>. Eine Zusammenfassung der Ereignisse.
+                    </div>
+
+                    <div class="player-controls">
+                        <button class="control-btn" onclick="skip(8, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
+                        <button class="play-btn" onclick="togglePlay(8)" id="play-btn-8" aria-label="Play Episode 8">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+
+                        <button class="control-btn" onclick="skip(8, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
+                        <div class="progress-wrapper">
+                            <div class="progress-bar-bg" id="progress-container-8">
+                                <div class="progress-fill" id="progress-fill-8"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time-8">0:00</span>
+                                <span id="duration-8">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(8, this.value)">
+                        </div>
+                    </div>
+                    <audio id="audio-player-8" src="../audio/villa_kunterbunt_korrespondenz_epos.mp3"
                         preload="metadata"></audio>
                     <div style="margin-top: 15px; text-align: right; width: 100%;">
                         <a href="korrespondenz_epos.html" class="action-link">Zur Folge</a>
@@ -1285,101 +1340,23 @@
         const playIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
         const pauseIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
-        function initPlayer(id) {
-            const audio = document.getElementById(`audio-player-${id}`);
-            const progressContainer = document.getElementById(`progress-container-${id}`);
-            const progressFill = document.getElementById(`progress-fill-${id}`);
-            const currentTimeEl = document.getElementById(`current-time-${id}`);
-            const durationEl = document.getElementById(`duration-${id}`);
-            const playBtn = document.getElementById(`play-btn-${id}`);
-
-            audio.addEventListener('timeupdate', () => {
-                const { duration, currentTime } = audio;
-                if (isNaN(duration)) return;
-                const progressPercent = (currentTime / duration) * 100;
-                progressFill.style.width = `${progressPercent}%`;
-                currentTimeEl.textContent = formatTime(currentTime);
-            });
-
-            progressContainer.addEventListener('click', (e) => {
-                const width = progressContainer.clientWidth;
-                const clickX = e.offsetX;
-                const duration = audio.duration;
-                audio.currentTime = (clickX / width) * duration;
-            });
-
-            audio.addEventListener('loadedmetadata', () => {
-                durationEl.textContent = formatTime(audio.duration);
-            });
-
-            audio.addEventListener('ended', () => {
-                playBtn.innerHTML = playIcon;
-                progressFill.style.width = '0%';
-                currentTimeEl.textContent = '0:00';
-            });
-        }
+        // Episode Data for MediaSession
+        const episodeData = {
+            1: { title: "Das Hörbuch (Epos)", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_abook_cover_front_thumb.png" },
+            2: { title: "Die Satire", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" },
+            3: { title: "Die Analyse", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" },
+            4: { title: "Das Dossier", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" },
+            5: { title: "Der DeepDive", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" },
+            6: { title: "Der Zupftest", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" },
+            7: { title: "Die Studie", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" },
+            8: { title: "Das Korrespondenz Epos", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" }
+        };
 
         function formatTime(seconds) {
             const min = Math.floor(seconds / 60);
             const sec = Math.floor(seconds % 60);
             return `${min}:${sec < 10 ? '0' : ''}${sec}`;
         }
-
-        function togglePlay(id) {
-            const audio = document.getElementById(`audio-player-${id}`);
-            const playBtn = document.getElementById(`play-btn-${id}`);
-
-            // Pause all other players
-            document.querySelectorAll('audio').forEach(otherAudio => {
-                if (otherAudio !== audio && !otherAudio.paused) {
-                    otherAudio.pause();
-                    const otherId = otherAudio.id.split('-').pop();
-                    document.getElementById(`play-btn-${otherId}`).innerHTML = playIcon;
-                }
-            });
-
-            if (audio.paused) {
-                audio.play();
-                playBtn.innerHTML = pauseIcon;
-            } else {
-                audio.pause();
-                playBtn.innerHTML = playIcon;
-            }
-        }
-
-        function skip(id, seconds) {
-            const audio = document.getElementById(`audio-player-${id}`);
-            audio.currentTime += seconds;
-        }
-
-        function setVolume(id, value) {
-            const audio = document.getElementById(`audio-player-${id}`);
-            audio.volume = value;
-        }
-
-        function toggleInfo(id) {
-            const infoText = document.getElementById(`info-text-${id}`);
-            if (infoText) {
-                infoText.classList.toggle('visible');
-            }
-        }
-
-        function openSource(url) {
-            if (url) {
-                window.open(url, '_blank');
-            }
-        }
-
-        // Episode Data for MediaSession
-        const episodeData = {
-            1: { title: "Episode I: Die Satire", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
-            2: { title: "Episode II: Die Analyse", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
-            3: { title: "Episode III: Das Dossier", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
-            4: { title: "Episode IV: Der DeepDive", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
-            5: { title: "Episode V: Der Zupftest", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
-            6: { title: "Episode VI: Die Studie", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
-            7: { title: "Episode VII: Das Epos", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" }
-        };
 
         function getPersistenceKey(src) {
             return 'vp_time_' + src.split('/').pop();
@@ -1396,9 +1373,6 @@
             audio.addEventListener('timeupdate', () => {
                 localStorage.setItem(key, audio.currentTime);
             });
-
-            // Optional: clear on end if desired, but user might want to replay so keeping it is safe, 
-            // or maybe reset strictly on 'ended'. User request implied holding "timestamp", so we keep it.
         }
 
         function setupMediaSession(audio, id) {
@@ -1430,49 +1404,20 @@
             }
         }
 
-        function initPlayer(id) {
-            const audio = document.getElementById(`audio-player-${id}`);
-            const progressContainer = document.getElementById(`progress-container-${id}`);
-            const progressFill = document.getElementById(`progress-fill-${id}`);
-            const currentTimeEl = document.getElementById(`current-time-${id}`);
-            const durationEl = document.getElementById(`duration-${id}`);
-            const playBtn = document.getElementById(`play-btn-${id}`);
-
-            // Set initial volume
-            audio.volume = 0.4;
-
-            setupPersistence(audio);
-            setupMediaSession(audio, id);
-
-            audio.addEventListener('timeupdate', () => {
-                const { duration, currentTime } = audio;
-                if (isNaN(duration)) return;
-                const progressPercent = (currentTime / duration) * 100;
-                progressFill.style.width = `${progressPercent}%`;
-                currentTimeEl.textContent = formatTime(currentTime);
-            });
-
-            progressContainer.addEventListener('click', (e) => {
-                const width = progressContainer.clientWidth;
-                const clickX = e.offsetX;
-                const duration = audio.duration;
-                audio.currentTime = (clickX / width) * duration;
-            });
-
-            audio.addEventListener('loadedmetadata', () => {
-                durationEl.textContent = formatTime(audio.duration);
-            });
-
-            audio.addEventListener('ended', () => {
-                playBtn.innerHTML = playIcon;
-                progressFill.style.width = '0%';
-                currentTimeEl.textContent = '0:00';
-            });
-        }
-
         function togglePlay(id) {
             const audio = document.getElementById(`audio-player-${id}`);
             const btn = document.getElementById(`play-btn-${id}`);
+
+            // Pause all other players
+            document.querySelectorAll('audio').forEach(otherAudio => {
+                if (otherAudio !== audio && !otherAudio.paused) {
+                    otherAudio.pause();
+                    const otherId = otherAudio.id.split('-').pop();
+                    const otherBtn = document.getElementById(`play-btn-${otherId}`);
+                    if (otherBtn) otherBtn.innerHTML = playIcon;
+                }
+            });
+
             if (audio.paused) {
                 audio.play();
                 btn.innerHTML = pauseIcon;
@@ -1480,6 +1425,29 @@
             } else {
                 audio.pause();
                 btn.innerHTML = playIcon;
+            }
+        }
+
+        function skip(id, seconds) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            audio.currentTime += seconds;
+        }
+
+        function setVolume(id, value) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            audio.volume = value;
+        }
+
+        function toggleInfo(id) {
+            const infoText = document.getElementById(`info-text-${id}`);
+            if (infoText) {
+                infoText.classList.toggle('visible');
+            }
+        }
+
+        function openSource(url) {
+            if (url) {
+                window.open(url, '_blank');
             }
         }
 
@@ -1508,6 +1476,51 @@
 
             localStorage.setItem(hintKey, 'true');
         }
+
+        function initPlayer(id) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            const progressContainer = document.getElementById(`progress-container-${id}`);
+            const progressFill = document.getElementById(`progress-fill-${id}`);
+            const currentTimeEl = document.getElementById(`current-time-${id}`);
+            const durationEl = document.getElementById(`duration-${id}`);
+            const playBtn = document.getElementById(`play-btn-${id}`);
+
+            if (!audio) return;
+
+            // Set initial volume
+            audio.volume = 0.4;
+
+            setupPersistence(audio);
+            setupMediaSession(audio, id);
+
+            audio.addEventListener('timeupdate', () => {
+                const { duration, currentTime } = audio;
+                if (isNaN(duration)) return;
+                const progressPercent = (currentTime / duration) * 100;
+                progressFill.style.width = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(currentTime);
+            });
+
+            progressContainer.addEventListener('click', (e) => {
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
+            });
+
+            audio.addEventListener('loadedmetadata', () => {
+                durationEl.textContent = formatTime(audio.duration);
+            });
+
+            audio.addEventListener('ended', () => {
+                if (playBtn) playBtn.innerHTML = playIcon;
+                if (progressFill) progressFill.style.width = '0%';
+                if (currentTimeEl) currentTimeEl.textContent = '0:00';
+            });
+        }
+
+        // Autoplay Logic
+        let autoplayEnabled = localStorage.getItem('autoplay') === 'true';
         const autoplayToggle = document.getElementById('autoplay-toggle');
         if (autoplayToggle) {
             autoplayToggle.checked = autoplayEnabled;
@@ -1526,7 +1539,6 @@
                 if (autoplayEnabled) {
                     const nextId = audioId + 1;
                     const nextPlayBtn = document.getElementById(`play-btn-${nextId}`);
-                    // Check if next episode exists by looking for its play button
                     if (nextPlayBtn) {
                         togglePlay(nextId);
                     }
@@ -1534,13 +1546,11 @@
             });
         }
 
-        // Initialize all players
         window.addEventListener('DOMContentLoaded', () => {
-            for (let i = 1; i <= 7; i++) {
+            for (let i = 1; i <= 8; i++) {
                 initPlayer(i);
             }
 
-            // Initialize autoplay listeners for all episodes
             document.querySelectorAll('audio[id^="audio-player-"]').forEach(audio => {
                 const id = parseInt(audio.id.split('-').pop());
                 setupAutoplay(id);
