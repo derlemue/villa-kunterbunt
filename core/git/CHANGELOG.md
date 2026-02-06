@@ -27,6 +27,37 @@
 
 <br>
 
+
+---
+
+## v.1.2.0 (Asset Organization & Structure)
+### "Clean Root Policy - Alles an seinem Platz"
+*6. Februar 2026*
+
+> **Status:** Vollständige Restrukturierung der Datenablage abgeschlossen.
+
+#### 🗂️ Repository Structure
+*   **Clean Root Policy:** Implementierung einer skalierbaren Ordnerstruktur mit klarer Trennung zwischen `main`, `cowork`, `meta` und `git`.
+*   **Data Migration:** Alle Assets in `core/data/{main,cowork,meta}` mit einheitlicher Unterstruktur (`images/`, `documents/`, `podcast/`, `gallery/`, `audio/`, `illustrations/`).
+*   **Naming Convention:** Konsequente Umbenennung aller Dateien zu snake_case (z.B. `die_villa_kunterbunt_ebook_cover_front.png`).
+
+#### 🎨 Assets & Media
+*   **Main Project:** Original eBook-Cover (front/back) und Audiobook-Cover in `core/data/main/images/`.
+*   **Anthologie (Cowork):** Vollständiger Asset-Satz (13 Dateien) für das Anthologie-Projekt in `core/data/cowork/images/`.
+*   **Kompendium (Meta):** Vollständiger Asset-Satz (13 Dateien) für das Kompendium-Projekt in `core/data/meta/images/`.
+*   **Git Assets:** OpenGraph-Template verschoben nach `core/git/images/` für Repository-Metadaten.
+*   **Favicon:** Neues Zirkuszelt-Favicon generiert und integriert.
+
+#### 🎵 Website Enhancements
+*   **Audio Widget:** Redesign als schwebendes Widget (rechts, unterhalb Header) mit Auto-Collapse nach 4 Sekunden.
+*   **Mute Indicator:** Pulsing-Animation (rot) bei stummgeschaltetem Audio.
+*   **Volume Control:** Slider für Lautstärkeregelung hinzugefügt.
+*   **Mobile Optimization:** Responsive Anpassungen für Touch-Geräte.
+
+#### 📝 Documentation
+*   **README Update:** Wiederherstellung und Verbesserung des "Hinweis für Unternehmen"-Abschnitts mit Anker-ID und Upload-Leitfaden-Link.
+*   **Path Updates:** Alle Referenzen auf verschobene Assets aktualisiert.
+
 ---
 
 ## v.1.1.0-RC (Release Candidate)
