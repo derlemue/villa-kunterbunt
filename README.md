@@ -86,8 +86,14 @@ Ein kleiner Wegweiser durch den digitalen Kaninchenbau.
 /
 ├── .git/
 ├── .github/
-├── assets/
-│   └── *.pdf
+├── .queue/
+│   ├── audio/
+│   ├── documents/
+│   │   └── *.pdf
+│   ├── gallery/
+│   ├── illustrations/
+│   ├── images/
+│   └── podcast/
 ├── core/
 │   ├── data/
 │   │   ├── cowork/
