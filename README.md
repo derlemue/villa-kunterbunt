@@ -12,5 +12,15 @@ Das Projekt wurde restrukturiert. Alle Inhalte befinden sich nun in der struktur
 
 👉 **[ZUR NEUEN WEBSEITE](https://derlemue.github.io/villa-kunterbunt/)**
 
+
+### 🏢 Hinweis für Unternehmen
+
+Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozessen** oder ähnlichem protokollieren, über den normalen Prozess zur Aufnahme in das Repository angefragt werden können. Diese werden nach erfolgreicher Prüfung prominent in der README platziert.
+
+> [!WARNING]
+> Stellungnahmen, Erklärungsversuche und andere bloße Symbole sind ausdrücklich davon ausgenommen und werden abgelehnt.
+
+[![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
+
 ---
 *Created with frustration and ❤️.*
