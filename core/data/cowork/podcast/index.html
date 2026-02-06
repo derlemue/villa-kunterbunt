@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Kunterbunt Cowork</title>
+
+    <!-- SEO / Social Media -->
+    <meta property="og:title" content="Die Villa Kunterbunt - Die Anthologie">
+    <meta property="og:description"
+        content="Satire als letzte Instanz. Die Dokumentation des kommunikativen Schlagabtauschs.">
+    <meta property="og:image"
+        content="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png">
+    <link rel="apple-touch-icon"
+        href="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png">
     <!-- Same styles and structure as main podcast page -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -789,7 +798,7 @@
 
             // Setup MediaSession (Specific for Ep 1 currently)
             if (id === 1) {
-                const artworkPath = "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png";
+                const artworkPath = "../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png";
                 const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
 
                 setupMediaSession(audio, {
