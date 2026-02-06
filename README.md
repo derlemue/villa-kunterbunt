@@ -16,15 +16,19 @@ Für das volle Erlebnis, inklusive vertonter Hörbücher und interaktiver Galeri
 
 <br>
 
-[![Website](https://img.shields.io/badge/🚀_JA_KLAR_-_ICH_WILL_AUF_DIE_WEBSEITE!-2ea44f?style=for-the-badge&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/)
+<a href="https://derlemue.github.io/villa-kunterbunt/">
+  <img src="https://img.shields.io/badge/🚀_JA_KLAR_-_ICH_WILL_AUF_DIE_WEBSEITE!-2ea44f?style=for-the-badge&logoColor=white" height="50">
+</a>
 
 <br>
+<br>
 
-<a href="core/git/docs/legacy/README_legacy.md">
-<img src="https://img.shields.io/badge/📜_Die_alte_README_hat_mir_viel_bedeutet...-grey?style=for-the-badge">
+<a href="core/git/translations/README_DE.md">
+  <img src="https://img.shields.io/badge/📜_Die_alte_README_hat_mir_viel_bedeutet...-grey?style=for-the-badge" height="35">
 </a>
-<a href="core/">
-<img src="https://img.shields.io/badge/💾_Ich_will_nur_die_Daten_ziehen-0366d6?style=for-the-badge&logo=github">
+
+<a href="https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip">
+  <img src="https://img.shields.io/badge/💾_Ich_will_nur_die_Daten_ziehen-0366d6?style=for-the-badge&logo=github" height="35">
 </a>
 
 ---

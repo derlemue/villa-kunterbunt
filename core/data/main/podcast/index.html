@@ -594,6 +594,39 @@
                 </div>
             </article>
 
+            <!-- Episode 7 -->
+            <article class="episode-card fade-in-up delay-2">
+                <img src="../../../website/data/main/images/abook_cover_front_thumb.png" alt="Cover Art"
+                    class="cover-art">
+                <div class="episode-content">
+                    <div class="episode-tag">Episode 07</div>
+                    <h2 class="episode-title">Das Korrespondenz Epos</h2>
+                    <div class="episode-description">
+                        Das vollständige <strong>Korrespondenz Epos</strong>. Eine Zusammenfassung der Ereignisse.
+                    </div>
+
+                    <div class="player-controls">
+                        <button class="play-btn" onclick="togglePlay(7)" id="play-btn-7" aria-label="Play Episode 7">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                        <div class="progress-wrapper">
+                            <div class="progress-bar-bg" id="progress-container-7">
+                                <div class="progress-fill" id="progress-fill-7"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time-7">0:00</span>
+                                <span id="duration-7">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <audio id="audio-player-7" src="../audio/villa_kunterbunt_korrespondenz_epos.mp3"
+                        preload="metadata"></audio>
+                </div>
+                <!-- No separate page for this yet -->
+            </article>
+
         </div>
 
         <footer>
@@ -673,8 +706,8 @@
             const audio = document.getElementById(`audio-player-${id}`);
             const btn = document.getElementById(`play-btn-${id}`);
 
-            // Loop through all potential players (1 to 6)
-            for (let i = 1; i <= 6; i++) {
+            // Loop through all potential players (1 to 7)
+            for (let i = 1; i <= 7; i++) {
                 if (i !== id) {
                     const otherAudio = document.getElementById(`audio-player-${i}`);
                     const otherBtn = document.getElementById(`play-btn-${i}`);
@@ -702,6 +735,7 @@
             initPlayer(4);
             initPlayer(5);
             initPlayer(6);
+            initPlayer(7);
         });
     </script>
 </body>
