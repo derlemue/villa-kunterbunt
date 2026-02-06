@@ -41,7 +41,7 @@
 
             <div class="consent-buttons">
                 <button id="consent-yes" class="consent-btn consent-primary">
-                    🔊 Jaaa unbedingt <span id="countdown"></span>
+                    🔊 Jaaa unbedingt
                 </button>
                 <button id="consent-maybe" class="consent-btn consent-secondary">
                     🫣 Ich weiß nicht
@@ -286,30 +286,6 @@
                     audio.muted = false;
                     audio.play().catch(e => console.log('Autoplay prevented:', e));
                 }
-            } else {
-                // Start countdown timer
-                const countdownSpan = document.getElementById('countdown');
-                let timeLeft = 15;
-
-                const updateCountdown = () => {
-                    if (timeLeft > 0) {
-                        countdownSpan.textContent = `(${timeLeft})`;
-                        timeLeft--;
-                    } else {
-                        // Auto-click yes button
-                        consentYes.click();
-                    }
-                };
-
-                updateCountdown();
-                const countdownInterval = setInterval(updateCountdown, 1000);
-
-                // Clear countdown if user clicks any button
-                const clearCountdown = () => clearInterval(countdownInterval);
-                consentYes.addEventListener('click', clearCountdown, { once: true });
-                consentMaybe.addEventListener('click', clearCountdown, { once: true });
-                consentProbablyNot.addEventListener('click', clearCountdown, { once: true });
-                consentNo.addEventListener('click', clearCountdown, { once: true });
             }
 
             // Consent handlers
