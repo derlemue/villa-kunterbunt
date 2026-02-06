@@ -8,7 +8,7 @@
 
 ---
 
-[![Website Preview](core/website/data/main/images/website_preview_v2.png)](https://derlemue.github.io/villa-kunterbunt/)
+[![Website Preview](core/git/images/website_preview.png)](https://derlemue.github.io/villa-kunterbunt/)
 
 > **✨ Die Villa Kunterbunt – Das Erlebnis.**
 > Für Besucher ist die Webseite der einzig wahre Ort. Hier wird der Wahnsinn nicht nur verwaltet, sondern zelebriert.
