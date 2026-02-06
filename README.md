@@ -91,16 +91,35 @@ Ein kleiner Wegweiser durch den digitalen Kaninchenbau.
 ├── core/
 │   ├── data/
 │   │   ├── cowork/
-│   │   │   └── *.html
+│   │   │   ├── audio/
+│   │   │   ├── documents/
+│   │   │   ├── gallery/
+│   │   │   ├── illustrations/
+│   │   │   ├── images/
+│   │   │   └── podcast/
 │   │   ├── main/
-│   │   │   └── *.html
-│   │   ├── meta/
-│   │   │   └── *.html
+│   │   │   ├── audio/
+│   │   │   ├── documents/
+│   │   │   ├── gallery/
+│   │   │   ├── illustrations/
+│   │   │   ├── images/
+│   │   │   └── podcast/
+│   │   └── meta/
+│   │       ├── audio/
+│   │       ├── documents/
+│   │       ├── gallery/
+│   │       ├── illustrations/
+│   │       ├── images/
+│   │       └── podcast/
 │   ├── git/
 │   │   ├── docs/
+│   │   │   └── *.html
 │   │   ├── images/
+│   │   │   └── *.png
 │   │   ├── reports/
+│   │   │   └── *.md
 │   │   ├── translations/
+│   │   │   └── *.md
 │   │   └── CHANGELOG.md
 │   ├── scripts/
 │   │   └── *.sh
