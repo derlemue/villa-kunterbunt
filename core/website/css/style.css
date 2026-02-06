@@ -1024,6 +1024,17 @@ header {
     justify-content: flex-start;
   }
 
+  /* Confetti Canvas - Fix for layout issue */
+  #confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .confetti-btn {
     background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(8px);
