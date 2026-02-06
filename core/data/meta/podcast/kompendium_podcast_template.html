@@ -375,15 +375,6 @@
         <header>
             <h1>Die Villa Kunterbunt</h1>
             <div class="subtitle">Das Korrespondenz Epos</div>
-
-            <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="../../meta/podcast/index.html" class="action-link"
-                    style="border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.1);">🎙️ Zum
-                    Meta Podcast</a>
-                <a href="../../cowork/podcast/index.html" class="action-link"
-                    style="border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.1);">🎧 Zum Cowork
-                    Podcast</a>
-            </div>
         </header>
 
         <div class="episode-list">
@@ -603,43 +594,10 @@
                 </div>
             </article>
 
-            <!-- Episode 7 -->
-            <article class="episode-card fade-in-up delay-2">
-                <img src="../../../website/data/main/images/abook_cover_front_thumb.png" alt="Cover Art"
-                    class="cover-art">
-                <div class="episode-content">
-                    <div class="episode-tag">Episode 07</div>
-                    <h2 class="episode-title">Das Korrespondenz Epos</h2>
-                    <div class="episode-description">
-                        Das vollständige <strong>Korrespondenz Epos</strong>. Eine Zusammenfassung der Ereignisse.
-                    </div>
-
-                    <div class="player-controls">
-                        <button class="play-btn" onclick="togglePlay(7)" id="play-btn-7" aria-label="Play Episode 7">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </button>
-                        <div class="progress-wrapper">
-                            <div class="progress-bar-bg" id="progress-container-7">
-                                <div class="progress-fill" id="progress-fill-7"></div>
-                            </div>
-                            <div class="time-display">
-                                <span id="current-time-7">0:00</span>
-                                <span id="duration-7">0:00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <audio id="audio-player-7" src="../audio/villa_kunterbunt_korrespondenz_epos.mp3"
-                        preload="metadata"></audio>
-                </div>
-                <!-- No separate page for this yet -->
-            </article>
-
         </div>
 
         <footer>
-            <a href="https://derlemue.github.io/villa-kunterbunt/"
+            <a href="../../../../../index.html"
                 style="display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); text-decoration:none; padding:10px 20px; border:1px solid var(--glass-border); border-radius:30px; transition:all 0.2s ease; background:rgba(255,255,255,0.05);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path
@@ -715,8 +673,8 @@
             const audio = document.getElementById(`audio-player-${id}`);
             const btn = document.getElementById(`play-btn-${id}`);
 
-            // Loop through all potential players (1 to 7)
-            for (let i = 1; i <= 7; i++) {
+            // Loop through all potential players (1 to 6)
+            for (let i = 1; i <= 6; i++) {
                 if (i !== id) {
                     const otherAudio = document.getElementById(`audio-player-${i}`);
                     const otherBtn = document.getElementById(`play-btn-${i}`);
@@ -744,7 +702,6 @@
             initPlayer(4);
             initPlayer(5);
             initPlayer(6);
-            initPlayer(7);
         });
     </script>
 </body>
