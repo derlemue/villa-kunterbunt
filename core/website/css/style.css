@@ -960,27 +960,41 @@ header {
 
 @media (max-width: 768px) {
   .audio-consent-modal {
-    padding: 2.5rem 2rem;
+    padding: 1.75rem 1.5rem;
     max-width: 95%;
   }
 
   .consent-headline {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
   }
 
-  .consent-body,
-  .consent-warning,
-  .consent-author {
-    font-size: 0.95rem;
+  .consent-body {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .consent-warning {
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
   }
 
   .consent-cta {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .consent-buttons {
+    gap: 0.6rem;
+    margin-bottom: 1rem;
   }
 
   .consent-btn {
-    font-size: 0.9rem;
-    padding: 0.65rem 1rem;
+    font-size: 0.875rem;
+    padding: 0.6rem 0.9rem;
   }
 }
 
