@@ -223,6 +223,8 @@
 
             // Init State
             audio.volume = 0.4;
+            // Initialize muted state and update UI
+            updateMuteState(audio.muted);
 
             // Auto-collapse logic
             let autoCollapseTimeout;
@@ -309,8 +311,7 @@
                 }
             }
 
-            // Initial Check
-            if (audio.muted) audioWidget.classList.add('pulsing');
+
         });
     </script>
 </body>
