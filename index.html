@@ -21,6 +21,33 @@
 
 <body>
 
+    <!-- Audio Consent Modal -->
+    <div id="audio-consent-modal" class="audio-consent-overlay">
+        <div class="audio-consent-modal">
+            <h1 class="consent-headline">Willkommen in der Anlage.</h1>
+            <p class="consent-body">
+                Das volle Rendite-Erlebnis dieser Immobilie entfaltet sich nur akustisch.
+                Wir haben Kosten noch Mühen gescheut. Gönn dir die Immersion.
+            </p>
+            <div class="consent-buttons">
+                <button id="consent-yes" class="consent-btn consent-primary">
+                    🔊 Jaaa unbedingt
+                </button>
+                <button id="consent-maybe" class="consent-btn consent-secondary">
+                    🫣 Ich weiß nicht
+                </button>
+                <button id="consent-no" class="consent-btn consent-tertiary">
+                    🔇 Nein ich will nur schauen
+                </button>
+            </div>
+            <div class="consent-footer">
+                <a href="https://github.com/derlemue/villa-kunterbunt" target="_blank" class="consent-data-link">
+                    📉 Ich will nur die daten
+                </a>
+            </div>
+        </div>
+    </div>
+
     <header>
         <nav>
             <div class="logo">🎪 Villa Kunterbunt</div>
@@ -220,6 +247,49 @@
             const volumeSlider = document.getElementById('volume-slider');
             const audioWidget = document.getElementById('audio-widget');
             const audioTrigger = document.getElementById('audio-trigger');
+
+            // Audio Consent Modal Logic
+            const consentModal = document.getElementById('audio-consent-modal');
+            const consentYes = document.getElementById('consent-yes');
+            const consentMaybe = document.getElementById('consent-maybe');
+            const consentNo = document.getElementById('consent-no');
+
+            // Check if user has already made a choice
+            const audioConsent = sessionStorage.getItem('audioConsent');
+
+            if (audioConsent) {
+                // User has already decided
+                consentModal.classList.add('hidden');
+                if (audioConsent === 'unmuted') {
+                    audio.muted = false;
+                }
+            }
+
+            // Consent handlers
+            consentYes.addEventListener('click', () => {
+                audio.muted = false;
+                sessionStorage.setItem('audioConsent', 'unmuted');
+                consentModal.classList.add('hidden');
+                updateMuteState(false);
+                // Optional: Track analytics event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'immersion', { event_category: 'audio_consent' });
+                }
+            });
+
+            consentMaybe.addEventListener('click', () => {
+                audio.muted = false;
+                sessionStorage.setItem('audioConsent', 'unmuted');
+                consentModal.classList.add('hidden');
+                updateMuteState(false);
+            });
+
+            consentNo.addEventListener('click', () => {
+                audio.muted = true;
+                sessionStorage.setItem('audioConsent', 'muted');
+                consentModal.classList.add('hidden');
+                updateMuteState(true);
+            });
 
             // Init State
             audio.volume = 0.4;
