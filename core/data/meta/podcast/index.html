@@ -155,8 +155,7 @@
             transform-style: preserve-3d;
         }
 
-        .cover-flip-container:hover .flipper,
-        .cover-flip-container.flipped .flipper {
+                .cover-flip-container.flipped .flipper {
             transform: rotateY(180deg);
         }
 
@@ -767,12 +766,15 @@
 
             // Setup MediaSession (Specific for Ep 1 currently)
             if (id === 1) {
+                const artworkPath = "../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png";
+                const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
+
                 setupMediaSession(audio, {
                     title: "Korrespondenz System Analyse",
                     artist: "Villa Kunterbunt",
                     album: "Die Villa Kunterbunt",
                     artwork: [
-                        { src: "../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                        { src: absoluteArtworkUrl, sizes: '512x512', type: 'image/png' }
                     ]
                 });
             }

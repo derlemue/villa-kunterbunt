@@ -542,7 +542,7 @@
                  Wait, I swapped them in index.html to put audiobook_cover_back FIRST.
                  So here I will use audiobook_cover_back as the main image to match the user's preference for "start position".
             -->
-            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png" alt="Cover Art"
+            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png" alt="Cover Art"
                 class="cover-art">
 
             <div class="episode-tag">Episode VI - Das Hörbuch (beta)</div>
@@ -775,7 +775,7 @@
                         artist: "Villa Kunterbunt",
                         album: "Die Villa Kunterbunt",
                         artwork: [
-                            { src: "../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                            { src: new URL("../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                         ]
                     });
 

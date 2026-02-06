@@ -157,8 +157,12 @@
             transform-style: preserve-3d;
         }
 
-        .cover-flip-container:hover .flipper,
-        .cover-flip-container.flipped .flipper {
+        .cover-flip-container .flipper {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+                .cover-flip-container.flipped .flipper {
             transform: rotateY(180deg);
         }
 
@@ -1337,12 +1341,15 @@
                 const data = episodeData[id];
 
                 audio.addEventListener('play', () => {
+                    const artworkPath = data.artwork;
+                    const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
+
                     navigator.mediaSession.metadata = new MediaMetadata({
                         title: data.title,
                         artist: data.artist,
                         album: "Die Villa Kunterbunt",
                         artwork: [
-                            { src: data.artwork, sizes: '512x512', type: 'image/png' }
+                            { src: absoluteArtworkUrl, sizes: '512x512', type: 'image/png' }
                         ]
                     });
 
