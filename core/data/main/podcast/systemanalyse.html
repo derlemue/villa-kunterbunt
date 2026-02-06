@@ -14,6 +14,19 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <style>
+        /* SEO Cloak */
+        .seo-cloud {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         :root {
             --bg-dark: #0f1115;
             --text-main: #ffffff;
@@ -477,8 +490,18 @@
         </header>
 
         <article class="episode-card">
-            <img src="../../../website/data/main/images/thumbs/die_villa_kunterbunt_ebook_cover_front_hq_thumb.png"
-                alt="Cover Art" class="cover-art">
+            <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png"
+                            alt="Front Cover">
+                    </div>
+                    <div class="back">
+                        <img src="../images/thumbs/die_villa_kunterbunt_audiobook_cover_back_thumb.png"
+                            alt="Back Cover">
+                    </div>
+                </div>
+            </div>
 
             <div class="episode-tag">Episode 06</div>
 
