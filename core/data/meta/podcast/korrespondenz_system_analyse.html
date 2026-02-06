@@ -489,10 +489,17 @@
             cursor: default;
         }
 
+        .info-btn.source-btn.has-source {
+            background: rgba(40, 167, 69, 0.15);
+            border-color: rgba(40, 167, 69, 0.3);
+            color: #28a745;
+        }
+
         .info-btn.source-btn.has-source:hover {
-            background: rgba(212, 175, 55, 0.15);
-            border-color: rgba(212, 175, 55, 0.3);
-            color: var(--accent-gold);
+            background: rgba(40, 167, 69, 0.25);
+            border-color: rgba(40, 167, 69, 0.5);
+            color: #34ce57;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.2);
         }
 
         .info-text {
@@ -688,7 +695,7 @@
 
             <div class="info-bar">
                 <button class="info-btn" onclick="toggleInfo()">TTS</button>
-                <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                <button class="info-btn source-btn has-source" onclick="openSource('')">Quelle</button>
             </div>
 
             <div id="info-text" class="info-text">
