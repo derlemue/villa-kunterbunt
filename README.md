@@ -1,6 +1,18 @@
 <div align="center">
 
-<img src="core/website/data/main/images/wallpaper.png" width="100%" alt="Villa Kunterbunt Wallpaper" style="border-radius: 10px;">
+<a href="https://derlemue.github.io/villa-kunterbunt/">
+  <img src="core/website/data/main/images/wallpaper.png" width="100%" alt="Villa Kunterbunt Wallpaper" style="border-radius: 10px;">
+</a>
+
+<br>
+
+<div align="center">
+
+[![@derlemue 400V](https://img.shields.io/badge/@derlemue-400V-2ea44f?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/)
+[![Bayernwerk 0,V](https://img.shields.io/badge/Bayernwerk-0,V-orange?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/)
+[![E.ON Energie error](https://img.shields.io/badge/E.ON_Energie-error-critical?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/)
+
+</div>
 
 # 🎪 Die Villa Kunterbunt
 ### Das Korrespondenz Epos der bürokratischen Tragik
