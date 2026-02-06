@@ -1,7 +1,16 @@
-# 🎪 Die Villa Kunterbunt
+<p align="center">
+  <img src="core/git/images/villa_kunterbunt_open_graph_template.png" width="45%" alt="opengraph preview" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+</p>
+
+---
+
+<div align="center">
+
+  # 🎪 Die Villa Kunterbunt
 ### Das Korrespondenz Epos
 
 *Eine satirische Odysee durch die Welt der Phasenausfälle, des "Remote-Voodoo" und der Suche nach der verlorenen dritten Phase.*
+</div>
 
 [![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](#)
 [![License](https://img.shields.io/github/license/derlemue/villa-kunterbunt?style=for-the-badge)](LICENSE)
@@ -28,4 +37,11 @@ Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozess
 
 ---
 
-*Created with frustration and ❤️.*
+<div align="center">
+<i>"Totaler Kurzschluss im <b>Kundenservice</b> - der <b>Servicekunde</b> übernimmt die Netzführung."</i>
+<br>
+<br>
+<i>*created with frustration and ❤️*</i>
+</div>
+
+*Created with frustration and ❤️*
