@@ -6,6 +6,7 @@
 *Eine satirische Odysee durch die Welt der Phasenausfälle, des "Remote-Voodoo" und der Suche nach der verlorenen dritten Phase.*
 </div>
 
+---
 
 [![Website Preview](core/website/data/main/images/website_preview.png)](https://derlemue.github.io/villa-kunterbunt/)
 
