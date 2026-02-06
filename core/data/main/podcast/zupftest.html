@@ -484,8 +484,18 @@
         </header>
 
         <article class="episode-card">
-            <img src="../../../website/data/main/images/thumbs/die_villa_kunterbunt_ebook_cover_front_hq_thumb.png"
-                alt="Cover Art" class="cover-art">
+            <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png"
+                            alt="Front Cover">
+                    </div>
+                    <div class="back">
+                        <img src="../images/thumbs/die_villa_kunterbunt_audiobook_cover_back_thumb.png"
+                            alt="Back Cover">
+                    </div>
+                </div>
+            </div>
 
             <div class="episode-tag">Episode 05</div>
 
