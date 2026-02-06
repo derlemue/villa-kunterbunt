@@ -147,8 +147,8 @@
             transform-style: preserve-3d;
         }
 
-        .cover-flip-container:hover .flipper,
-        .cover-flip-container.flipped .flipper {
+        
+                .cover-flip-container.flipped .flipper {
             transform: rotateY(180deg);
         }
 
@@ -786,7 +786,7 @@
                         artist: "Villa Kunterbunt",
                         album: "Die Villa Kunterbunt",
                         artwork: [
-                            { src: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                            { src: new URL("../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                         ]
                     });
                     navigator.mediaSession.setActionHandler('play', () => audio.play());

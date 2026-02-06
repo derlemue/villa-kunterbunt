@@ -155,7 +155,11 @@
             transform-style: preserve-3d;
         }
 
-        .cover-flip-container:hover .flipper,
+        .cover-flip-container .flipper {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
         .cover-flip-container.flipped .flipper {
             transform: rotateY(180deg);
         }
@@ -616,11 +620,11 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png"
+                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png"
                                 alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png"
+                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png"
                                 alt="Back Cover">
                         </div>
                     </div>
@@ -754,12 +758,15 @@
 
             // Setup MediaSession (Specific for Ep 1 currently)
             if (id === 1) {
+                const artworkPath = "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png";
+                const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
+
                 setupMediaSession(audio, {
                     title: "Episode VI: Die Anthologie",
                     artist: "Villa Kunterbunt",
                     album: "Die Villa Kunterbunt",
                     artwork: [
-                        { src: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                        { src: absoluteArtworkUrl, sizes: '512x512', type: 'image/png' }
                     ]
                 });
             }
