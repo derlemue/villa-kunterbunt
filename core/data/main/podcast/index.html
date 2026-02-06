@@ -47,7 +47,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('../images/die_villa_kunterbunt_podcast_thumb.png');
+            background-image: url('../images/thumbs/die_villa_kunterbunt_podcast_thumb.png');
             background-size: cover;
             background-position: center;
             filter: blur(60px) brightness(0.25) saturate(1.2);
@@ -397,6 +397,121 @@
             animation-delay: 0.4s;
         }
 
+        /* Info & Source Buttons */
+        .info-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .info-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+        }
+
+        .info-btn.source-btn.no-source {
+            background: rgba(255, 50, 50, 0.15);
+            border-color: rgba(255, 50, 50, 0.3);
+            color: rgba(255, 100, 100, 0.8);
+            cursor: default;
+        }
+
+        .info-btn.source-btn.has-source:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--accent-gold);
+        }
+
+        .info-text {
+            display: none;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            border-left: 3px solid var(--accent-gold);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .info-text.visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Player Controls */
+        .control-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            color: var(--text-main);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 10px;
+        }
+
+        .volume-slider {
+            -webkit-appearance: none;
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .volume-slider:hover::-webkit-slider-thumb {
+            background: var(--accent-gold);
+        }
+
         /* SEO Cloak */
         .seo-cloud {
             position: absolute;
@@ -434,16 +549,30 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/die_villa_kunterbunt_abook_cover_back.png" alt="Back Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png" alt="Back Cover">
                         </div>
                     </div>
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 01</div>
                     <h2 class="episode-title">Die Satire</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" onclick="toggleInfo(1)">TTS</button>
+                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-1" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
                     <div class="episode-description">
                         Das finale Kapitel: Die satirische Initiativbewerbung als Akt der subversiven Compliance. Wie
                         man durch die Übernahme der <strong>E.ON</strong>-Sprache die Ineffizienz des Systems
@@ -451,11 +580,24 @@
                     </div>
 
                     <div class="player-controls">
+                        <button class="control-btn" onclick="skip(1, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
                         <button class="play-btn" onclick="togglePlay(1)" id="play-btn-1" aria-label="Play Episode 1">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+
+                        <button class="control-btn" onclick="skip(1, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
                         <div class="progress-wrapper">
                             <div class="progress-bar-bg" id="progress-container-1">
                                 <div class="progress-fill" id="progress-fill-1"></div>
@@ -464,6 +606,11 @@
                                 <span id="current-time-1">0:00</span>
                                 <span id="duration-1">0:00</span>
                             </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(1, this.value)">
                         </div>
                     </div>
                     <audio id="audio-player-1" src="../audio/villa_kunterbunt_satire_podcast.mp3"
@@ -479,27 +626,54 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/die_villa_kunterbunt_abook_cover_back.png" alt="Back Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png" alt="Back Cover">
                         </div>
                     </div>
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 02</div>
                     <h2 class="episode-title">Die Analyse</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" onclick="toggleInfo(2)">TTS</button>
+                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-2" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
                     <div class="episode-description">
                         Die Analyse des satirischen E-Books "Die Villa Kunterbunt", in dem ein simpler Stromausfall
                         durch <strong>E.ON</strong>s Inkompetenz zum literarischen Drama in vier Akten wird.
                     </div>
 
                     <div class="player-controls">
+                        <button class="control-btn" onclick="skip(2, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
                         <button class="play-btn" onclick="togglePlay(2)" id="play-btn-2" aria-label="Play Episode 2">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+
+                        <button class="control-btn" onclick="skip(2, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
                         <div class="progress-wrapper">
                             <div class="progress-bar-bg" id="progress-container-2">
                                 <div class="progress-fill" id="progress-fill-2"></div>
@@ -508,6 +682,11 @@
                                 <span id="current-time-2">0:00</span>
                                 <span id="duration-2">0:00</span>
                             </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(2, this.value)">
                         </div>
                     </div>
                     <audio id="audio-player-2" src="../audio/villa_kunterbunt_analyse_podcast.mp3"
@@ -524,27 +703,54 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/die_villa_kunterbunt_abook_cover_back.png" alt="Back Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png" alt="Back Cover">
                         </div>
                     </div>
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 03</div>
                     <h2 class="episode-title">Das Dossier</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" onclick="toggleInfo(3)">TTS</button>
+                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-3" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
                     <div class="episode-description">
                         Das Dossier des Systemadministrators "derlemue", der einen Stromausfall zum Anlass für einen
                         "Open Source Protest" auf GitHub nahm und die Bürokratie mit dem "FI-Beweis" aushebelte.
                     </div>
 
                     <div class="player-controls">
+                        <button class="control-btn" onclick="skip(3, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
                         <button class="play-btn" onclick="togglePlay(3)" id="play-btn-3" aria-label="Play Episode 3">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+
+                        <button class="control-btn" onclick="skip(3, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
                         <div class="progress-wrapper">
                             <div class="progress-bar-bg" id="progress-container-3">
                                 <div class="progress-fill" id="progress-fill-3"></div>
@@ -553,6 +759,11 @@
                                 <span id="current-time-3">0:00</span>
                                 <span id="duration-3">0:00</span>
                             </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(3, this.value)">
                         </div>
                     </div>
                     <audio id="audio-player-3" src="../audio/villa_kunterbunt_dossier_podcast.mp3"
@@ -568,27 +779,54 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/die_villa_kunterbunt_abook_cover_back.png" alt="Back Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png" alt="Back Cover">
                         </div>
                     </div>
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 04</div>
                     <h2 class="episode-title">Der DeepDive</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" onclick="toggleInfo(4)">TTS</button>
+                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-4" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
                     <div class="episode-description">
                         Analyse des Phänomens "Remote Voodoo": Der Konflikt zwischen perfekten digitalen Dashboards und
                         der analogen Realität einer lockeren Schraube.
                     </div>
 
                     <div class="player-controls">
+                        <button class="control-btn" onclick="skip(4, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
                         <button class="play-btn" onclick="togglePlay(4)" id="play-btn-4" aria-label="Play Episode 4">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+
+                        <button class="control-btn" onclick="skip(4, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
                         <div class="progress-wrapper">
                             <div class="progress-bar-bg" id="progress-container-4">
                                 <div class="progress-fill" id="progress-fill-4"></div>
@@ -597,6 +835,11 @@
                                 <span id="current-time-4">0:00</span>
                                 <span id="duration-4">0:00</span>
                             </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(4, this.value)">
                         </div>
                     </div>
                     <audio id="audio-player-4" src="../audio/villa_kunterbunt_deepdive_podcast.mp3"
@@ -612,27 +855,54 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/die_villa_kunterbunt_abook_cover_back.png" alt="Back Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png" alt="Back Cover">
                         </div>
                     </div>
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 05</div>
                     <h2 class="episode-title">Der Zupftest</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" onclick="toggleInfo(5)">TTS</button>
+                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-5" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
                     <div class="episode-description">
                         Der "Zupftest" als fragwürdige Diagnosemethode im Fokus. Die Diskrepanz zwischen moderner PR und
                         realer infrastruktureller Schlamperei bei <strong>Bayernwerk</strong>.
                     </div>
 
                     <div class="player-controls">
+                        <button class="control-btn" onclick="skip(5, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
                         <button class="play-btn" onclick="togglePlay(5)" id="play-btn-5" aria-label="Play Episode 5">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+
+                        <button class="control-btn" onclick="skip(5, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
                         <div class="progress-wrapper">
                             <div class="progress-bar-bg" id="progress-container-5">
                                 <div class="progress-fill" id="progress-fill-5"></div>
@@ -641,6 +911,11 @@
                                 <span id="current-time-5">0:00</span>
                                 <span id="duration-5">0:00</span>
                             </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(5, this.value)">
                         </div>
                     </div>
                     <audio id="audio-player-5" src="../audio/villa_kunterbunt_zupftest_podcast.mp3"
@@ -656,27 +931,54 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/die_villa_kunterbunt_abook_cover_back.png" alt="Back Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png" alt="Back Cover">
                         </div>
                     </div>
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 06</div>
                     <h2 class="episode-title">Die Studie</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" onclick="toggleInfo(6)">TTS</button>
+                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-6" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
                     <div class="episode-description">
                         Die <strong>systemanalytische Untersuchung</strong> einer fehlerhaften Reparatur an einer
                         defekten Stromphase (L3) und die humorvolle Entlarvung technischer Inkompetenz im Kundenservice.
                     </div>
 
                     <div class="player-controls">
+                        <button class="control-btn" onclick="skip(6, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
                         <button class="play-btn" onclick="togglePlay(6)" id="play-btn-6" aria-label="Play Episode 6">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+
+                        <button class="control-btn" onclick="skip(6, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
                         <div class="progress-wrapper">
                             <div class="progress-bar-bg" id="progress-container-6">
                                 <div class="progress-fill" id="progress-fill-6"></div>
@@ -685,6 +987,11 @@
                                 <span id="current-time-6">0:00</span>
                                 <span id="duration-6">0:00</span>
                             </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(6, this.value)">
                         </div>
                     </div>
                     <audio id="audio-player-6" src="../audio/villa_kunterbunt_die_studie_podcast.mp3"
@@ -700,26 +1007,53 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_podcast_thumb.png" alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/die_villa_kunterbunt_abook_cover_back.png" alt="Back Cover">
+                            <img src="../images/thumbs/die_villa_kunterbunt_abook_cover_back_thumb.png" alt="Back Cover">
                         </div>
                     </div>
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">Episode 07</div>
                     <h2 class="episode-title">Das Korrespondenz Epos</h2>
+
+                    <div class="info-bar">
+                        <button class="info-btn" onclick="toggleInfo(7)">TTS</button>
+                        <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-7" class="info-text">
+                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
+                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
+                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
+                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
+                        abschließenden manuellen Qualitätsprüfung.
+                    </div>
+
                     <div class="episode-description">
                         Das vollständige <strong>Korrespondenz Epos</strong>. Eine Zusammenfassung der Ereignisse.
                     </div>
 
                     <div class="player-controls">
+                        <button class="control-btn" onclick="skip(7, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
                         <button class="play-btn" onclick="togglePlay(7)" id="play-btn-7" aria-label="Play Episode 7">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </button>
+
+                        <button class="control-btn" onclick="skip(7, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
                         <div class="progress-wrapper">
                             <div class="progress-bar-bg" id="progress-container-7">
                                 <div class="progress-fill" id="progress-fill-7"></div>
@@ -728,6 +1062,11 @@
                                 <span id="current-time-7">0:00</span>
                                 <span id="duration-7">0:00</span>
                             </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1"
+                                oninput="setVolume(7, this.value)">
                         </div>
                     </div>
                     <audio id="audio-player-7" src="../audio/villa_kunterbunt_korrespondenz_epos.mp3"
@@ -815,40 +1154,57 @@
 
         function togglePlay(id) {
             const audio = document.getElementById(`audio-player-${id}`);
-            const btn = document.getElementById(`play-btn-${id}`);
+            const playBtn = document.getElementById(`play-btn-${id}`);
 
-            // Loop through all potential players (1 to 7)
-            for (let i = 1; i <= 7; i++) {
-                if (i !== id) {
-                    const otherAudio = document.getElementById(`audio-player-${i}`);
-                    const otherBtn = document.getElementById(`play-btn-${i}`);
-                    if (otherAudio && !otherAudio.paused) {
-                        otherAudio.pause();
-                        otherBtn.innerHTML = playIcon;
-                    }
+            // Pause all other players
+            document.querySelectorAll('audio').forEach(otherAudio => {
+                if (otherAudio !== audio && !otherAudio.paused) {
+                    otherAudio.pause();
+                    const otherId = otherAudio.id.split('-').pop();
+                    document.getElementById(`play-btn-${otherId}`).innerHTML = playIcon;
                 }
-            }
+            });
 
             if (audio.paused) {
                 audio.play();
-                btn.innerHTML = pauseIcon;
+                playBtn.innerHTML = pauseIcon;
             } else {
                 audio.pause();
-                btn.innerHTML = playIcon;
+                playBtn.innerHTML = playIcon;
             }
         }
 
-        // Initialize players
+        function skip(id, seconds) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            audio.currentTime += seconds;
+        }
+
+        function setVolume(id, value) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            audio.volume = value;
+        }
+
+        function toggleInfo(id) {
+            const infoText = document.getElementById(`info-text-${id}`);
+            if (infoText) {
+                infoText.classList.toggle('visible');
+            }
+        }
+
+        function openSource(url) {
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+
+        // Initialize all players
         window.addEventListener('DOMContentLoaded', () => {
-            initPlayer(1);
-            initPlayer(2);
-            initPlayer(3);
-            initPlayer(4);
-            initPlayer(5);
-            initPlayer(6);
-            initPlayer(7);
+            for (let i = 1; i <= 7; i++) {
+                initPlayer(i);
+            }
         });
     </script>
 </body>
 
 </html>
+```
