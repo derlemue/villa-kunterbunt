@@ -41,7 +41,5 @@ Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozess
 <i>"Totaler Kurzschluss im <b>Kundenservice</b> - der <b>Servicekunde</b> übernimmt die Netzführung."</i>
 <br>
 <br>
-<i>*created with frustration and ❤️*</i>
+<i>created with frustration and ❤️</i>
 </div>
-
-*Created with frustration and ❤️*
