@@ -711,26 +711,57 @@
             </div>
 
             <div class="episode-description">
-                In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“ als
-                IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der Moderatorin
-                und eines Experten für Systemanalyse als hochkomplexes, aber instabiles <strong>Legacy-System</strong>
-                analysiert. Die Analyse konzentriert sich primär auf die <strong>Korrespondenzsysteme</strong> und die
-                zugrunde liegende Architektur, wobei die Villa als <strong>monolithisches Gefüge</strong> identifiziert
-                wird, das durch eine extreme Anhäufung technischer Schulden geprägt ist.
-                <br><br>
-                Die zentralen Argumente betreffen die <strong>mangelnde Governance</strong> und die <strong>kritische
-                    Sicherheitsarchitektur</strong> des Standorts. Es wird erörtert, wie das Fehlen einer effektiven
-                Firewall den Zugriff durch externe Akteure wie staatliche Behörden begünstigt, während der „Root-User“
-                Pippi Langstrumpf durch unbeschränkte Privilegien jegliche Standardisierung verhindert. Die Diskussion
-                beleuchtet zudem die asynchronen Kommunikationsprotokolle der Protagonistin sowie die Einbindung
-                heterogener Peripherieeinheiten in das instabile Systemgefüge.
-                <br><br>
-                Der technologische Kontext verknüpft klassische Systemanalyse mit modernen Begriffen der
-                <strong>IT-Security</strong> und des <strong>Prozessmanagements</strong>. Diese Folge bietet für
-                Professionals im Bereich Software-Architektur und Business-Analyse einen innovativen Blickwinkel auf die
-                Bewertung non-konformer Systeme und die Herausforderungen der <strong>Schatten-IT</strong>. Ein präziser
-                Diskurs über die Belastbarkeit chaotischer Strukturen in einer regulatorisch geprägten Welt.
+                <div id="description-short">
+                    In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
+                    als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
+                    Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
+                    <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
+                    <strong>Korrespondenzsysteme</strong>...
+                </div>
+                <div id="description-full" style="display: none;">
+                    In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
+                    als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
+                    Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
+                    <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
+                    <strong>Korrespondenzsysteme</strong> und die zugrunde liegende Architektur, wobei die Villa als
+                    <strong>monolithisches Gefüge</strong> identifiziert wird, das durch eine extreme Anhäufung
+                    technischer Schulden geprägt ist.
+                    <br><br>
+                    Die zentralen Argumente betreffen die <strong>mangelnde Governance</strong> und die
+                    <strong>kritische Sicherheitsarchitektur</strong> des Standorts. Es wird erörtert, wie das Fehlen
+                    einer effektiven Firewall den Zugriff durch externe Akteure wie staatliche Behörden begünstigt,
+                    während der „Root-User“ Pippi Langstrumpf durch unbeschränkte Privilegien jegliche Standardisierung
+                    verhindert. Die Diskussion beleuchtet zudem die asynchronen Kommunikationsprotokolle der
+                    Protagonistin sowie die Einbindung heterogener Peripherieeinheiten in das instabile Systemgefüge.
+                    <br><br>
+                    Der technologische Kontext verknüpft klassische Systemanalyse mit modernen Begriffen der
+                    <strong>IT-Security</strong> und des <strong>Prozessmanagements</strong>. Diese Folge bietet für
+                    Professionals im Bereich Software-Architektur und Business-Analyse einen innovativen Blickwinkel auf
+                    die Bewertung non-konformer Systeme und die Herausforderungen der <strong>Schatten-IT</strong>. Ein
+                    präziser Diskurs über die Belastbarkeit chaotischer Strukturen in einer regulatorisch geprägten
+                    Welt.
+                </div>
+                <button id="toggle-description-btn" onclick="toggleDescription()"
+                    style="background:none; border:none; color:var(--accent-gold); cursor:pointer; font-size:0.9rem; margin-top:10px; padding:0; text-decoration:underline;">aufklappen</button>
             </div>
+
+            <script>
+                function toggleDescription() {
+                    const shortDesc = document.getElementById('description-short');
+                    const fullDesc = document.getElementById('description-full');
+                    const btn = document.getElementById('toggle-description-btn');
+
+                    if (fullDesc.style.display === 'none') {
+                        fullDesc.style.display = 'block';
+                        shortDesc.style.display = 'none';
+                        btn.textContent = 'zuklappen';
+                    } else {
+                        fullDesc.style.display = 'none';
+                        shortDesc.style.display = 'block';
+                        btn.textContent = 'aufklappen';
+                    }
+                }
+            </script>
 
             <div class="player-controls">
                 <button class="control-btn" onclick="skip(-30)" title="-30s">
@@ -771,10 +802,29 @@
                 preload="metadata"></audio>
 
             <div class="nav-links"
-                style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center;">
-                <a href="index.html" class="nav-link highlight">
-                    <span>Alle Episoden</span>
-                </a>
+                style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 15px;">
+                <div style="display: flex; justify-content: center; gap: 20px;">
+                    <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                            style="transform: rotate(180deg);">
+                            <path d="M4 12l8-8 8 8M4 12h16" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Vorherige Episode</span>
+                    </button>
+                    <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
+                        <span>Nächste Episode</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 12l8-8 8 8M4 12h16" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <a href="index.html" class="nav-link highlight">
+                        <span>Alle Episoden</span>
+                    </a>
+                </div>
             </div>
         </article>
 
