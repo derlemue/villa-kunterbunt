@@ -661,6 +661,8 @@ header {
   border-right: none;
   border-radius: 12px 0 0 12px;
   padding: 10px 14px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
   transition: background 0.3s, transform 0.2s;
