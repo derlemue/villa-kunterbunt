@@ -635,6 +635,52 @@
         const durationEl = document.getElementById('duration');
         const playBtn = document.getElementById('play-btn');
 
+        // Persistence
+        function getPersistenceKey(src) {
+            return 'vp_time_' + src.split('/').pop();
+        }
+
+        function setupPersistence(audio) {
+            const key = getPersistenceKey(audio.currentSrc || audio.src);
+            const savedTime = localStorage.getItem(key);
+
+            if (savedTime && !isNaN(savedTime)) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem(key, audio.currentTime);
+            });
+        }
+
+        // MediaSession
+        function setupMediaSession(audio) {
+            if ('mediaSession' in navigator) {
+                audio.addEventListener('play', () => {
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: "Episode VI - aBook",
+                        artist: "Villa Kunterbunt",
+                        album: "Die Villa Kunterbunt",
+                        artwork: [
+                            { src: "../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                        ]
+                    });
+
+                    navigator.mediaSession.setActionHandler('play', () => audio.play());
+                    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+                    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                        audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
+                    });
+                    navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                        audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
+                    });
+                });
+            }
+        }
+
+        setupPersistence(audio);
+        setupMediaSession(audio);
+
         audio.addEventListener('timeupdate', () => {
             const { duration, currentTime } = audio;
             if (isNaN(duration)) return;

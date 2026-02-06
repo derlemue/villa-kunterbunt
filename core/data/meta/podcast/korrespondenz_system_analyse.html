@@ -743,7 +743,7 @@
                 </div>
             </div>
 
-            <audio id="audio-player" src="../audio/villa_kunterbunt_meta_korrespondenz_analyse.mp3"
+            <audio id="audio-player" src="../audio/villa_kunterbunt_korrespondenz_system_analyse.mp3"
                 preload="metadata"></audio>
 
             <div class="nav-links"
@@ -870,6 +870,9 @@
         function openSource(url) {
             if (url) {
                 window.open(url, '_blank');
+            } else {
+                // If no URL provided (empty string), open default
+                window.open('../documents/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf', '_blank');
             }
         }
 
