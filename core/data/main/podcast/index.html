@@ -545,6 +545,61 @@
             white-space: nowrap;
             border: 0;
         }
+
+        /* Autoplay Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: .4s;
+            border: 1px solid var(--glass-border);
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 2px;
+            bottom: 2px;
+            background-color: var(--text-muted);
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: var(--accent-gold);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(20px);
+            background-color: var(--accent-gold);
+        }
+
+        .slider.round {
+            border-radius: 20px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -562,6 +617,15 @@
                 <a href="../../meta/podcast/index.html" class="action-link">🎙️ Das Kompendium</a>
             </div>
         </header>
+
+        <div
+            style="margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 30px;">
+            <label class="switch">
+                <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoplay()">
+                <span class="slider round"></span>
+            </label>
+            <span style="color: var(--text-muted); font-size: 0.9rem;">Autoplay</span>
+        </div>
 
         <div class="episode-list">
 
@@ -1336,11 +1400,45 @@
 
         // ... (rest of functions like formatTime, togglePlay, etc. are outside initPlayer) ...
 
+        // Autoplay Logic
+        let autoplayEnabled = localStorage.getItem('autoplay') === 'true';
+        const autoplayToggle = document.getElementById('autoplay-toggle');
+        if (autoplayToggle) {
+            autoplayToggle.checked = autoplayEnabled;
+        }
+
+        function toggleAutoplay() {
+            autoplayEnabled = !autoplayEnabled;
+            localStorage.setItem('autoplay', autoplayEnabled);
+        }
+
+        function setupAutoplay(audioId) {
+            const audio = document.getElementById(`audio-player-${audioId}`);
+            if (!audio) return;
+
+            audio.addEventListener('ended', () => {
+                if (autoplayEnabled) {
+                    const nextId = audioId + 1;
+                    const nextPlayBtn = document.getElementById(`play-btn-${nextId}`);
+                    // Check if next episode exists by looking for its play button
+                    if (nextPlayBtn) {
+                        togglePlay(nextId);
+                    }
+                }
+            });
+        }
+
         // Initialize all players
         window.addEventListener('DOMContentLoaded', () => {
             for (let i = 1; i <= 7; i++) {
                 initPlayer(i);
             }
+
+            // Initialize autoplay listeners for all episodes
+            document.querySelectorAll('audio[id^="audio-player-"]').forEach(audio => {
+                const id = parseInt(audio.id.split('-').pop());
+                setupAutoplay(id);
+            });
         });
     </script>
 </body>
