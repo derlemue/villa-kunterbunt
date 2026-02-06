@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Die Satire - Villa Kunterbunt</title>
+    <title>Episode VI - aBook - Villa Kunterbunt Cowork</title>
     <meta name="description"
-        content="Episode 3: Die Satire. In dieser Podcast-Folge wird das finale Kapitel der „Villa Kunterbunt“ analysiert: die satirische Initiativbewerbung des Kunden als Akt der subversiven Compliance.">
+        content="Episode VI: aBook. Die sechste Episode als Hörbuch. Ein Cowork Podcast aus dem Coworking Space.">
     <!-- Google Fonts for premium typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,6 @@
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
             --accent-gold: #d4af37;
-            /* Noble gold accent */
             --glass-bg: rgba(20, 20, 20, 0.75);
             --glass-border: rgba(255, 255, 255, 0.08);
             --glass-highlight: rgba(255, 255, 255, 0.03);
@@ -46,7 +45,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('../../../website/data/main/images/die_villa_kunterbunt_ebook_cover_front_hq_thumb.png');
+            background-image: url('../../../website/data/main/images/wallpaper.png');
             background-size: cover;
             background-position: center;
             filter: blur(60px) brightness(0.25) saturate(1.2);
@@ -216,27 +215,11 @@
         /* Navigation Links */
         .nav-links {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid var(--glass-border);
-        }
-
-        /* Specific positioning for prev/next */
-        .prev-episode {
-            margin-right: auto;
-            text-align: left;
-        }
-
-        .next-episode {
-            margin-left: auto;
-            text-align: right;
-        }
-
-        .centered-link {
-            margin: 0 auto;
-            text-align: center;
         }
 
         .nav-link {
@@ -283,6 +266,7 @@
             color: var(--text-main);
             text-decoration: none;
             transition: color 0.2s;
+            display: inline-block;
         }
 
         a:hover {
@@ -313,19 +297,6 @@
                 transform: translateY(0);
             }
         }
-
-        /* SEO Cloak */
-        .seo-cloud {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
     </style>
 </head>
 
@@ -335,22 +306,25 @@
 
     <div class="main-container">
         <header>
-            <div class="subtitle">Die Villa Kunterbunt</div>
-            <h1>Die Satire</h1>
+            <div class="subtitle">Villa Kunterbunt Cowork</div>
+            <h1>Episode VI - aBook</h1>
         </header>
 
         <article class="episode-card">
-            <img src="../../../website/data/main/images/die_villa_kunterbunt_ebook_cover_front_hq_thumb.png"
-                alt="Cover Art" class="cover-art">
+            <!-- Used back cover as primary visualization here as requested by user implication? 
+                 Actually let's use the front cover (which we just swapped to be the podcast thumb) for the static page to be safe, 
+                 or should we use the audiobook cover? 
+                 Let's stick to the podcast thumb (originally front). 
+                 Wait, I swapped them in index.html to put audiobook_cover_back FIRST.
+                 So here I will use audiobook_cover_back as the main image to match the user's preference for "start position".
+            -->
+            <img src="../images/die_villa_kunterbunt_anthologie_audiobook_cover_back.png" alt="Cover Art"
+                class="cover-art">
 
-            <div class="episode-tag">Episode 01</div>
+            <div class="episode-tag">Cowork Podcast</div>
 
             <div class="episode-description">
-                In dieser Podcast-Folge wird das finale Kapitel der „Villa Kunterbunt“ analysiert: die satirische
-                Initiativbewerbung des Kunden als Akt der subversiven Compliance. Die Sprecher diskutieren, wie der
-                Autor durch die Übernahme der <strong>E.ON</strong>-Sprache die Ineffizienz des Systems (z. B. 171 € für
-                15 Minuten mangelhafte Arbeit) bloßstellt und sich im Epilog vom leidenden Kunden zum überlegenen
-                Forscher einer „experimentellen Studie“ wandelt.
+                Die sechste Episode als Hörbuch. Ein <strong>Cowork Podcast</strong> aus dem Coworking Space.
             </div>
 
             <div class="player-controls">
@@ -369,48 +343,25 @@
                     </div>
                 </div>
             </div>
-            <audio id="audio-player" src="../audio/Die%20Villa%20Kunterbunt%20–%20Satire.mp3"
-                preload="metadata"></audio>
+            <audio id="audio-player" src="../audio/villa_kunterbunt_episode_vi_abook.mp3" preload="metadata"></audio>
 
             <div class="nav-links">
-                <a href="analyse.html" class="nav-link next-episode highlight">
-                    <span>Nächste Episode: Die Analyse</span>
-                </a>
-            </div>
-            <div class="nav-links" style="border-top: none; margin-top: 20px; padding-top: 0;">
-                <a href="index.html" class="nav-link centered-link highlight">
+                <a href="index.html" class="nav-link highlight">
                     <span>Alle Episoden</span>
                 </a>
             </div>
         </article>
 
         <footer>
-            <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README.md" class="nav-link"
+            <a href="https://derlemue.github.io/villa-kunterbunt/" class="nav-link"
                 style="display:inline-flex; width:auto; border-bottom:none;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
-                <span>Projekt auf GitHub</span>
+                <span>Zurück zur Startseite</span>
             </a>
         </footer>
-    </div>
-
-    <!-- Hidden SEO Content -->
-    <div class="seo-cloud">
-        E.ON, Bayernwerk, Kundenservice, Erfahrung, Beschwerde, Störung, Stromausfall, Hotline, Erreichbarkeit, Problem,
-        Ärger, Bewertung, Kritik, E.ON Erfahrungen, Bayernwerk Erfahrungen, Netzbetreiber, Stromanbieter, Service,
-        Support, Hilfe, Abzocke, Betrug, Unfähig, Warteschleife, Keine Antwort, Ignoriert, Verbraucherschutz,
-        Bundesnetzagentur, Schlichtungsstelle, Anwalt, Klage, Schadenersatz, Verdienstausfall, Phasenausfall,
-        Nullleiter, Anschluss, Zählerwechsel, Zähler, Smart Meter, Techniker, Termin, Versäumt, Kosten, Rechnung,
-        Mahnung, Inkasso, Energieversorger, Strompreis, Gaspreis, Vertrag, Kündigung, Widerruf, Neuanschluss,
-        Bauherrenservice, Netzanschluss, Hausanschluss, Kabel, Leitung, Muffe, Verteiler, Trafo, Spannung, Volt, Ampere,
-        Watt, kWh, Verbrauch, Abschlag, Rückzahlung, Guthaben, Bonus, Prämie, Tarif, Wechsel, Vergleich, Check24,
-        Verivox, Trustpilot, Reclabox, Google Bewertung, Facebook, Twitter, Social Media, Shitstorm, Skandal, Presse,
-        Medien, Fernsehen, Radio, Zeitung, Bericht, Reportage, Doku, Dokumentation, Fall, Akte, Dossier, Analyse,
-        Podcast, Audio, MP3, Hören, Stream, Download, Kostenlos, Gratis, Online, Digital, Portal, Login, Mein E.ON,
-        Kundenportal, Registrierung, Passwort, Vergessen, Netzcenter, Kundencenter, Email, Telefonnummer, Adresse,
-        Vorstand, Beschwerdemanagement, Qualitätsmanagement, Feedback, Rezension, Stern, Warnung.
     </div>
 
     <script>
