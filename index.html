@@ -24,8 +24,14 @@
     <header>
         <nav>
             <div class="logo">🎪 Villa Kunterbunt</div>
+            <div class="nav-links">
+                <a href="#about">Über das Projekt</a>
+                <a href="#downloads">Downloads</a>
+                <a href="#podcasts">Podcasts</a>
+                <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README.md">GitHub</a>
+            </div>
             <div class="audio-wrapper expanded">
-                <button id="toggle-player" class="btn-icon" aria-label="Toggle Player">🎵</button>
+                <button id="toggle-player" class="btn-icon" aria-label="Toggle Player">🎶</button>
                 <div class="audio-controls" id="audio-controls">
                     <button id="toggle-audio" class="btn-icon" aria-label="Play/Pause">
                         <span id="icon-play">▶️</span>
@@ -43,16 +49,10 @@
                     </div>
                 </div>
             </div>
-            <audio id="bg-music" autoplay>
-                <source src="core/website/global/audio/villa_kunterbunt_background_melody.mp3" type="audio/mpeg">
-            </audio>
-            <div class="nav-links">
-                <a href="#about">Über das Projekt</a>
-                <a href="#downloads">Downloads</a>
-                <a href="#podcasts">Podcasts</a>
-                <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README.md">GitHub</a>
-            </div>
         </nav>
+        <audio id="bg-music" autoplay>
+            <source src="core/website/global/audio/villa_kunterbunt_background_melody.mp3" type="audio/mpeg">
+        </audio>
     </header>
 
     <main>
