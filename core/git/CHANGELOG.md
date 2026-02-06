@@ -30,6 +30,29 @@
 
 ---
 
+## v.1.2.1 (Podcast Navigation & Branding)
+### "Epos, Kompendium & Anthologie"
+*6. Februar 2026*
+
+> **Status:** Harmonisierung der Navigation und Branding-Vereinheitlichung abgeschlossen.
+
+#### 🎙️ Podcast-Harmonisierung
+*   **Branding-Vereinheitlichung:** Umstellung aller Podcast-Serien auf die neuen, prägnanten Namen:
+    *   Haupt-Podcast: **"Das Epos"**
+    *   Meta-Podcast: **"Das Kompendium"**
+    *   Cowork-Podcast: **"Die Anthologie"**
+*   **Header-Design:** Vereinheitlichung aller H1-Überschriften auf **"Die Villa Kunterbunt"** über alle Index- und Folgeseiten hinweg, ergänzt durch die neuen Serien- und Folgentitel in den Untertiteln.
+*   **Button-Design:** Umstellung aller Navigations-Buttons auf die neuen Seriennamen inklusive passender Emojis (`🏰`, `🎙️`, `🎧`).
+*   **Interaktivität:** Fix der Cover-Flip-Funktionalität für alle Episoden im Haupt-Index (E01-E07).
+*   **Zentrierung:** Perfekte Zentrierung der "Alle Episoden"-Buttons mittels Flexbox auf allen Einzelseiten.
+
+#### 🔧 Bugfixes & Polish
+*   **Audio-Links:** Reparatur der fehlerhaften Audio-Pfade auf den Einzelseiten von E01, E04 und E05 (Synchronisation mit den tatsächlichen mp3-Dateinamen).
+*   **Footer-Bereinigung:** Entfernung der Text-Pfeile (`←`) aus den GitHub-Links im Footer für ein minimalistisches, icon-basiertes Design.
+*   **CSS-Standardisierung:** Konsequente Nutzung der `.action-link` Klasse zur Eliminierung von redundanten Inline-Styles.
+
+---
+
 ## v.1.2.0 (Asset Organization & Structure)
 ### "Clean Root Policy - Alles an seinem Platz"
 *6. Februar 2026*
