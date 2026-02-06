@@ -364,6 +364,10 @@
             // Toggle Widget
             audioTrigger.addEventListener('click', () => {
                 audioWidget.classList.toggle('expanded');
+                // Restart auto-collapse timer when opening
+                if (audioWidget.classList.contains('expanded')) {
+                    startAutoCollapse();
+                }
             });
 
             // Prevent collapse when interacting with controls
