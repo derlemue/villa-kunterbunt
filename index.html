@@ -90,6 +90,9 @@
                         <span id="icon-sound">🔊</span>
                         <span id="icon-mute" style="display:none;">🔇</span>
                     </button>
+                    <button id="toggle-confetti" class="btn-icon confetti-active" aria-label="Toggle Confetti">
+                        🎉
+                    </button>
                 </div>
                 <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.4" class="volume-slider"
                     aria-label="Volume">
@@ -99,6 +102,9 @@
             <source src="core/website/global/audio/villa_kunterbunt_background_melody.mp3" type="audio/mpeg">
         </audio>
     </header>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
 
     <main>
         <section class="hero">
@@ -411,6 +417,96 @@
                 }
             }
 
+            // Confetti System
+            const confettiCanvas = document.getElementById('confetti-canvas');
+            const confettiCtx = confettiCanvas.getContext('2d');
+            const confettiBtn = document.getElementById('toggle-confetti');
+            let confettiActive = true;
+            let confettiParticles = [];
+            let animationFrame;
+
+            // Set canvas size
+            function resizeCanvas() {
+                confettiCanvas.width = window.innerWidth;
+                confettiCanvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Confetti particle class
+            class Confetti {
+                constructor() {
+                    this.x = Math.random() * confettiCanvas.width;
+                    this.y = -10;
+                    this.size = Math.random() * 8 + 4;
+                    this.speedY = Math.random() * 3 + 2;
+                    this.speedX = Math.random() * 2 - 1;
+                    this.rotation = Math.random() * 360;
+                    this.rotationSpeed = Math.random() * 10 - 5;
+                    this.color = ['#f59e0b', '#ef4444', '#3b82f6', '#10b981', '#f472b6', '#fbbf24'][Math.floor(Math.random() * 6)];
+                }
+
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+                    this.rotation += this.rotationSpeed;
+
+                    if (this.y > confettiCanvas.height) {
+                        this.y = -10;
+                        this.x = Math.random() * confettiCanvas.width;
+                    }
+                }
+
+                draw() {
+                    confettiCtx.save();
+                    confettiCtx.translate(this.x, this.y);
+                    confettiCtx.rotate((this.rotation * Math.PI) / 180);
+                    confettiCtx.fillStyle = this.color;
+                    confettiCtx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                    confettiCtx.restore();
+                }
+            }
+
+            // Create initial confetti
+            function createConfetti() {
+                for (let i = 0; i < 50; i++) {
+                    confettiParticles.push(new Confetti());
+                }
+            }
+
+            // Animation loop
+            function animateConfetti() {
+                if (!confettiActive) return;
+
+                confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+                confettiParticles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+
+                animationFrame = requestAnimationFrame(animateConfetti);
+            }
+
+            // Toggle confetti
+            confettiBtn.addEventListener('click', () => {
+                confettiActive = !confettiActive;
+
+                if (confettiActive) {
+                    confettiBtn.classList.add('confetti-active');
+                    confettiBtn.classList.remove('confetti-inactive');
+                    animateConfetti();
+                } else {
+                    confettiBtn.classList.remove('confetti-active');
+                    confettiBtn.classList.add('confetti-inactive');
+                    cancelAnimationFrame(animationFrame);
+                    confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                }
+            });
+
+            // Start confetti on load
+            createConfetti();
+            animateConfetti();
 
         });
     </script>
