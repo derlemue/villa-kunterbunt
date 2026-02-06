@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa Kunterbunt Meta Podcast</title>
+    <title>Villa Kunterbunt Meta</title>
+
+    <!-- SEO / Social Media -->
+    <meta property="og:title" content="Die Villa Kunterbunt | Das Kompendium">
+    <meta property="og:description" content="Systemanalyse und Korrespondenz Berichte.">
+    <meta property="og:image"
+        content="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png">
+    <link rel="apple-touch-icon"
+        href="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png">
     <!-- Same styles and structure as main podcast page -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -779,9 +787,9 @@
                 const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
 
                 setupMediaSession(audio, {
-                    title: "Korrespondenz System Analyse",
-                    artist: "Villa Kunterbunt",
-                    album: "Die Villa Kunterbunt",
+                    title: "Die Villa Kunterbunt | Die erweiterte Studienanalyse",
+                    artist: "Die Villa Kunterbunt",
+                    album: "Das Kompendium",
                     artwork: [
                         { src: absoluteArtworkUrl, sizes: '512x512', type: 'image/png' }
                     ]

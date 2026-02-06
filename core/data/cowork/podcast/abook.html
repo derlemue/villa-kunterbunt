@@ -850,11 +850,11 @@
             if ('mediaSession' in navigator) {
                 audio.addEventListener('play', () => {
                     navigator.mediaSession.metadata = new MediaMetadata({
-                        title: "Episode VI - aBook",
-                        artist: "Villa Kunterbunt",
+                        title: "Die Anthologie | Episode VI - Das Hörbuch (beta)",
+                        artist: "Die Villa Kunterbunt",
                         album: "Die Villa Kunterbunt",
                         artwork: [
-                            { src: new URL("../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
+                            { src: new URL("../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                         ]
                     });
 
