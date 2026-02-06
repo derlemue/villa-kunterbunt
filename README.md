@@ -86,6 +86,7 @@ Ein kleiner Wegweiser durch den digitalen Kaninchenbau.
 /
 ├── .git/
 ├── .github/
+├── .inbox/
 ├── .queue/
 │   ├── audio/
 │   ├── documents/
