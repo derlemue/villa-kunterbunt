@@ -519,6 +519,18 @@
                 coverImage.addEventListener('mouseout', () => {
                     coverImage.src = coverImage.dataset.front;
                 });
+
+                // Click (Mobile/Touch)
+                coverImage.addEventListener('click', () => {
+                    const currentSide = coverImage.dataset.showing;
+                    if (currentSide === 'front') {
+                        coverImage.src = coverImage.dataset.back;
+                        coverImage.dataset.showing = 'back';
+                    } else {
+                        coverImage.src = coverImage.dataset.front;
+                        coverImage.dataset.showing = 'front';
+                    }
+                });
             }
 
         });
