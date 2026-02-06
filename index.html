@@ -24,10 +24,25 @@
     <!-- Audio Consent Modal -->
     <div id="audio-consent-modal" class="audio-consent-overlay">
         <div class="audio-consent-modal">
-            <h1 class="consent-headline">Willkommen in der Anlage.</h1>
+            <h1 class="consent-headline">Tag der offenen Tür in der Villa Kunterbunt</h1>
             <p class="consent-body">
-                Das volle Rendite-Erlebnis dieser Immobilie entfaltet sich nur akustisch.
-                Wir haben Kosten noch Mühen gescheut. Gönn dir die Immersion.
+                Willkommen im Zentrum der kontrollierten Eskalation. Sie betreten das digitale Abbild einer Firma, die
+                herkömmliche Strukturen als optional betrachtet. Hier wird nicht gearbeitet, hier wird auditive Realität
+                dekonstruiert. Das vorliegende eBook dokumentiert den Prozess, wie aus einer Vision eine funktionale
+                Anstalt für akustische Höchstleistung wurde.
+            </p>
+            <p class="consent-warning">
+                <strong>⚠️ Dringende System-Empfehlung:</strong><br>
+                Um die maximale Customer Experience zu gewährleisten und die volle Rendite der Anlage zu extrahieren,
+                empfiehlt die Leitung inständig die Aktivierung des Vollbild- und Audio-Modus.
+            </p>
+            <p class="consent-author">
+                In einem seltenen Moment absoluter Übereinkunft bestätigt der Autor: Dies ist die Sahnehaube. Ohne die
+                akustische Immersion bleibt Ihr Besuch lediglich eine visuelle Datenabfrage – ein Fehler, den das System
+                nicht verzeiht.
+            </p>
+            <p class="consent-cta">
+                <strong>Gönn dir die Immersion. Die Behandlung hat bereits begonnen.</strong>
             </p>
             <div class="consent-buttons">
                 <button id="consent-yes" class="consent-btn consent-primary">
@@ -36,14 +51,17 @@
                 <button id="consent-maybe" class="consent-btn consent-secondary">
                     🫣 Ich weiß nicht
                 </button>
+                <button id="consent-probably-not" class="consent-btn consent-secondary">
+                    🤔 Ich glaube eher nicht
+                </button>
                 <button id="consent-no" class="consent-btn consent-tertiary">
                     🔇 Nein ich will nur schauen
                 </button>
             </div>
             <div class="consent-footer">
-                <a href="https://github.com/derlemue/villa-kunterbunt" target="_blank" class="consent-data-link">
+                <button id="consent-data" class="consent-btn consent-data">
                     📉 Ich will nur die daten
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -252,7 +270,9 @@
             const consentModal = document.getElementById('audio-consent-modal');
             const consentYes = document.getElementById('consent-yes');
             const consentMaybe = document.getElementById('consent-maybe');
+            const consentProbablyNot = document.getElementById('consent-probably-not');
             const consentNo = document.getElementById('consent-no');
+            const consentData = document.getElementById('consent-data');
 
             // Check if user has already made a choice
             const audioConsent = sessionStorage.getItem('audioConsent');
@@ -262,12 +282,14 @@
                 consentModal.classList.add('hidden');
                 if (audioConsent === 'unmuted') {
                     audio.muted = false;
+                    audio.play().catch(e => console.log('Autoplay prevented:', e));
                 }
             }
 
             // Consent handlers
             consentYes.addEventListener('click', () => {
                 audio.muted = false;
+                audio.play().catch(e => console.log('Play prevented:', e));
                 sessionStorage.setItem('audioConsent', 'unmuted');
                 consentModal.classList.add('hidden');
                 updateMuteState(false);
@@ -279,6 +301,15 @@
 
             consentMaybe.addEventListener('click', () => {
                 audio.muted = false;
+                audio.play().catch(e => console.log('Play prevented:', e));
+                sessionStorage.setItem('audioConsent', 'unmuted');
+                consentModal.classList.add('hidden');
+                updateMuteState(false);
+            });
+
+            consentProbablyNot.addEventListener('click', () => {
+                audio.muted = false;
+                audio.play().catch(e => console.log('Play prevented:', e));
                 sessionStorage.setItem('audioConsent', 'unmuted');
                 consentModal.classList.add('hidden');
                 updateMuteState(false);
@@ -289,6 +320,10 @@
                 sessionStorage.setItem('audioConsent', 'muted');
                 consentModal.classList.add('hidden');
                 updateMuteState(true);
+            });
+
+            consentData.addEventListener('click', () => {
+                window.open('https://github.com/derlemue/villa-kunterbunt', '_blank');
             });
 
             // Init State
