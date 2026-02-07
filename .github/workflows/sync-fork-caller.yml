@@ -1,7 +1,7 @@
 name: Sync Fork
 
 on:
-  workflow_call: # Das erlaubt dem Caller von oben, diese Datei zu nutzen
+  workflow_call:
   workflow_dispatch:
 
 permissions:
@@ -10,6 +10,8 @@ permissions:
 
 jobs:
   sync:
+    # Führt den Job nur aus, wenn das Repository NICHT das Original ist
+    if: github.repository != 'derlemue/villa-kunterbunt'
     runs-on: [self-hosted, vps-debian]
     steps:
       - name: Checkout
@@ -32,9 +34,8 @@ jobs:
           git merge upstream/main --no-edit || exit 1
           git push origin main
 
-      # DAS HIER FIXT DEN SPEICHERPLATZ AUF DEM VPS
       - name: Cleanup workspace
-        if: always() # Läuft immer, auch wenn der Sync fehlschlägt
+        if: always()
         run: |
           echo "Cleaning up workspace on VPS..."
           rm -rf "${{ github.workspace }}"/*
