@@ -1,24 +1,42 @@
-name: Sync Fork Caller
+name: Sync Fork
 
 on:
-  schedule:
-    - cron: '00 */2 * * *'
+  workflow_call: # Das erlaubt dem Caller von oben, diese Datei zu nutzen
   workflow_dispatch:
 
 permissions:
   contents: write
-
+  actions: write
 
 jobs:
-  call-sync-fork:
-    uses: lemueIO/.github/.github/workflows/sync-fork.yml@main
-    secrets: inherit
+  sync:
+    runs-on: [self-hosted, vps-debian]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
-    
-- name: Cleanup workspace
-        if: always() # Läuft auch, wenn der Job fehlschlägt
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Sync with Upstream
+        run: |
+          UPSTREAM_URL="https://github.com/derlemue/villa-kunterbunt.git"
+          git remote add upstream "$UPSTREAM_URL" || git remote set-url upstream "$UPSTREAM_URL"
+          git fetch upstream main
+          git merge upstream/main --no-edit || exit 1
+          git push origin main
+
+      # DAS HIER FIXT DEN SPEICHERPLATZ AUF DEM VPS
+      - name: Cleanup workspace
+        if: always() # Läuft immer, auch wenn der Sync fehlschlägt
         run: |
           echo "Cleaning up workspace on VPS..."
           rm -rf "${{ github.workspace }}"/*
-          # Löscht Docker-Leichen, falls vorhanden
+          # Hält Docker sauber
           docker system prune -f --volumes || true
