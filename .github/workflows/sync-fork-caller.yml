@@ -1,12 +1,19 @@
-name: Fork Sync Caller
+name: Sync Fork Caller
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Alle 30 Minuten
-  workflow_dispatch:      # Ermöglicht manuellen Start
+    - cron: '00 */2 * * *'
+  workflow_dispatch:
+
+# Wir definieren die Permissions hier global...
+permissions:
+  contents: write
 
 jobs:
-  sync:
+  call-sync-fork:
+    # ...und stellen sicher, dass der Job sie auch wirklich anwenden darf
+    permissions:
+      contents: write
     uses: lemueIO/.github/.github/workflows/central-sync-logic.yml@main
     with:
       upstream_url: "https://github.com/derlemue/villa-kunterbunt.git"
