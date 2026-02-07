@@ -1,15 +1,13 @@
-# DATEI: (Im Fork) .github/workflows/my-schedule.yml
-name: Fork Sync Scheduler
+name: Fork Sync Caller
 
 on:
   schedule:
     - cron: '*/30 * * * *' # Alle 30 Minuten
-  workflow_dispatch:
+  workflow_dispatch:      # Ermöglicht manuellen Start
 
 jobs:
-  call-central-logic:
-    # Hier rufen wir die Zentrale an
+  sync:
     uses: lemueIO/.github/.github/workflows/central-sync-logic.yml@main
     with:
       upstream_url: "https://github.com/derlemue/villa-kunterbunt.git"
-    secrets: inherit # Wichtig, falls Tokens benötigt werden
+    secrets: inherit
