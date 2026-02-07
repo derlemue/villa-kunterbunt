@@ -17,5 +17,5 @@ jobs:
     uses: lemueIO/.github/.github/workflows/central-pages-logic.yml@main
     with:
       publish_dir: '.'
-      runs_on: 'ubuntu-latest'
+      runs_on: 'self-hosted'
     secrets: inherit
