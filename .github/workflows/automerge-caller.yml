@@ -5,6 +5,7 @@ on:
     types: [submitted]
   check_run:
     types: [completed]
+  workflow_dispatch:
 
 jobs:
   automerge:
