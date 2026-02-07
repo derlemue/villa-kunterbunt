@@ -772,73 +772,74 @@
                     Qualitätsprüfung</strong>.
             </div>
 
-            <div class="episode-description">
-                <div id="description-short">
-                    In dieser Episode tauchen wir tief in das „Epos der Villa Kunterbunt“ ein – ein Dokument, das weit
-                    über eine gewöhnliche Kundenbeschwerde hinausgeht und sich als Manifest moderner
-                    Verbraucherfrustration versteht.
-                </div>
-                <div id="description-full" style="display: none;">
-                    In dieser Episode tauchen wir tief in das „Epos der Villa Kunterbunt“ ein – ein Dokument, das weit
-                    über eine gewöhnliche Kundenbeschwerde hinausgeht und sich als Manifest moderner
-                    Verbraucherfrustration versteht. Der Host analysiert die Korrespondenz rund um den berüchtigten
-                    Phasenausfall L3 und dekonstruiert dabei die systemischen Versäumnisse großer
-                    Versorgungsunternehmen. Es ist eine Reise durch ein „prozessuales Paralleluniversum“, in dem
-                    administrative Blindheit auf technische Inkompetenz trifft.
-                    <br><br>
-                    Die Analyse beleuchtet, wie der betroffene Kunde durch einen radikalen Strategiewechsel – weg vom
-                    „Bittsteller“, hin zum „Anlieferer wertvoller Prozessdaten“ – die Spielregeln des Konzern-Dialogs
-                    ändert. Besonders im Fokus stehen die satirischen Spitzen gegen das „Remote-Voodoo“ der Fernanalyse
-                    und die Kunst, für 15 Minuten wirkungslose Arbeit horrende Summen in Rechnung zu stellen. Die
-                    Episode arbeitet heraus, dass die Suche nach der „dritten Phase“ letztlich die Suche nach einer
-                    kompetenten Instanz ist, die Verantwortung in einem automatisierten System übernimmt.
-                    <br><br>
-                    Für Professionals aus den Bereichen Customer Experience (CX), Qualitätsmanagement und
-                    Business-Transformation bietet diese Folge eine brillante Fallstudie. Sie zeigt auf, wie Unternehmen
-                    durch Ignoranz ihre eigene Reputation demontieren und warum echte Fachkompetenz am „Kabel“
-                    wertvoller ist als jede Management-Sitzung. Ein tiefgründiger, analytischer und zugleich
-                    unterhaltsamer Blick auf die Abgründe des modernen Dienstleistungswesens.
-                </div>
-                <div class="toggle-container" style="text-align: center; margin-top: 15px;">
-                    <button id="toggle-description-btn" onclick="toggleDescription()" class="toggle-btn">
-                        <span id="toggle-text">Mehr anzeigen</span>
-                        <svg id="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                </div>
+            <div class="episode-description collapsed" id="desc-text">
+                In dieser Episode tauchen wir tief in das „Epos der Villa Kunterbunt“ ein – ein Dokument, das weit
+                über eine gewöhnliche Kundenbeschwerde hinausgeht und sich als Manifest moderner
+                Verbraucherfrustration versteht. Der Host analysiert die Korrespondenz rund um den berüchtigten
+                Phasenausfall L3 und dekonstruiert dabei die systemischen Versäumnisse großer
+                Versorgungsunternehmen. Es ist eine Reise durch ein „prozessuales Paralleluniversum“, in dem
+                administrative Blindheit auf technische Inkompetenz trifft.
+                <br><br>
+                Die Analyse beleuchtet, wie der betroffene Kunde durch einen radikalen Strategiewechsel – weg vom
+                „Bittsteller“, hin zum „Anlieferer wertvoller Prozessdaten“ – die Spielregeln des Konzern-Dialogs
+                ändert. Besonders im Fokus stehen die satirischen Spitzen gegen das „Remote-Voodoo“ der Fernanalyse
+                und die Kunst, für 15 Minuten wirkungslose Arbeit horrende Summen in Rechnung zu stellen. Die
+                Episode arbeitet heraus, dass die Suche nach der „dritten Phase“ letztlich die Suche nach einer
+                kompetenten Instanz ist, die Verantwortung in einem automatisierten System übernimmt.
+                <br><br>
+                Für Professionals aus den Bereichen Customer Experience (CX), Qualitätsmanagement und
+                Business-Transformation bietet diese Folge eine brillante Fallstudie. Sie zeigt auf, wie Unternehmen
+                durch Ignoranz ihre eigene Reputation demontieren und warum echte Fachkompetenz am „Kabel“
+                wertvoller ist als jede Management-Sitzung. Ein tiefgründiger, analytischer und zugleich
+                unterhaltsamer Blick auf die Abgründe des modernen Dienstleistungswesens.
             </div>
+            <button class="read-more-btn" id="read-more-btn" onclick="toggleDescription()">MEHR ANZEIGEN</button>
 
             <style>
-                .toggle-btn {
-                    background: rgba(255, 255, 255, 0.05);
-                    border: 1px solid var(--glass-border);
-                    color: var(--text-muted);
-                    padding: 8px 16px;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-size: 0.85rem;
-                    transition: all 0.3s ease;
+                .episode-description.collapsed {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
-                .toggle-btn:hover {
-                    background: rgba(212, 175, 55, 0.1);
+                .episode-description.expanded {
+                    display: block;
+                }
+
+                .read-more-btn {
+                    background: none;
+                    border: none;
                     color: var(--accent-gold);
-                    border-color: rgba(212, 175, 55, 0.3);
+                    cursor: pointer;
+                    font-size: 0.85rem;
+                    margin-top: 5px;
+                    padding: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 600;
                 }
 
-                .toggle-btn svg {
-                    transition: transform 0.3s ease;
-                }
-
-                .toggle-btn.expanded svg {
-                    transform: rotate(180deg);
+                .read-more-btn:hover {
+                    text-decoration: underline;
                 }
             </style>
+
+            <script>
+                function toggleDescription() {
+                    const desc = document.getElementById('desc-text');
+                    const btn = document.getElementById('read-more-btn');
+                    desc.classList.toggle('collapsed');
+                    desc.classList.toggle('expanded');
+
+                    if (desc.classList.contains('collapsed')) {
+                        btn.innerText = "MEHR ANZEIGEN";
+                    } else {
+                        btn.innerText = "WENIGER ANZEIGEN";
+                    }
+                }
+            </script>
 
 
 
@@ -923,24 +924,7 @@
         const playBtn = document.getElementById('play-btn');
 
         // Description Toggle
-        function toggleDescription() {
-            const shortDesc = document.getElementById('description-short');
-            const fullDesc = document.getElementById('description-full');
-            const btn = document.getElementById('toggle-description-btn');
-            const text = document.getElementById('toggle-text');
 
-            if (fullDesc.style.display === 'none') {
-                fullDesc.style.display = 'block';
-                shortDesc.style.display = 'none';
-                text.textContent = 'Weniger anzeigen';
-                btn.classList.add('expanded');
-            } else {
-                fullDesc.style.display = 'none';
-                shortDesc.style.display = 'block';
-                text.textContent = 'Mehr anzeigen';
-                btn.classList.remove('expanded');
-            }
-        }
 
         // TTS Info Toggle
         let ttsTimeout;

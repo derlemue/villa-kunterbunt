@@ -730,7 +730,7 @@
     <div class="main-container">
         <header>
             <h1>Die Villa Kunterbunt</h1>
-            <div class="subtitle">Das Kompendium | Die erweiterte Studienanalyse</div>
+            <div class="subtitle">Das Kompendium</div>
             <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
                 <a href="../../main/podcast/index.html" class="action-link">🏰 Das Epos</a>
                 <a href="../../cowork/podcast/index.html" class="action-link">🎧 Die Anthologie</a>
@@ -773,14 +773,7 @@
             </div>
 
             <div class="episode-description">
-                <div id="description-short">
-                    In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
-                    als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
-                    Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
-                    <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
-                    <strong>Korrespondenzsysteme</strong>...
-                </div>
-                <div id="description-full" style="display: none;">
+                <div class="episode-description collapsed" id="desc-text">
                     In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
                     als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
                     Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
@@ -803,111 +796,119 @@
                     präziser Diskurs über die Belastbarkeit chaotischer Strukturen in einer regulatorisch geprägten
                     Welt.
                 </div>
-                <div class="toggle-container" style="text-align: center; margin-top: 15px;">
-                    <button id="toggle-description-btn" onclick="toggleDescription()" class="toggle-btn">
-                        <span id="toggle-text">Mehr anzeigen</span>
-                        <svg id="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 9l6 6 6-6" />
+                <button class="read-more-btn" id="read-more-btn" onclick="toggleDescription()">MEHR ANZEIGEN</button>
+
+                <style>
+                    .episode-description.collapsed {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .episode-description.expanded {
+                        display: block;
+                    }
+
+                    .read-more-btn {
+                        background: none;
+                        border: none;
+                        color: var(--accent-gold);
+                        cursor: pointer;
+                        font-size: 0.85rem;
+                        margin-top: 5px;
+                        padding: 0;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                    }
+
+                    .read-more-btn:hover {
+                        text-decoration: underline;
+                    }
+                </style>
+
+                <script>
+                    function toggleDescription() {
+                        const desc = document.getElementById('desc-text');
+                        const btn = document.getElementById('read-more-btn');
+                        desc.classList.toggle('collapsed');
+                        desc.classList.toggle('expanded');
+
+                        if (desc.classList.contains('collapsed')) {
+                            btn.innerText = "MEHR ANZEIGEN";
+                        } else {
+                            btn.innerText = "WENIGER ANZEIGEN";
+                        }
+                    }
+                </script>
+
+
+
+                <div class="player-controls">
+                    <button class="control-btn" onclick="skip(-30)" title="-30s">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
                         </svg>
                     </button>
-                </div>
-            </div>
 
-            <style>
-                .toggle-btn {
-                    background: rgba(255, 255, 255, 0.05);
-                    border: 1px solid var(--glass-border);
-                    color: var(--text-muted);
-                    padding: 8px 16px;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-size: 0.85rem;
-                    transition: all 0.3s ease;
-                }
-
-                .toggle-btn:hover {
-                    background: rgba(212, 175, 55, 0.1);
-                    color: var(--accent-gold);
-                    border-color: rgba(212, 175, 55, 0.3);
-                }
-
-                .toggle-btn svg {
-                    transition: transform 0.3s ease;
-                }
-
-                .toggle-btn.expanded svg {
-                    transform: rotate(180deg);
-                }
-            </style>
-
-
-
-            <div class="player-controls">
-                <button class="control-btn" onclick="skip(-30)" title="-30s">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
-                    </svg>
-                </button>
-
-                <button class="play-btn" id="play-btn" aria-label="Play Episode">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                </button>
-
-                <button class="control-btn" onclick="skip(30)" title="+30s">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
-                    </svg>
-                </button>
-
-                <div class="progress-wrapper">
-                    <div class="progress-bar-bg" id="progress-container">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                    <div class="time-display">
-                        <span id="current-time">0:00</span>
-                        <span id="duration">0:00</span>
-                    </div>
-                </div>
-
-                <div class="volume-control">
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
-                        oninput="setVolume(this.value)">
-                </div>
-            </div>
-
-            <audio id="audio-player" src="../audio/das_villa_kunterbunt_kompendium_die_erweiterte_studienanalyse.mp3"
-                preload="metadata"></audio>
-
-            <div class="nav-links"
-                style="border-top: none; margin-top: 10px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 10px;">
-                <div style="display: flex; justify-content: center; gap: 20px;">
-                    <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                    <button class="play-btn" id="play-btn" aria-label="Play Episode">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
                         </svg>
-                        <span>Vorherige Episode</span>
                     </button>
-                    <a href="korrespondenz_epos.html" class="nav-link">
-                        <span>Nächste Episode</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
+
+                    <button class="control-btn" onclick="skip(30)" title="+30s">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
                         </svg>
-                    </a>
+                    </button>
+
+                    <div class="progress-wrapper">
+                        <div class="progress-bar-bg" id="progress-container">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="current-time">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="volume-control">
+                        <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                            oninput="setVolume(this.value)">
+                    </div>
                 </div>
-                <div style="display: flex; justify-content: center;">
-                    <a href="index.html" class="nav-link highlight">
-                        <span>Alle Episoden</span>
-                    </a>
+
+                <audio id="audio-player"
+                    src="../audio/das_villa_kunterbunt_kompendium_die_erweiterte_studienanalyse.mp3"
+                    preload="metadata"></audio>
+
+                <div class="nav-links"
+                    style="border-top: none; margin-top: 10px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; justify-content: center; gap: 20px;">
+                        <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 12H5M12 19l-7-7 7-7" />
+                            </svg>
+                            <span>Vorherige Episode</span>
+                        </button>
+                        <a href="korrespondenz_epos.html" class="nav-link">
+                            <span>Nächste Episode</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <a href="index.html" class="nav-link highlight">
+                            <span>Alle Episoden</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
         </article>
 
         <footer>
@@ -928,24 +929,7 @@
         const playBtn = document.getElementById('play-btn');
 
         // Description Toggle
-        function toggleDescription() {
-            const shortDesc = document.getElementById('description-short');
-            const fullDesc = document.getElementById('description-full');
-            const btn = document.getElementById('toggle-description-btn');
-            const text = document.getElementById('toggle-text');
 
-            if (fullDesc.style.display === 'none') {
-                fullDesc.style.display = 'block';
-                shortDesc.style.display = 'none';
-                text.textContent = 'Weniger anzeigen';
-                btn.classList.add('expanded');
-            } else {
-                fullDesc.style.display = 'none';
-                shortDesc.style.display = 'block';
-                text.textContent = 'Mehr anzeigen';
-                btn.classList.remove('expanded');
-            }
-        }
 
         // TTS Info Toggle
         let ttsTimeout;

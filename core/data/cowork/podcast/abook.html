@@ -664,98 +664,76 @@
                     Qualitätsprüfung</strong>.
             </div>
 
-            <div class="episode-description">
-                <div id="description-short">
-                    In Episode 6, „Das Erwachen des Feedbacks“, erreicht die Saga um die „<strong>Villa
-                        Kunterbunt</strong>“ ihren kommunikativen Höhepunkt. Nachdem in den vorangegangenen Analysen die
-                    systemtheoretischen Schwachstellen beleuchtet wurden, taucht diese Folge tief in die reale
-                    Korrespondenz...
-                </div>
-                <div id="description-full" style="display: none;">
-                    In Episode 6, „Das Erwachen des Feedbacks“, erreicht die Saga um die „<strong>Villa
-                        Kunterbunt</strong>“ ihren kommunikativen Höhepunkt. Nachdem in den vorangegangenen Analysen die
-                    systemtheoretischen Schwachstellen beleuchtet wurden, taucht diese Folge tief in die reale
-                    Korrespondenz zwischen dem „<strong>Root-User</strong>“ der Villa und den Energieriesen
-                    <strong>E.ON</strong> und <strong>Bayernwerk</strong> ein. Der Hörer wird Zeuge einer
-                    außergewöhnlichen <strong>Customer Journey</strong>, die den Weg von technischer Frustration hin zu
-                    einem literarisch-satirischen Mahnmal der Service-Realität nachzeichnet.
-                    <br><br>
-                    Die Episode dekonstruiert die <strong>psychologischen und prozessualen Barrieren</strong> moderner
-                    Großkonzerne. Während <strong>E.ON</strong> als Negativbeispiel für systemisches Versagen und
-                    verzögerte Reaktionen herangezogen wird – eine Strategie, die der Absender mit der Taktung von
-                    <strong>Marvel-Blockbustern</strong> vergleicht –, bietet die Antwort des
-                    <strong>Bayernwerks</strong> einen Lichtblick in Sachen <strong>Krisen-PR</strong>. Die Analyse
-                    zeigt auf, wie professionelles <strong>Beschwerdemanagement</strong> selbst auf schärfste Satire
-                    konstruktiv reagieren kann, um verloren gegangenes Vertrauen zurückzugewinnen.
-                    <br><br>
-                    Besonderes Augenmerk liegt auf der Nutzung von <strong>Open-Source-Plattformen</strong> wie
-                    <strong>GitHub</strong> als Werkzeug der <strong>Kundenselbstverteidigung</strong>. Die Folge
-                    liefert wertvolle Erkenntnisse für Spezialisten in den Bereichen <strong>IT-Governance</strong>,
-                    <strong>Unternehmenskommunikation</strong> und <strong>Service-Design</strong>. Es wird deutlich,
-                    dass in einer Welt der automatisierten <strong>Ticket-Systeme</strong> menschliche
-                    <strong>Empathie</strong> und intellektuelle <strong>Redlichkeit</strong> die einzigen wirksamen
-                    Mittel gegen die „Mauer aus Textbausteinen“ sind. Ein fesselndes Lehrstück über die Macht des Wortes
-                    und die notwendige Transformation von <strong>Schatten-IT</strong> in transparente Prozesse.
-                </div>
-                <div class="toggle-container" style="text-align: center; margin-top: 15px;">
-                    <button id="toggle-description-btn" onclick="toggleDescription()" class="toggle-btn">
-                        <span id="toggle-text">Mehr anzeigen</span>
-                        <svg id="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                </div>
+            <div class="episode-description collapsed" id="desc-text">
+                In Episode 6, „Das Erwachen des Feedbacks“, erreicht die Saga um die „<strong>Villa
+                    Kunterbunt</strong>“ ihren kommunikativen Höhepunkt. Nachdem in den vorangegangenen Analysen die
+                systemtheoretischen Schwachstellen beleuchtet wurden, taucht diese Folge tief in die reale
+                Korrespondenz zwischen dem „<strong>Root-User</strong>“ der Villa und den Energieriesen
+                <strong>E.ON</strong> und <strong>Bayernwerk</strong> ein. Der Hörer wird Zeuge einer
+                außergewöhnlichen <strong>Customer Journey</strong>, die den Weg von technischer Frustration hin zu
+                einem literarisch-satirischen Mahnmal der Service-Realität nachzeichnet.
+                <br><br>
+                Die Episode dekonstruiert die <strong>psychologischen und prozessualen Barrieren</strong> moderner
+                Großkonzerne. Während <strong>E.ON</strong> als Negativbeispiel für systemisches Versagen und
+                verzögerte Reaktionen herangezogen wird – eine Strategie, die der Absender mit der Taktung von
+                <strong>Marvel-Blockbustern</strong> vergleicht –, bietet die Antwort des
+                <strong>Bayernwerks</strong> einen Lichtblick in Sachen <strong>Krisen-PR</strong>. Die Analyse
+                zeigt auf, wie professionelles <strong>Beschwerdemanagement</strong> selbst auf schärfste Satire
+                konstruktiv reagieren kann, um verloren gegangenes Vertrauen zurückzugewinnen.
+                <br><br>
+                Besonderes Augenmerk liegt auf der Nutzung von <strong>Open-Source-Plattformen</strong> wie
+                <strong>GitHub</strong> als Werkzeug der <strong>Kundenselbstverteidigung</strong>. Die Folge
+                liefert wertvolle Erkenntnisse für Spezialisten in den Bereichen <strong>IT-Governance</strong>,
+                <strong>Unternehmenskommunikation</strong> und <strong>Service-Design</strong>. Es wird deutlich,
+                dass in einer Welt der automatisierten <strong>Ticket-Systeme</strong> menschliche
+                <strong>Empathie</strong> und intellektuelle <strong>Redlichkeit</strong> die einzigen wirksamen
+                Mittel gegen die „Mauer aus Textbausteinen“ sind. Ein fesselndes Lehrstück über die Macht des Wortes
+                und die notwendige Transformation von <strong>Schatten-IT</strong> in transparente Prozesse.
             </div>
+            <button class="read-more-btn" id="read-more-btn" onclick="toggleDescription()">MEHR ANZEIGEN</button>
 
             <style>
-                .toggle-btn {
-                    background: rgba(255, 255, 255, 0.05);
-                    border: 1px solid var(--glass-border);
-                    color: var(--text-muted);
-                    padding: 8px 16px;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-size: 0.85rem;
-                    transition: all 0.3s ease;
+                .episode-description.collapsed {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
-                .toggle-btn:hover {
-                    background: rgba(212, 175, 55, 0.1);
+                .episode-description.expanded {
+                    display: block;
+                }
+
+                .read-more-btn {
+                    background: none;
+                    border: none;
                     color: var(--accent-gold);
-                    border-color: rgba(212, 175, 55, 0.3);
+                    cursor: pointer;
+                    font-size: 0.85rem;
+                    margin-top: 5px;
+                    padding: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 600;
                 }
 
-                .toggle-btn svg {
-                    transition: transform 0.3s ease;
-                }
-
-                .toggle-btn.expanded svg {
-                    transform: rotate(180deg);
+                .read-more-btn:hover {
+                    text-decoration: underline;
                 }
             </style>
 
             <script>
                 function toggleDescription() {
-                    const shortDesc = document.getElementById('description-short');
-                    const fullDesc = document.getElementById('description-full');
-                    const btn = document.getElementById('toggle-description-btn');
-                    const text = document.getElementById('toggle-text');
-                    const icon = document.getElementById('toggle-icon');
+                    const desc = document.getElementById('desc-text');
+                    const btn = document.getElementById('read-more-btn');
+                    desc.classList.toggle('collapsed');
+                    desc.classList.toggle('expanded');
 
-                    if (fullDesc.style.display === 'none') {
-                        fullDesc.style.display = 'block';
-                        shortDesc.style.display = 'none';
-                        text.textContent = 'Weniger anzeigen';
-                        btn.classList.add('expanded');
+                    if (desc.classList.contains('collapsed')) {
+                        btn.innerText = "MEHR ANZEIGEN";
                     } else {
-                        fullDesc.style.display = 'none';
-                        shortDesc.style.display = 'block';
-                        text.textContent = 'Mehr anzeigen';
-                        btn.classList.remove('expanded');
+                        btn.innerText = "WENIGER ANZEIGEN";
                     }
                 }
             </script>
