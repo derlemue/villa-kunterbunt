@@ -11,6 +11,8 @@ jobs:
     # Berechtigungen müssen direkt im Job stehen
     permissions:
       contents: write
-      pull-requests: write
+      pages: write
+      id-token: write
+      workflows: write
     uses: lemueIO/.github/.github/workflows/central-automerge-logic.yml@main
     secrets: inherit
