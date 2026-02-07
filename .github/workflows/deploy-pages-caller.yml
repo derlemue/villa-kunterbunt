@@ -1,9 +1,7 @@
-name: Deploy Pages Caller
+name: Deploy GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call: # Ermöglicht den Aufruf durch den Caller
   workflow_dispatch:
 
 permissions:
@@ -11,15 +9,43 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  call-deploy-pages:
-    uses: lemueIO/.github/.github/workflows/deploy-pages.yml@main
-    secrets: inherit
-    
-- name: Cleanup workspace
-        if: always() # Läuft auch, wenn der Job fehlschlägt
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: [self-hosted, vps-debian]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Git Safe Directory
+        run: |
+          # Notwendig für Docker-Umgebungen auf dem VPS
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Pfad-Fix: Root hochladen, damit /site/index.html funktioniert
+          path: '.' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # Hält den VPS-Speicher nach dem Deployment sauber
+      - name: Cleanup workspace
+        if: always()
         run: |
           echo "Cleaning up workspace on VPS..."
           rm -rf "${{ github.workspace }}"/*
-          # Löscht Docker-Leichen, falls vorhanden
+          # Entfernt ungenutzte Docker-Daten
           docker system prune -f --volumes || true
