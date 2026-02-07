@@ -786,12 +786,14 @@ header {
   .audio-widget {
     top: auto;
     bottom: 20px;
-    /* Stick to bottom right on mobile for better reach */
-    right: 0;
+    right: 15px;
+    /* Slightly inset to prevent cutoff */
   }
 
   .audio-trigger {
     padding: 8px 12px;
+    border-radius: 12px;
+    border-right: 1px solid var(--card-border);
   }
 
   .audio-controls-panel {
