@@ -433,6 +433,8 @@
             gap: 15px;
             margin-bottom: 20px;
             flex-wrap: wrap;
+            width: 100%;
+            justify-content: flex-start;
         }
 
         .info-btn {
@@ -706,7 +708,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">E01: Die erweiterte Studienanalyse</div>
-                    <h2 class="episode-title">Die erweiterte Studienanalyse <span class="badge">BETA</span></h2>
+                    <h2 class="episode-title">Die erweiterte Studienanalyse</h2>
 
                     <div class="info-bar">
                         <button id="tts-btn-1" class="info-btn" onclick="toggleInfo(1)">TTS</button>
@@ -839,15 +841,12 @@
 
             // Setup MediaSession (Specific for Ep 1 currently)
             if (id === 1) {
-                const artworkPath = "../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png";
-                const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
-
                 setupMediaSession(audio, {
                     title: "E01: Die erweiterte Studienanalyse",
                     artist: "Die Villa Kunterbunt",
                     album: "Das Villa Kunterbunt Kompendium",
                     artwork: [
-                        { src: absoluteArtworkUrl, sizes: '512x512', type: 'image/png' }
+                        { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                     ]
                 });
             }

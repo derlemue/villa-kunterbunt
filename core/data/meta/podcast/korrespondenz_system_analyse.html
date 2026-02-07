@@ -468,6 +468,8 @@
             gap: 15px;
             margin-bottom: 20px;
             flex-wrap: wrap;
+            width: 100%;
+            justify-content: flex-start;
         }
 
         .info-btn {
@@ -718,7 +720,7 @@
         <header>
             <h1>Die Villa Kunterbunt</h1>
             <div class="subtitle">Das Kompendium | Die erweiterte Studienanalyse</div>
-            <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="../../main/podcast/index.html" class="action-link">🏰 Das Epos</a>
                 <a href="../../cowork/podcast/index.html" class="action-link">🎧 Die Anthologie</a>
             </div>
@@ -738,12 +740,13 @@
                 </div>
             </div>
 
-            <div class="episode-tag">Die erweiterte Studienanalyse</div>
-            <h2 class="episode-title">Die erweiterte Studienanalyse <span class="badge">BETA</span></h2>
+            <div class="episode-tag">E01: Die erweiterte Studienanalyse</div>
+            <h2 class="episode-title">Die erweiterte Studienanalyse</h2>
 
             <div class="info-bar">
                 <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
-                <button class="info-btn source-btn has-source" onclick="openSource('')">Quelle</button>
+                <button class="info-btn source-btn has-source"
+                    onclick="openSource('../documents/das_villa_kunterbunt_kompendium.pdf')">Quelle</button>
             </div>
 
             <div id="info-text" class="info-text">
@@ -1006,16 +1009,16 @@
         // MediaSession
         function setupMediaSession(audio) {
             if ('mediaSession' in navigator) {
-                audio.addEventListener('play', () => {
-                    navigator.mediaSession.metadata = new MediaMetadata({
-                        title: "E01: Die erweiterte Studienanalyse",
-                        artist: "Die Villa Kunterbunt",
-                        album: "Das Villa Kunterbunt Kompendium",
-                        artwork: [
-                            { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
-                        ]
-                    });
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: "E01: Die erweiterte Studienanalyse",
+                    artist: "Die Villa Kunterbunt",
+                    album: "Das Villa Kunterbunt Kompendium",
+                    artwork: [
+                        { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
+                    ]
+                });
 
+                audio.addEventListener('play', () => {
                     navigator.mediaSession.setActionHandler('play', () => audio.play());
                     navigator.mediaSession.setActionHandler('pause', () => audio.pause());
                     navigator.mediaSession.setActionHandler('seekbackward', (details) => {
