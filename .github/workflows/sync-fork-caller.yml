@@ -13,6 +13,7 @@ jobs:
   call-sync-fork:
     uses: lemueIO/.github/.github/workflows/sync-fork.yml@main
     secrets: inherit
+
     
 - name: Cleanup workspace
         if: always() # Läuft auch, wenn der Job fehlschlägt
