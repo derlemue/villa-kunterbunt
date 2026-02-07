@@ -11,13 +11,11 @@ permissions:
   pages: write
   id-token: write
 
-
-
 jobs:
   call-deploy-pages:
     uses: lemueIO/.github/.github/workflows/deploy-pages.yml@main
     secrets: inherit
-
+    
 - name: Cleanup workspace
         if: always() # Läuft auch, wenn der Job fehlschlägt
         run: |
