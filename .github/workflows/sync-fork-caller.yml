@@ -18,6 +18,4 @@ jobs:
       contents: write
       pull-requests: write
     uses: lemueIO/.github/.github/workflows/central-sync-logic.yml@main
-    with:
-      upstream_url: "https://github.com/derlemue/villa-kunterbunt.git"
     secrets: inherit
