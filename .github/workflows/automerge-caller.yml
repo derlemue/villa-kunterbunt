@@ -15,6 +15,5 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      workflows: write
     uses: lemueIO/.github/.github/workflows/central-automerge-logic.yml@main
     secrets: inherit
