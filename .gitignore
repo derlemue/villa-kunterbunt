@@ -1,3 +1,5 @@
-.agent/
 .inbox/
 .queue/
+temp_audio.mp3
+temp_runner_checkout/
+*.log

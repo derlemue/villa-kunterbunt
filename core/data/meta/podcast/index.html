@@ -341,7 +341,7 @@
 
             .volume-control {
                 margin-left: 0;
-                margin-top: 10px;
+                margin-top: 5px;
             }
         }
 
@@ -711,8 +711,8 @@
                     </div>
                 </div>
                 <div class="episode-content">
-                    <div class="episode-tag">E01: Das Kompendium</div>
-                    <h2 class="episode-title">Korrespondenz System Analyse</h2>
+                    <div class="episode-tag">Die erweiterte Studienanalyse</div>
+                    <h2 class="episode-title">E01: Das Kompendium</h2>
 
                     <div class="info-bar">
                         <button id="tts-btn-1" class="info-btn" onclick="toggleInfo(1)">TTS</button>
@@ -793,8 +793,8 @@
                     </div>
                 </div>
                 <div class="episode-content">
-                    <div class="episode-tag">E02: Das Epos</div>
-                    <h2 class="episode-title">Korrespondenz Epos</h2>
+                    <div class="episode-tag">Das Epos der Villa Kunterbunt</div>
+                    <h2 class="episode-title">E02: Das Epos</h2>
 
                     <div class="info-bar">
                         <button id="tts-btn-2" class="info-btn" onclick="toggleInfo(2)">TTS</button>
@@ -918,17 +918,24 @@
             // Setup Persistence
             setupPersistence(audio);
 
-            // Setup MediaSession (Specific for Ep 1 currently)
-            if (id === 1) {
-                setupMediaSession(audio, {
-                    title: "E01: Korrespondenz System Analyse",
-                    artist: "Villa Kunterbunt",
-                    album: "Das Kompendium",
-                    artwork: [
-                        { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
-                    ]
-                });
-            }
+            // Setup MediaSession
+            const metadata = (id === 1) ? {
+                title: "E01: Das Kompendium",
+                artist: "Villa Kunterbunt",
+                album: "Das Kompendium",
+                artwork: [
+                    { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
+                ]
+            } : {
+                title: "E02: Das Epos",
+                artist: "Villa Kunterbunt",
+                album: "Das Kompendium",
+                artwork: [
+                    { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
+                ]
+            };
+
+            setupMediaSession(audio, metadata);
 
             audio.addEventListener('timeupdate', () => {
                 const { duration, currentTime } = audio;
