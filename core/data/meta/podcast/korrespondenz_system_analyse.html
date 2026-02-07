@@ -588,6 +588,13 @@
             }
         }
 
+        /* Mobile specific overrides */
+        @media (max-width: 650px) {
+            .info-text {
+                text-align: left !important;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 650px) {
             .episode-card {
@@ -836,67 +843,7 @@
                 }
             </style>
 
-            <script>
-                function toggleDescription() {
-                    const shortDesc = document.getElementById('description-short');
-                    const fullDesc = document.getElementById('description-full');
-                    const btn = document.getElementById('toggle-description-btn');
-                    const text = document.getElementById('toggle-text');
-                    const icon = document.getElementById('toggle-icon');
 
-                    if (fullDesc.style.display === 'none') {
-                        fullDesc.style.display = 'block';
-                        shortDesc.style.display = 'none';
-                        text.textContent = 'Weniger anzeigen';
-                        btn.classList.add('expanded');
-                    } else {
-                        fullDesc.style.display = 'none';
-                        shortDesc.style.display = 'block';
-                        text.textContent = 'Mehr anzeigen';
-                        btn.classList.remove('expanded');
-                    }
-                }
-
-                // Interaction Logic
-                let ttsTimeout;
-
-                function toggleInfo() {
-                    const infoText = document.getElementById('info-text');
-
-                    if (ttsTimeout) clearTimeout(ttsTimeout);
-
-                    const isVisible = infoText.classList.toggle('visible');
-
-                    if (isVisible) {
-                        ttsTimeout = setTimeout(() => {
-                            infoText.classList.remove('visible');
-                        }, 10000);
-                    }
-                }
-
-                function triggerTTSHint() {
-                    const hintKey = 'meta_ep1_tts_hint_shown';
-                    if (localStorage.getItem(hintKey)) return;
-
-                    const ttsBtn = document.getElementById('tts-btn');
-
-                    setTimeout(() => {
-                        toggleInfo(); // Auto-open
-
-                        // Pulse effect
-                        if (ttsBtn) {
-                            ttsBtn.classList.add('pulse-gold');
-                            setTimeout(() => {
-                                ttsBtn.classList.remove('pulse-gold');
-                            }, 3000);
-                        }
-                    }, 500);
-
-                    localStorage.setItem(hintKey, 'true');
-                }
-
-
-            </script>
 
             <div class="player-controls">
                 <button class="control-btn" onclick="skip(-30)" title="-30s">
@@ -985,6 +932,55 @@
         const durationEl = document.getElementById('duration');
         const playBtn = document.getElementById('play-btn');
 
+        // Description Toggle
+        function toggleDescription() {
+            const shortDesc = document.getElementById('description-short');
+            const fullDesc = document.getElementById('description-full');
+            const btn = document.getElementById('toggle-description-btn');
+            const text = document.getElementById('toggle-text');
+
+            if (fullDesc.style.display === 'none') {
+                fullDesc.style.display = 'block';
+                shortDesc.style.display = 'none';
+                text.textContent = 'Weniger anzeigen';
+                btn.classList.add('expanded');
+            } else {
+                fullDesc.style.display = 'none';
+                shortDesc.style.display = 'block';
+                text.textContent = 'Mehr anzeigen';
+                btn.classList.remove('expanded');
+            }
+        }
+
+        // TTS Info Toggle
+        let ttsTimeout;
+        function toggleInfo() {
+            const infoText = document.getElementById('info-text');
+            if (ttsTimeout) clearTimeout(ttsTimeout);
+            const isVisible = infoText.classList.toggle('visible');
+            if (isVisible) {
+                ttsTimeout = setTimeout(() => {
+                    infoText.classList.remove('visible');
+                }, 10000);
+            }
+        }
+
+        // TTS Hint Auto-open logic (Per-Episode)
+        function triggerTTSHint() {
+            const hintKey = 'tts_hint_meta_e01'; // Shared key for E01
+            if (localStorage.getItem(hintKey)) return;
+
+            const ttsBtn = document.getElementById('tts-btn');
+            setTimeout(() => {
+                toggleInfo();
+                if (ttsBtn) {
+                    ttsBtn.classList.add('pulse-gold');
+                    setTimeout(() => ttsBtn.classList.remove('pulse-gold'), 3000);
+                }
+            }, 500);
+            localStorage.setItem(hintKey, 'true');
+        }
+
         // Set initial volume
         audio.volume = 0.8;
 
@@ -996,11 +992,9 @@
         function setupPersistence(audio) {
             const key = getPersistenceKey(audio.currentSrc || audio.src);
             const savedTime = localStorage.getItem(key);
-
             if (savedTime && !isNaN(savedTime)) {
                 audio.currentTime = parseFloat(savedTime);
             }
-
             audio.addEventListener('timeupdate', () => {
                 localStorage.setItem(key, audio.currentTime);
             });
@@ -1017,16 +1011,9 @@
                         { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                     ]
                 });
-
                 audio.addEventListener('play', () => {
                     navigator.mediaSession.setActionHandler('play', () => audio.play());
                     navigator.mediaSession.setActionHandler('pause', () => audio.pause());
-                    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-                        audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
-                    });
-                    navigator.mediaSession.setActionHandler('seekforward', (details) => {
-                        audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
-                    });
                 });
             }
         }
@@ -1037,16 +1024,13 @@
         audio.addEventListener('timeupdate', () => {
             const { duration, currentTime } = audio;
             if (isNaN(duration)) return;
-            const progressPercent = (currentTime / duration) * 100;
-            progressFill.style.width = `${progressPercent}%`;
+            progressFill.style.width = `${(currentTime / duration) * 100}%`;
             currentTimeEl.textContent = formatTime(currentTime);
         });
 
         progressContainer.addEventListener('click', (e) => {
             const width = progressContainer.clientWidth;
-            const clickX = e.offsetX;
-            const duration = audio.duration;
-            audio.currentTime = (clickX / width) * duration;
+            audio.currentTime = (e.offsetX / width) * audio.duration;
         });
 
         audio.addEventListener('loadedmetadata', () => {
@@ -1073,29 +1057,8 @@
             audio.volume = value;
         }
 
-        let ttsTimeout;
-
-        function toggleInfo() {
-            const infoText = document.getElementById('info-text');
-
-            if (ttsTimeout) clearTimeout(ttsTimeout);
-
-            const isVisible = infoText.classList.toggle('visible');
-
-            if (isVisible) {
-                ttsTimeout = setTimeout(() => {
-                    infoText.classList.remove('visible');
-                }, 10000);
-            }
-        }
-
         function openSource(url) {
-            if (url) {
-                window.open(url, '_blank');
-            } else {
-                // If no URL provided (empty string), open default
-                window.open('../documents/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf', '_blank');
-            }
+            window.open(url || '../documents/das_villa_kunterbunt_kompendium.pdf', '_blank');
         }
 
         playBtn.addEventListener('click', () => {

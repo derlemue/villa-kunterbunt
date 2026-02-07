@@ -497,6 +497,13 @@
             display: block;
         }
 
+        /* Mobile specific overrides */
+        @media (max-width: 650px) {
+            .info-text {
+                text-align: left !important;
+            }
+        }
+
         .badge {
             display: inline-block;
             padding: 2px 10px;
@@ -940,7 +947,7 @@
         }
 
         function triggerTTSHint(id) {
-            const hintKey = 'tts_hint_shown_meta'; // Unique key for meta
+            const hintKey = (id === 1) ? 'tts_hint_meta_e01' : `tts_hint_meta_e${id}`;
             if (localStorage.getItem(hintKey)) return;
 
             const ttsBtn = document.getElementById(`tts-btn-${id}`);
