@@ -560,7 +560,7 @@
     <div class="main-container">
         <header>
             <h1>Die Villa Kunterbunt</h1>
-            <div class="subtitle">Das Epos | Das Hörbuch</div>
+            <div class="subtitle">Korrespondenz Epos | Das Hörbuch</div>
             <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                 <a href="../../cowork/podcast/index.html" class="action-link">🎧 Die Anthologie</a>
                 <a href="../../meta/podcast/index.html" class="action-link">🎙️ Das Kompendium</a>
@@ -579,8 +579,8 @@
                 </div>
             </div>
 
-            <div class="episode-tag">Das Hörbuch</div>
-            <h2 class="episode-title">Die Villa Kunterbunt (Epos) <span class="badge">BETA</span></h2>
+            <div class="episode-tag">E01: Die erweiterte Studienanalyse</div>
+            <h2 class="episode-title">Das Hörbuch <span class="badge">BETA</span></h2>
 
             <div class="info-bar">
                 <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
@@ -776,9 +776,9 @@
         if ('mediaSession' in navigator) {
             audio.addEventListener('play', () => {
                 navigator.mediaSession.metadata = new MediaMetadata({
-                    title: "Die Villa Kunterbunt | Das Hörbuch (Epos)",
+                    title: "E01: Die erweiterte Studienanalyse",
                     artist: "Die Villa Kunterbunt",
-                    album: "Das Epos",
+                    album: "Korrespondenz Epos",
                     artwork: [
                         { src: new URL("../images/thumbs/die_villa_kunterbunt_abook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                     ]
