@@ -10,11 +10,6 @@ on:
 permissions:
   contents: write
   workflows: write
-<<<<<<< Updated upstream
-
-jobs:
-  call-sync:
-=======
   pull-requests: write
 
 jobs:
@@ -24,7 +19,6 @@ jobs:
       contents: write
       workflows: write
       pull-requests: write
->>>>>>> Stashed changes
     uses: lemueIO/.github/.github/workflows/central-sync-logic.yml@main
     with:
       upstream_url: "https://github.com/derlemue/villa-kunterbunt.git"
