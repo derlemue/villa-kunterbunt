@@ -9,7 +9,6 @@ on:
 # Globale Berechtigungen für das Token des Callers
 permissions:
   contents: write
-  workflows: write
   pull-requests: write
 
 jobs:
@@ -17,7 +16,6 @@ jobs:
     # ...und stellen sicher, dass der Job sie auch wirklich anwenden darf
     permissions:
       contents: write
-      workflows: write
       pull-requests: write
     uses: lemueIO/.github/.github/workflows/central-sync-logic.yml@main
     with:
