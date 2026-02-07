@@ -29,6 +29,34 @@
 
 
 ---
+<br>
+
+## v.1.2.2 (Infrastructure Optimization & Metadata)
+### "Dynamic Runners & Embedded Souls"
+*7. Februar 2026*
+
+> **Status:** Infrastruktur-Stabilisierung und MP3-Metadaten-Veredelung abgeschlossen.
+
+#### 🚀 Infrastructure & CI/CD
+*   **Dynamic Runner Selection:** Implementierung einer dynamischen Runner-Weiche im Deployment-Workflow.
+    *   **Upstream (`derlemue`):** Nutzung von GitHub-hosted Runnern (`ubuntu-latest`) für maximale Verfügbarkeit.
+    *   **Forks (`lemueIO`):** Automatische Nutzung von bis zu **8 Self-Hosted Docker-Runnern** zur Lastverteilung.
+*   **Sync Optimization:** Erhöhung der Synchronisations-Frequenz von täglich auf **alle 15 Minuten**, um Commit-Lag zu minimieren.
+*   **Cleanup:** Vollständige Entfernung von `.agent/` (ehemals `.ag/`) und temporären `.queue/` Verzeichnissen aus der Git-Historie.
+*   **Centralized Utilities:** Konsolidierung aller Wartungs-Scripte in `core/scripts/`.
+
+#### 🎵 Media & Metadata
+*   **ID3 Tagging:** Einbettung von Metadaten (Artist: "Villa Kunterbunt", Album-Art, Cover) direkt in alle Audiobook-MP3s mittels Mutagen/Python.
+*   **Title Revert:** Entfernung der technischen Nummerierung ("E01/E06") zugunsten der reinen Buchtitel ("Das Hörbuch") für ein cleanes Branding.
+*   **MediaSession API:** Dynamische Metadaten-Bereitschaft im Player für korrekte Anzeige in iPhone-Widgets und Sperrbildschirmen.
+*   **OpenGraph Optimization:** Website-Thumbnail auf **555KB** (1280x640) bei voller Qualität optimiert.
+
+#### 🎨 UI Harmonization
+*   **Layout Polish:** Vereinheitlichung der Abstände (`margin-top`) für Volume-Slider und Button-Abstände (`15px`) über alle Portale hinweg.
+*   **Root Index:** Korrektur des Audio-Fades und Standardisierung der Lautstärke-Vorgaben.
+
+---
+<br>
 
 ## v.1.2.1 (Podcast Navigation & Branding)
 ### "Epos, Kompendium & Anthologie"
