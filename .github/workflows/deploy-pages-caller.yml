@@ -6,14 +6,14 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   deploy:
+    # Hier werden die Pages- und Token-Rechte weitergegeben
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     uses: lemueIO/.github/.github/workflows/central-pages-logic.yml@main
     with:
-      publish_dir: '.' # Oder './site', falls die index.html dort liegt
+      publish_dir: '.'
     secrets: inherit
