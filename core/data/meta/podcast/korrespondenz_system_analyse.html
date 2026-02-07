@@ -210,7 +210,11 @@
         .episode-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
-            margin: 0 0 20px 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         .episode-description {
@@ -468,8 +472,7 @@
             gap: 15px;
             margin-bottom: 20px;
             flex-wrap: wrap;
-            width: 100%;
-            justify-content: flex-start;
+            justify-content: center;
         }
 
         .info-btn {
@@ -720,7 +723,7 @@
         <header>
             <h1>Die Villa Kunterbunt</h1>
             <div class="subtitle">Das Kompendium | Die erweiterte Studienanalyse</div>
-            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
                 <a href="../../main/podcast/index.html" class="action-link">🏰 Das Epos</a>
                 <a href="../../cowork/podcast/index.html" class="action-link">🎧 Die Anthologie</a>
             </div>
@@ -855,24 +858,6 @@
                 }
 
                 // Interaction Logic
-                function triggerTTSHint() {
-                    const hintKey = 'meta_ep1_tts_hint_shown';
-                    if (localStorage.getItem(hintKey)) return;
-
-                    const ttsBtn = document.getElementById('tts-btn');
-
-                    setTimeout(() => {
-                        toggleInfo(); // Auto-open with 10s timer
-
-                        ttsBtn.classList.add('pulse-gold');
-                        setTimeout(() => {
-                            ttsBtn.classList.remove('pulse-gold');
-                        }, 3000);
-                    }, 500);
-
-                    localStorage.setItem(hintKey, 'true');
-                }
-
                 let ttsTimeout;
 
                 function toggleInfo() {
@@ -885,16 +870,31 @@
                     if (isVisible) {
                         ttsTimeout = setTimeout(() => {
                             infoText.classList.remove('visible');
+                        }, 10000);
+                    }
+                }
+
+                function triggerTTSHint() {
+                    const hintKey = 'meta_ep1_tts_hint_shown';
+                    if (localStorage.getItem(hintKey)) return;
+
+                    const ttsBtn = document.getElementById('tts-btn');
+
+                    setTimeout(() => {
+                        toggleInfo(); // Auto-open
+
+                        // Pulse effect
+                        if (ttsBtn) {
                             ttsBtn.classList.add('pulse-gold');
                             setTimeout(() => {
                                 ttsBtn.classList.remove('pulse-gold');
                             }, 3000);
-                        }, 4000);
-                    }, 1000);
-                }, 500);
+                        }
+                    }, 500);
 
-                localStorage.setItem(hintKey, 'true');
+                    localStorage.setItem(hintKey, 'true');
                 }
+
 
             </script>
 
