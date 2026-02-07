@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   call-sync-fork:
+    if: github.repository != 'derlemue/villa-kunterbunt'
     # ...und stellen sicher, dass der Job sie auch wirklich anwenden darf
     permissions:
       contents: write
