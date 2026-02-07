@@ -1,20 +1,24 @@
 name: Sync Fork Caller
 
+# Harmonization update
 on:
   schedule:
-    - cron: '00 */2 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
-# Wir definieren die Permissions hier global...
+# Globale Berechtigungen für das Token des Callers
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   call-sync-fork:
     # ...und stellen sicher, dass der Job sie auch wirklich anwenden darf
     permissions:
       contents: write
+      pull-requests: write
     uses: lemueIO/.github/.github/workflows/central-sync-logic.yml@main
     with:
       upstream_url: "https://github.com/derlemue/villa-kunterbunt.git"
+      runs_on: 'ubuntu-latest'
     secrets: inherit

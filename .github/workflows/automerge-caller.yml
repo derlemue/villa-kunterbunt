@@ -1,10 +1,13 @@
+
 name: Fork Automerge Caller
 
+# Harmonization update
 on:
   pull_request_review:
     types: [submitted]
   check_run:
     types: [completed]
+  workflow_dispatch:
 
 jobs:
   automerge:
@@ -12,5 +15,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      workflows: write
     uses: lemueIO/.github/.github/workflows/central-automerge-logic.yml@main
     secrets: inherit

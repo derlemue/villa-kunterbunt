@@ -747,6 +747,19 @@
             }
         }
 
+        function toggleDescription() {
+            const desc = document.getElementById('desc-text');
+            const btn = document.getElementById('read-more-btn');
+            desc.classList.toggle('collapsed');
+            desc.classList.toggle('expanded');
+
+            if (desc.classList.contains('collapsed')) {
+                btn.innerText = "MEHR ANZEIGEN";
+            } else {
+                btn.innerText = "WENIGER ANZEIGEN";
+            }
+        }
+
         // Onboarding / TTS Hint Logic
         let ttsTimeout;
 

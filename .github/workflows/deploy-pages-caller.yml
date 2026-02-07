@@ -1,5 +1,6 @@
 name: Fork Deploy Caller
 
+# Harmonization update
 on:
   push:
     branches:
@@ -10,7 +11,7 @@ jobs:
   deploy:
     # Hier werden die Pages- und Token-Rechte weitergegeben
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
     uses: lemueIO/.github/.github/workflows/central-pages-logic.yml@main
