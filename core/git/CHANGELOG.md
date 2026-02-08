@@ -41,11 +41,13 @@
 *   **Dynamic Runner Selection:** Implementierung einer dynamischen Runner-Weiche im Deployment-Workflow.
     *   **Upstream (`derlemue`):** Nutzung von GitHub-hosted Runnern (`ubuntu-latest`) für maximale Verfügbarkeit.
     *   **Forks (`lemueIO`):** Automatische Nutzung von bis zu **8 Self-Hosted Docker-Runnern** zur Lastverteilung.
+*   **Deployment Stabilization:** Einführung von `concurrency: cancel-in-progress`, um Warteschlangen-Staus (Deadlocks) im Deployment zu verhindern.
 *   **Sync Optimization:** Erhöhung der Synchronisations-Frequenz von täglich auf **alle 15 Minuten**, um Commit-Lag zu minimieren.
 *   **Cleanup:** Vollständige Entfernung von `.agent/` (ehemals `.ag/`) und temporären `.queue/` Verzeichnissen aus der Git-Historie.
 *   **Centralized Utilities:** Konsolidierung aller Wartungs-Scripte in `core/scripts/`.
 
 #### 🎵 Media & Metadata
+*   **Audio Restoration:** Wiederherstellung der ungekürzten Audiobook-Fassungen (47MB+ statt 16MB) für Main und Cowork.
 *   **ID3 Tagging:** Einbettung von Metadaten (Artist: "Villa Kunterbunt", Album-Art, Cover) direkt in alle Audiobook-MP3s mittels Mutagen/Python.
 *   **Title Revert:** Entfernung der technischen Nummerierung ("E01/E06") zugunsten der reinen Buchtitel ("Das Hörbuch") für ein cleanes Branding.
 *   **MediaSession API:** Dynamische Metadaten-Bereitschaft im Player für korrekte Anzeige in iPhone-Widgets und Sperrbildschirmen.
