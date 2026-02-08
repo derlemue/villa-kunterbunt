@@ -492,18 +492,13 @@
             margin-bottom: 20px;
             border-left: 3px solid var(--accent-gold);
             animation: fadeIn 0.3s ease;
+            text-align: center;
         }
 
         .info-text.visible {
             display: block;
         }
 
-        /* Mobile specific overrides */
-        @media (max-width: 650px) {
-            .info-text {
-                text-align: left !important;
-            }
-        }
 
         .badge {
             display: inline-block;
@@ -558,6 +553,7 @@
 
         .volume-slider {
             -webkit-appearance: none;
+            appearance: none;
             width: 80px;
             height: 4px;
             background: rgba(255, 255, 255, 0.1);
@@ -567,6 +563,7 @@
 
         .volume-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
+            appearance: none;
             width: 12px;
             height: 12px;
             background: var(--text-muted);
