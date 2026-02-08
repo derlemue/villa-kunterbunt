@@ -773,146 +773,123 @@
             </div>
 
             <div class="episode-description">
-                <div class="episode-description collapsed" id="desc-text">
-                    In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
-                    als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
-                    Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
-                    <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
-                    <strong>Korrespondenzsysteme</strong> und die zugrunde liegende Architektur, wobei die Villa als
-                    <strong>monolithisches Gefüge</strong> identifiziert wird, das durch eine extreme Anhäufung
-                    technischer Schulden geprägt ist.
-                    <br><br>
-                    Die zentralen Argumente betreffen die <strong>mangelnde Governance</strong> und die
-                    <strong>kritische Sicherheitsarchitektur</strong> des Standorts. Es wird erörtert, wie das Fehlen
-                    einer effektiven Firewall den Zugriff durch externe Akteure wie staatliche Behörden begünstigt,
-                    während der „Root-User“ Pippi Langstrumpf durch unbeschränkte Privilegien jegliche Standardisierung
-                    verhindert. Die Diskussion beleuchtet zudem die asynchronen Kommunikationsprotokolle der
-                    Protagonistin sowie die Einbindung heterogener Peripherieeinheiten in das instabile Systemgefüge.
-                    <br><br>
-                    Der technologische Kontext verknüpft klassische Systemanalyse mit modernen Begriffen der
-                    <strong>IT-Security</strong> und des <strong>Prozessmanagements</strong>. Diese Folge bietet für
-                    Professionals im Bereich Software-Architektur und Business-Analyse einen innovativen Blickwinkel auf
-                    die Bewertung non-konformer Systeme und die Herausforderungen der <strong>Schatten-IT</strong>. Ein
-                    präziser Diskurs über die Belastbarkeit chaotischer Strukturen in einer regulatorisch geprägten
-                    Welt.
-                </div>
-                <button class="read-more-btn" id="read-more-btn" onclick="toggleDescription()">MEHR ANZEIGEN</button>
+            </div>
+            <button class="read-more-btn" id="read-more-btn" onclick="toggleDescription()">MEHR ANZEIGEN</button>
 
-                <style>
-                    .episode-description.collapsed {
-                        display: -webkit-box;
-                        -webkit-line-clamp: 3;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+            <style>
+                .episode-description.collapsed {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .episode-description.expanded {
+                    display: block;
+                }
+
+                .read-more-btn {
+                    background: none;
+                    border: none;
+                    color: var(--accent-gold);
+                    cursor: pointer;
+                    font-size: 0.85rem;
+                    margin-top: 5px;
+                    padding: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 600;
+                }
+
+                .read-more-btn:hover {
+                    text-decoration: underline;
+                }
+            </style>
+
+            <script>
+                function toggleDescription() {
+                    const desc = document.getElementById('desc-text');
+                    const btn = document.getElementById('read-more-btn');
+                    desc.classList.toggle('collapsed');
+                    desc.classList.toggle('expanded');
+
+                    if (desc.classList.contains('collapsed')) {
+                        btn.innerText = "MEHR ANZEIGEN";
+                    } else {
+                        btn.innerText = "WENIGER ANZEIGEN";
                     }
-
-                    .episode-description.expanded {
-                        display: block;
-                    }
-
-                    .read-more-btn {
-                        background: none;
-                        border: none;
-                        color: var(--accent-gold);
-                        cursor: pointer;
-                        font-size: 0.85rem;
-                        margin-top: 5px;
-                        padding: 0;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        font-weight: 600;
-                    }
-
-                    .read-more-btn:hover {
-                        text-decoration: underline;
-                    }
-                </style>
-
-                <script>
-                    function toggleDescription() {
-                        const desc = document.getElementById('desc-text');
-                        const btn = document.getElementById('read-more-btn');
-                        desc.classList.toggle('collapsed');
-                        desc.classList.toggle('expanded');
-
-                        if (desc.classList.contains('collapsed')) {
-                            btn.innerText = "MEHR ANZEIGEN";
-                        } else {
-                            btn.innerText = "WENIGER ANZEIGEN";
-                        }
-                    }
-                </script>
+                }
+            </script>
 
 
 
-                <div class="player-controls">
-                    <button class="control-btn" onclick="skip(-30)" title="-30s">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
-                        </svg>
-                    </button>
+            <div class="player-controls">
+                <button class="control-btn" onclick="skip(-30)" title="-30s">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                    </svg>
+                </button>
 
-                    <button class="play-btn" id="play-btn" aria-label="Play Episode">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z" />
-                        </svg>
-                    </button>
+                <button class="play-btn" id="play-btn" aria-label="Play Episode">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
 
-                    <button class="control-btn" onclick="skip(30)" title="+30s">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
-                        </svg>
-                    </button>
+                <button class="control-btn" onclick="skip(30)" title="+30s">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                    </svg>
+                </button>
 
-                    <div class="progress-wrapper">
-                        <div class="progress-bar-bg" id="progress-container">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
-                        <div class="time-display">
-                            <span id="current-time">0:00</span>
-                            <span id="duration">0:00</span>
-                        </div>
+                <div class="progress-wrapper">
+                    <div class="progress-bar-bg" id="progress-container">
+                        <div class="progress-fill" id="progress-fill"></div>
                     </div>
-
-                    <div class="volume-control">
-                        <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
-                            oninput="setVolume(this.value)">
+                    <div class="time-display">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
                     </div>
                 </div>
 
-                <audio id="audio-player"
-                    src="../audio/das_villa_kunterbunt_kompendium_die_erweiterte_studienanalyse.mp3"
-                    preload="metadata"></audio>
-
-                <div class="nav-links"
-                    style="border-top: none; margin-top: 10px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 10px;">
-                    <div style="display: flex; justify-content: center; gap: 20px;">
-                        <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M19 12H5M12 19l-7-7 7-7" />
-                            </svg>
-                            <span>Vorherige Episode</span>
-                        </button>
-                        <a href="korrespondenz_epos.html" class="nav-link">
-                            <span>Nächste Episode</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div style="display: flex; justify-content: center;">
-                        <a href="index.html" class="nav-link highlight">
-                            <span>Alle Episoden</span>
-                        </a>
-                    </div>
+                <div class="volume-control">
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                        oninput="setVolume(this.value)">
                 </div>
+            </div>
+
+            <audio id="audio-player" src="../audio/das_villa_kunterbunt_kompendium_die_erweiterte_studienanalyse.mp3"
+                preload="metadata"></audio>
+
+            <div class="nav-links"
+                style="border-top: none; margin-top: 10px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: center; gap: 20px;">
+                    <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        <span>Vorherige Episode</span>
+                    </button>
+                    <a href="korrespondenz_epos.html" class="nav-link">
+                        <span>Nächste Episode</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <a href="index.html" class="nav-link highlight">
+                        <span>Alle Episoden</span>
+                    </a>
+                </div>
+            </div>
         </article>
 
         <footer>
-            <a href="https://derlemue.github.io/villa-kunterbunt/"
+            <a href="https://github.com/derlemue/villa-kunterbunt"
                 style="display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); text-decoration:none; padding:10px 20px; border:1px solid var(--glass-border); border-radius:30px; transition:all 0.2s ease; background:rgba(255,255,255,0.05);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path
