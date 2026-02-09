@@ -16,5 +16,5 @@ jobs:
     uses: lemueIO/.github/.github/workflows/central-pages-logic.yml@main
     with:
       publish_dir: '.'
-      runs_on: ${{ (github.repository == 'lemueIO/villa-kunterbunt' || github.repository == 'derlemue/villa-kunterbunt') && 'self-hosted' || 'ubuntu-latest' }}
+      runs_on: ${{ github.repository == 'lemueIO/villa-kunterbunt' && 'self-hosted' || 'ubuntu-latest' }}
     secrets: inherit

@@ -1,4 +1,5 @@
 # Standard Sync Fork Caller (Harmonized)
+name: Sync Fork Caller
 on:
   schedule:
     - cron: '*/15 * * * *'
