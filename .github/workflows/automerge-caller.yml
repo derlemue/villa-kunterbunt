@@ -16,6 +16,4 @@ jobs:
       contents: write
       pull-requests: write
     uses: lemueIO/.github/.github/workflows/central-automerge-logic.yml@main
-    with:
-      runs_on: ${{ (github.repository == 'lemueIO/villa-kunterbunt' || github.repository == 'derlemue/villa-kunterbunt') && 'self-hosted' || 'ubuntu-latest' }}
     secrets: inherit
