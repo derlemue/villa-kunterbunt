@@ -1,7 +1,7 @@
 import os
 import sys
 from mutagen.mp3 import MP3
-from mutagen.id3 import ID3, APIC, TIT2, TPE1, TALB, error
+from mutagen.id3 import ID3, APIC, TIT2, TPE1, TALB, TLEN, error
 
 def embed_metadata(mp3_path, img_path, title, artist, album):
     print(f"Processing {mp3_path}...")
@@ -17,6 +17,10 @@ def embed_metadata(mp3_path, img_path, title, artist, album):
         audio.tags.add(TIT2(encoding=3, text=title))
         audio.tags.add(TPE1(encoding=3, text=artist))
         audio.tags.add(TALB(encoding=3, text=album))
+        
+        # Add TLEN (Duration in ms)
+        duration_ms = int(audio.info.length * 1000)
+        audio.tags.add(TLEN(encoding=3, text=str(duration_ms)))
         
         with open(img_path, 'rb') as img_file:
             audio.tags.add(
