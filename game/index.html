@@ -22,7 +22,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* FIX 1: Hintergrundbild wieder eingefügt */
+            /* Hintergrundbild Villa Kunterbunt */
             background-image: url('https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/core/data/main/images/die_villa_kunterbunt_wallpaper.png');
             background-size: cover;
             background-position: center;
@@ -40,20 +40,25 @@
 
         h1 { 
             margin-bottom: 20px; 
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+            /* Textschatten verstärkt für Lesbarkeit auf buntem Grund */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 2px 2px 4px rgba(0,0,0,0.5);
             color: #111;
             font-weight: 900;
+            text-align: center;
         }
 
         .game-container {
-            /* FIX 2: Container transparent gemacht (0.9 alpha) */
-            background: rgba(255, 255, 255, 0.9); 
+            /* FIX 1: Transparenz stark erhöht (0.45 Alpha) */
+            background: rgba(255, 255, 255, 0.45); 
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             width: 100%;
             max-width: 850px;
-            backdrop-filter: blur(5px); /* Milchglas-Effekt für bessere Lesbarkeit */
+            /* Starker Weichzeichner für den Hintergrund (Milchglas-Effekt) */
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         /* --- ZÄHLER VISUALISIERUNG (OBEN) --- */
@@ -221,42 +226,49 @@
 
         /* Werkzeugkasten */
         .toolbox-container { margin-bottom: 35px; }
-        .toolbox-container h3 { margin-bottom: 15px; color: #374151; }
+        .toolbox-container h3 { 
+            margin-bottom: 15px; 
+            color: #111; /* Dunklerer Text für Kontrast */
+            font-weight: 800;
+        }
         .toolbox {
             display: flex;
             gap: 25px;
             padding: 25px;
-            background-color: #f8fafc;
+            background-color: rgba(248, 250, 252, 0.8); /* Leicht transparentes Weiß */
             border-radius: 10px;
-            border: 3px dashed #cbd5e1;
+            border: 3px dashed #94a3b8;
             justify-content: center;
-            align-items: center; /* Zentriert die größeren Kabel */
+            align-items: center;
         }
         
-        /* FIX 4: Kabel zur Auswahl sind größer (Faktor ~1.5) */
+        /* Kabel zur Auswahl */
         .loose-cable {
-            width: 80px;  /* Breiter */
-            height: 40px; /* Dicker */
+            width: 80px;  
+            height: 40px; 
             border-radius: 20px;
             cursor: pointer;
             border: 4px solid transparent;
             transition: all 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             position: relative;
+            margin-right: 25px; /* Mehr Platz für das lange Kupfer */
         }
         
-        /* FIX 3: Abisoliertes Kupfer-Ende wieder hinzugefügt und vergrößert */
+        /* FIX 2: Kupfer-Ende Faktor 3 verlängert */
         .loose-cable::after { 
             content: ''; 
             position: absolute; 
-            right: -8px; /* Weiter draußen */
+            /* Länge verdreifacht (36px statt 12px) */
+            width: 36px; 
+            height: 24px;
+            /* Position angepasst, damit es anliegt */
+            right: -32px; 
             top: 50%; 
             transform: translateY(-50%);
-            width: 12px; /* Länger */
-            height: 24px; /* Dicker */
             background: linear-gradient(to right, #b45309, #d97706); 
-            border-radius: 3px;
-            box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         
         .loose-cable:hover { transform: translateY(-3px); }
@@ -269,12 +281,13 @@
 
         /* UI Elemente */
         .progress-section { margin-bottom: 20px; }
+        .progress-section p { font-weight: bold; }
         .progress-bar-bg {
-            background-color: #e5e7eb;
+            background-color: rgba(229, 231, 235, 0.8);
             height: 28px;
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
         }
         .progress-bar-fill {
             height: 100%;
@@ -304,18 +317,18 @@
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             opacity: 1;
         }
         #finish-btn:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
             background: linear-gradient(to bottom, #334155, #1e293b);
         }
         /* Disabled State */
         #finish-btn:disabled {
-            background: #cbd5e1; /* Helles Grau */
-            color: #94a3b8;
+            background: #94a3b8; 
+            color: #e2e8f0;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
@@ -325,6 +338,7 @@
         #message-area {
             margin-top: 35px; padding: 25px; border-radius: 10px; text-align: center; display: none;
             animation: slideIn 0.5s ease-out;
+            background: rgba(255, 255, 255, 0.95); /* Nachrichten deckender für Lesbarkeit */
         }
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .msg-success { background-color: #f0fdf4; color: #166534; border: 2px solid var(--success); }
@@ -400,8 +414,6 @@
         };
 
         // --- KONFIGURATION DER KLEMMEN ---
-        
-        // 1. Bereits belegte Klemmen (Eingang + N/PE)
         const prefilledTerminals = {
             0: 'brown',         // 1 (L1 In)
             3: 'black',         // 4 (L2 In)
@@ -409,13 +421,8 @@
             9: 'green-yellow',  // 10 (N/PE)
             11: 'green-yellow'  // 12 (N/PE)
         };
-
-        // 2. Leere aber blockierte Klemmen (Klemme 11 / Index 10)
         const blockedEmptyIndices = [10];
-
-        // 3. Visuelle Markierung der Zielklemmen (3, 6, 9)
         const highlightedIndices = [2, 5, 8];
-
 
         // --- Initialisierung ---
         function initGame() {
@@ -432,14 +439,11 @@
                 slot.className = 'terminal-slot';
                 slot.id = `terminal-${i}`;
 
-                // Markierung (Ziel)
                 if (highlightedIndices.includes(i)) {
                     slot.classList.add('target-highlight');
                 }
 
-                // Logik: Was ist in der Klemme?
                 if (prefilledTerminals.hasOwnProperty(i)) {
-                    // Fall A: Vorbelegt mit Kabel
                     slot.classList.add('blocked');
                     const cableColor = prefilledTerminals[i];
                     const cableDiv = document.createElement('div');
@@ -448,13 +452,9 @@
                     terminalConnections[i] = 'locked';
 
                 } else if (blockedEmptyIndices.includes(i)) {
-                    // Fall B: Leer aber blockiert (Klemme 11)
                     slot.classList.add('blocked');
-                    // Kein Kabel, aber locked
                     terminalConnections[i] = 'locked-empty';
-
                 } else {
-                    // Fall C: Frei und klickbar (Richtige und falsche Ziele)
                     slot.onclick = () => connectToTerminal(i);
                 }
 
@@ -509,13 +509,12 @@
             fillElement.style.width = `${percent}%`;
             fillElement.innerText = `${percent}%`;
 
-            // Logik: Button erst ab 66% (2 Kabel) aktiv
             if (percent >= 66) {
-                fillElement.classList.add('ready'); // Wird grün
-                finishBtn.disabled = false;         // Button aktiv
+                fillElement.classList.add('ready'); 
+                finishBtn.disabled = false;         
             } else {
-                fillElement.classList.remove('ready'); // Bleibt blau
-                finishBtn.disabled = true;             // Button inaktiv
+                fillElement.classList.remove('ready'); 
+                finishBtn.disabled = true;             
             }
         }
 
