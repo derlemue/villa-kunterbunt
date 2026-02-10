@@ -2,7 +2,7 @@
 .agent/
 .inbox/
 .queue/
-.core/audio-post/media/
+.core/scripts/audio-post/media/
 temp_audio.mp3
 temp_runner_checkout/
 *.log
