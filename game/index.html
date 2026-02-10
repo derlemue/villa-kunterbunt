@@ -33,7 +33,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Technischer Hintergrund für den Blur-Effekt */
+            /* Technischer Hintergrund mit Unschärfe-Effekt */
             background-color: #cbd5e1;
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
@@ -272,41 +272,21 @@
             justify-content: center;
         }
 
-        /* Realistische Kabel zur Auswahl */
+        /* KABEL ZUR AUSWAHL: Angepasst */
         .loose-cable {
-            width: 80px;
-            height: 120px; /* Länglicher, wie ein Stück Kabel */
-            border-radius: 6px;
+            /* Skalierung um Faktor 1,5 der montierten Kabelbreite (70% -> 105%) */
+            width: 105%;
+            /* Skalierung um Faktor 1,5 der montierten Kabelhöhe (110% -> 165%) */
+            height: 165%;
+            border-radius: 6px 6px 0 0; /* Nur oben abgerundet, wie montierte */
             cursor: pointer;
             position: relative;
             transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+            box-shadow: inset 0 -5px 10px rgba(0,0,0,0.3), 2px 0 5px rgba(0,0,0,0.2); /* Gleicher Schatten wie montierte */
             border: 2px solid transparent;
         }
-
-        /* Kupfer-Ende */
-        .loose-cable::after { 
-            content: ''; 
-            position: absolute; 
-            top: -15px; /* Oben rausstehend */
-            left: 50%; 
-            transform: translateX(-50%);
-            width: 12px; 
-            height: 15px; 
-            background: linear-gradient(to right, #b45309, #f59e0b, #b45309); /* Kupfer Gold */
-            border-radius: 2px 2px 0 0;
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.4);
-        }
         
-        /* Schnittkante unten */
-        .loose-cable::before {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 6px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 0 0 6px 6px;
-        }
+        /* Kein Kupfer-Ende mehr, da nicht abisoliert */
 
         .loose-cable:hover { transform: translateY(-10px) scale(1.02); }
         
