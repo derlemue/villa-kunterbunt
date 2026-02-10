@@ -3,163 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOLarex Simulator: Profi Edition</title>
+    <title>Zähler-Anschluss: LOLarex Simulation</title>
     <style>
         :root {
-            /* Farben */
-            --bg-dark: #1e293b;
+            --bg-color: #f0f2f5;
             --terminal-bg: #d1d5db;
             --screw-color: #6b7280;
-            
-            --brown-main: #8B4513;
-            --brown-light: #a05a2c;
-            --brown-dark: #5e2f0d;
-
-            --black-main: #222222;
-            --black-light: #444444;
-            --black-dark: #000000;
-
-            --grey-main: #808080;
-            --grey-light: #a6a6a6;
-            --grey-dark: #595959;
-
-            --highlight-color: rgba(34, 197, 94, 0.4);
+            --brown-cable: #8B4513;
+            --black-cable: #222222;
+            --grey-cable: #808080;
+            --highlight-color: rgba(34, 197, 94, 0.2);
             --select-highlight: #3b82f6;
             --success: #22c55e;
             --warning: #eab308;
             --error: #ef4444;
-            --meter-white: rgba(243, 244, 246, 0.95);
+            --meter-white: #f3f4f6;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Technischer Hintergrund mit Unschärfe-Effekt */
-            background-color: #cbd5e1;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
-            background-size: 40px 40px;
+            /* FIX 1: Hintergrundbild wieder eingefügt */
+            background-image: url('https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/core/data/main/images/die_villa_kunterbunt_wallpaper.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            color: #1f2937;
+            color: #333;
         }
 
         h1 { 
             margin-bottom: 20px; 
-            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
-            color: #0f172a;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+            color: #111;
+            font-weight: 900;
         }
 
-        /* --- GLASS CONTAINER --- */
         .game-container {
-            /* Transparenz & Blur */
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            
+            /* FIX 2: Container transparent gemacht (0.9 alpha) */
+            background: rgba(255, 255, 255, 0.9); 
             padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             width: 100%;
             max-width: 850px;
-            position: relative;
+            backdrop-filter: blur(5px); /* Milchglas-Effekt für bessere Lesbarkeit */
         }
 
-        /* --- PROFI MODE SWITCH --- */
-        .profi-switch-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            background: rgba(255,255,255,0.8);
-            padding: 8px 12px;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .switch-label {
-            margin-right: 10px;
-            font-weight: bold;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 40px;
-            height: 22px;
-        }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        input:checked + .slider { background-color: #ef4444; } /* Rot für Gefahr/Profi */
-        input:checked + .slider:before { transform: translateX(18px); }
-
-        /* --- ZÄHLER VISUALISIERUNG --- */
+        /* --- ZÄHLER VISUALISIERUNG (OBEN) --- */
         .meter-body {
             background-color: var(--meter-white);
-            border: 1px solid #94a3b8;
+            border: 2px solid #9ca3af;
             border-bottom: none;
             border-radius: 8px 8px 0 0;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
         }
 
+        /* LCD Display */
         .lcd-display {
-            background-color: #dbead5;
-            border: 2px solid #64748b;
+            background-color: #dbead5; /* LCD Grüngrau */
+            border: 2px solid #94a3b8;
             border-radius: 4px;
             width: 60%;
             margin: 0 auto 15px auto;
             padding: 15px;
             font-family: 'Courier New', monospace;
             box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+            position: relative;
         }
         
-        .lcd-top-row { font-size: 14px; font-weight: bold; margin-bottom: 5px; color: #333; }
-        .lcd-main-value { font-size: 32px; font-weight: bold; text-align: right; letter-spacing: 2px; color: #111; }
+        .lcd-top-row {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .lcd-main-value {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: right;
+            letter-spacing: 2px;
+            color: #111;
+        }
         .lcd-unit { font-size: 16px; margin-left: 5px; }
 
+        /* Beschriftung */
         .meter-branding {
-            display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
-        .brand-name { font-size: 24px; font-weight: 800; color: #1e3a8a; }
-        .model-name { font-size: 18px; font-weight: 600; color: #4b5563; }
+        .brand-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e3a8a; /* Dunkelblau */
+        }
+        .model-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4b5563;
+        }
 
-        /* --- KLEMMENLEISTE --- */
+        /* --- KLEMMENLEISTE (UNTEN) --- */
         .meter-terminals-block {
-            background: linear-gradient(to bottom, #f3f4f6 0%, #d1d5db 100%);
+            background: linear-gradient(to bottom, #e5e7eb 0%, #d1d5db 100%);
             padding: 15px 20px 25px 20px;
             border-radius: 0 0 8px 8px;
-            border: 1px solid #94a3b8;
-            border-top: 4px solid #6b7280;
+            border: 2px solid #9ca3af;
+            border-top: 4px solid #6b7280; /* Trennlinie */
             margin-bottom: 35px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .terminals-row {
@@ -169,26 +132,33 @@
         }
 
         .terminal-wrapper {
-            display: flex; flex-direction: column; align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .terminal-label {
-            font-weight: 600; margin-bottom: 6px; color: #4b5563; font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #4b5563;
+            font-size: 14px;
         }
 
         .terminal-slot {
             width: 100%;
-            height: 70px;
+            height: 65px;
             background-color: var(--terminal-bg);
             border: 2px solid #9ca3af;
             border-radius: 4px;
             position: relative;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
-            display: flex; justify-content: center; align-items: flex-end;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
             overflow: hidden;
-            background-image: radial-gradient(#999 1px, transparent 1px);
-            background-size: 4px 4px;
+            /* Comic-Raster Effekt */
+            background-image: url('data:image/svg+xml;utf8,<svg width="4" height="4" viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="0.5" fill="%23000" opacity="0.1"/></svg>');
         }
 
         .terminal-slot:hover:not(.blocked) {
@@ -196,124 +166,119 @@
             background-color: #e2e8f0;
         }
 
-        /* --- HIGHLIGHT LOGIK --- */
-        
-        /* Normal: Ziel leuchtet */
+        /* Ziel-Klemmen Leuchten */
         .terminal-slot.target-highlight {
             background-color: var(--highlight-color);
-            box-shadow: inset 0 0 10px var(--highlight-color);
-            border-color: #86efac;
+            box-shadow: inset 0 0 8px var(--highlight-color);
         }
 
-        /* PROFI MODE: Leuchten ausblenden */
-        .terminals-row.profi-mode .terminal-slot.target-highlight {
-            background-color: var(--terminal-bg);
-            box-shadow: none;
-            border-color: #9ca3af;
-            background-image: radial-gradient(#999 1px, transparent 1px); /* Reset Pattern */
-        }
-        /* Hover im Profi Mode trotzdem zeigen, damit man weiß dass klickbar */
-        .terminals-row.profi-mode .terminal-slot.target-highlight:hover {
-            border-color: var(--select-highlight);
-            background-color: #e2e8f0;
-        }
-
-
+        /* Blockierte Klemmen */
         .terminal-slot.blocked {
             cursor: not-allowed;
             background-color: #cbd5e1;
             opacity: 0.9;
         }
-
+        /* Schraube */
         .screw-head {
-            position: absolute; top: 5px; width: 22px; height: 22px;
-            background: radial-gradient(circle at 30% 30%, #f3f4f6, #4b5563);
-            border-radius: 50%; border: 1px solid #374151;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+            position: absolute;
+            top: 5px;
+            width: 22px;
+            height: 22px;
+            background: radial-gradient(circle at 30% 30%, #d1d5db, #4b5563);
+            border-radius: 50%;
+            border: 1px solid #374151;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
             z-index: 2;
         }
         .screw-head::after {
-            content: '+'; position: absolute; color: #e5e7eb;
-            font-size: 20px; line-height: 19px; left: 2px; top: 0;
+            content: '+';
+            position: absolute;
+            color: #e5e7eb;
+            font-size: 20px;
+            line-height: 19px;
+            left: 2px;
+            top: 0;
             text-shadow: 0 1px 1px rgba(0,0,0,0.8);
         }
 
-        /* --- KABEL DESIGN (REALISTISCH) --- */
-        
-        /* Basis für angeschlossene Kabel */
+        /* Kabel Darstellung (Montiert) */
         .connected-cable {
-            width: 70%;
+            width: 65%; /* Relativ schmal wenn montiert */
             height: 110%;
             margin-bottom: -35px;
             border-radius: 4px 4px 0 0;
-            box-shadow: inset 0 -5px 10px rgba(0,0,0,0.3), 2px 0 5px rgba(0,0,0,0.2);
+            box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.2);
+            border-bottom: none;
             z-index: 1;
         }
-
-        /* Farbspezifische 3D Verläufe */
-        .cable-brown { background: linear-gradient(to right, var(--brown-dark), var(--brown-main), var(--brown-light), var(--brown-main), var(--brown-dark)); }
-        .cable-black { background: linear-gradient(to right, var(--black-dark), var(--black-main), var(--black-light), var(--black-main), var(--black-dark)); }
-        .cable-grey { background: linear-gradient(to right, var(--grey-dark), var(--grey-main), var(--grey-light), var(--grey-main), var(--grey-dark)); }
-        
+        .cable-brown { background-color: var(--brown-cable); }
+        .cable-black { background-color: var(--black-cable); }
+        .cable-grey { background-color: var(--grey-cable); }
         .cable-green-yellow {
-            background: repeating-linear-gradient(45deg, #ca8a04, #ca8a04 10px, #16a34a 10px, #16a34a 20px);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+            background: repeating-linear-gradient(45deg, #eab308, #eab308 10px, #22c55e 10px, #22c55e 20px);
         }
 
-        /* --- WERKZEUGKASTEN --- */
+        /* Werkzeugkasten */
         .toolbox-container { margin-bottom: 35px; }
-        .toolbox-container h3 { margin-bottom: 15px; color: #374151; text-align: center;}
-        
+        .toolbox-container h3 { margin-bottom: 15px; color: #374151; }
         .toolbox {
-            display: flex; gap: 30px; padding: 30px;
-            background: rgba(255,255,255,0.5); /* Leicht transparent */
+            display: flex;
+            gap: 25px;
+            padding: 25px;
+            background-color: #f8fafc;
             border-radius: 10px;
-            border: 2px dashed #94a3b8;
+            border: 3px dashed #cbd5e1;
             justify-content: center;
+            align-items: center; /* Zentriert die größeren Kabel */
         }
-
-        /* KABEL ZUR AUSWAHL: Angepasst */
+        
+        /* FIX 4: Kabel zur Auswahl sind größer (Faktor ~1.5) */
         .loose-cable {
-            /* Skalierung um Faktor 1,5 der montierten Kabelbreite (70% -> 105%) */
-            width: 105%;
-            /* Skalierung um Faktor 1,5 der montierten Kabelhöhe (110% -> 165%) */
-            height: 165%;
-            border-radius: 6px 6px 0 0; /* Nur oben abgerundet, wie montierte */
+            width: 80px;  /* Breiter */
+            height: 40px; /* Dicker */
+            border-radius: 20px;
             cursor: pointer;
+            border: 4px solid transparent;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: relative;
-            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: inset 0 -5px 10px rgba(0,0,0,0.3), 2px 0 5px rgba(0,0,0,0.2); /* Gleicher Schatten wie montierte */
-            border: 2px solid transparent;
         }
         
-        /* Kein Kupfer-Ende mehr, da nicht abisoliert */
-
-        .loose-cable:hover { transform: translateY(-10px) scale(1.02); }
+        /* FIX 3: Abisoliertes Kupfer-Ende wieder hinzugefügt und vergrößert */
+        .loose-cable::after { 
+            content: ''; 
+            position: absolute; 
+            right: -8px; /* Weiter draußen */
+            top: 50%; 
+            transform: translateY(-50%);
+            width: 12px; /* Länger */
+            height: 24px; /* Dicker */
+            background: linear-gradient(to right, #b45309, #d97706); 
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
         
+        .loose-cable:hover { transform: translateY(-3px); }
         .loose-cable.selected {
-            border-color: var(--select-highlight); 
-            transform: translateY(-15px) scale(1.05); 
-            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.5);
+            border-color: var(--select-highlight); transform: scale(1.05); box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
         }
-        
         .loose-cable.used {
-            opacity: 0.3; cursor: not-allowed; transform: none; border-color: transparent; box-shadow: none;
-            filter: grayscale(100%);
+            opacity: 0.4; cursor: not-allowed; transform: none; border-color: transparent; box-shadow: none;
         }
 
         /* UI Elemente */
         .progress-section { margin-bottom: 20px; }
         .progress-bar-bg {
-            background-color: rgba(229, 231, 235, 0.5);
+            background-color: #e5e7eb;
             height: 28px;
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
         }
         .progress-bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, #3b82f6, #2563eb);
+            background-color: #3b82f6; /* Startet Blau */
             width: 0%;
             transition: all 0.4s ease;
             text-align: center;
@@ -322,8 +287,9 @@
             line-height: 28px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
+        /* Grün wenn fertig */
         .progress-bar-fill.ready {
-            background: linear-gradient(90deg, #22c55e, #16a34a);
+            background-color: var(--success);
         }
 
         .controls { text-align: center; margin-top: 20px; }
@@ -332,21 +298,24 @@
             background: linear-gradient(to bottom, #1e293b, #0f172a);
             color: white;
             border: none;
-            padding: 16px 40px;
+            padding: 16px 32px;
             font-size: 18px;
             font-weight: 600;
-            border-radius: 30px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 1;
         }
         #finish-btn:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
             background: linear-gradient(to bottom, #334155, #1e293b);
         }
+        /* Disabled State */
         #finish-btn:disabled {
-            background: #94a3b8;
+            background: #cbd5e1; /* Helles Grau */
+            color: #94a3b8;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
@@ -355,15 +324,12 @@
         /* Nachrichten */
         #message-area {
             margin-top: 35px; padding: 25px; border-radius: 10px; text-align: center; display: none;
-            background: rgba(255,255,255,0.9);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
             animation: slideIn 0.5s ease-out;
         }
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .msg-success { border-left: 5px solid var(--success); color: #166534; }
-        .msg-warning { border-left: 5px solid var(--warning); color: #854d0e; }
-        .msg-error { border-left: 5px solid var(--error); color: #991b1b; }
+        .msg-success { background-color: #f0fdf4; color: #166534; border: 2px solid var(--success); }
+        .msg-warning { background-color: #fefce8; color: #854d0e; border: 2px solid var(--warning); }
+        .msg-error { background-color: #fef2f2; color: #991b1b; border: 2px solid var(--error); }
         .msg-title { font-size: 26px; font-weight: 800; margin-bottom: 12px; display: block; }
 
         .confetti {
@@ -375,20 +341,12 @@
 </head>
 <body>
 
-    <h1>LOLarex Simulator <span style="font-size: 0.6em; font-weight:normal; opacity:0.7">Profi Edition</span></h1>
+    <h1>LOLarex Simulator: Abgangsverdrahtung</h1>
 
     <div class="game-container">
         
-        <div class="profi-switch-container">
-            <span class="switch-label">Profi-Mode</span>
-            <label class="switch">
-                <input type="checkbox" id="profi-toggle" onchange="toggleProfiMode()">
-                <span class="slider round"></span>
-            </label>
-        </div>
-
         <div class="progress-section">
-            <p style="font-weight:600; color:#4b5563;">Fortschritt (mind. 66% benötigt):</p>
+            <p>Fortschritt (mind. 66% benötigt):</p>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="progress-fill">0%</div>
             </div>
@@ -411,7 +369,7 @@
         </div>
 
         <div class="toolbox-container">
-            <h3>Kabel auswählen (Abgang)</h3>
+            <h3>Kabel wählen (Abgang)</h3>
             <div class="toolbox">
                 <div class="loose-cable cable-brown" id="btn-brown" onclick="selectCable('brown')" title="Phase L1"></div>
                 <div class="loose-cable cable-black" id="btn-black" onclick="selectCable('black')" title="Phase L2"></div>
@@ -442,6 +400,8 @@
         };
 
         // --- KONFIGURATION DER KLEMMEN ---
+        
+        // 1. Bereits belegte Klemmen (Eingang + N/PE)
         const prefilledTerminals = {
             0: 'brown',         // 1 (L1 In)
             3: 'black',         // 4 (L2 In)
@@ -449,7 +409,11 @@
             9: 'green-yellow',  // 10 (N/PE)
             11: 'green-yellow'  // 12 (N/PE)
         };
+
+        // 2. Leere aber blockierte Klemmen (Klemme 11 / Index 10)
         const blockedEmptyIndices = [10];
+
+        // 3. Visuelle Markierung der Zielklemmen (3, 6, 9)
         const highlightedIndices = [2, 5, 8];
 
 
@@ -475,6 +439,7 @@
 
                 // Logik: Was ist in der Klemme?
                 if (prefilledTerminals.hasOwnProperty(i)) {
+                    // Fall A: Vorbelegt mit Kabel
                     slot.classList.add('blocked');
                     const cableColor = prefilledTerminals[i];
                     const cableDiv = document.createElement('div');
@@ -483,10 +448,13 @@
                     terminalConnections[i] = 'locked';
 
                 } else if (blockedEmptyIndices.includes(i)) {
+                    // Fall B: Leer aber blockiert (Klemme 11)
                     slot.classList.add('blocked');
+                    // Kein Kabel, aber locked
                     terminalConnections[i] = 'locked-empty';
 
                 } else {
+                    // Fall C: Frei und klickbar (Richtige und falsche Ziele)
                     slot.onclick = () => connectToTerminal(i);
                 }
 
@@ -502,17 +470,6 @@
 
 
         // --- Spiellogik ---
-
-        function toggleProfiMode() {
-            const container = document.getElementById('terminals-container');
-            const checkbox = document.getElementById('profi-toggle');
-            
-            if (checkbox.checked) {
-                container.classList.add('profi-mode');
-            } else {
-                container.classList.remove('profi-mode');
-            }
-        }
 
         function selectCable(color) {
             if (cablesUsed[color]) return;
@@ -552,12 +509,13 @@
             fillElement.style.width = `${percent}%`;
             fillElement.innerText = `${percent}%`;
 
+            // Logik: Button erst ab 66% (2 Kabel) aktiv
             if (percent >= 66) {
-                fillElement.classList.add('ready');
-                finishBtn.disabled = false;
+                fillElement.classList.add('ready'); // Wird grün
+                finishBtn.disabled = false;         // Button aktiv
             } else {
-                fillElement.classList.remove('ready');
-                finishBtn.disabled = true;
+                fillElement.classList.remove('ready'); // Bleibt blau
+                finishBtn.disabled = true;             // Button inaktiv
             }
         }
 
