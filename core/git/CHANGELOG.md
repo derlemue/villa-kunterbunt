@@ -177,6 +177,10 @@
 ### "Druckfertige Ausgabe - Die Rakete ist in der Luft"
 *2. Februar 2026*
 
+<p align="center">
+  <img src="./images/villa_kunterbunt_print.png" width="60%" alt="Print Version" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+</p>
+
 > **Status:** Versand an Hauptdarsteller seit 02.02. erfolgreich ausgelöst.
 > **Update 03.02.:** Finaler Feinschliff der Dokumentation (Day 1 Patch).
 
