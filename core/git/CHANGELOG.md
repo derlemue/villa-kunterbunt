@@ -51,7 +51,7 @@
     *   **Meta-Portal:** Alle 6 Episoden inklusive Index verfügen nun über direkten Repo-Zugriff.
     *   **Main & Cowork:** Nachrüstung der "Repo"-Buttons in Indizes und Einzelseiten.
     *   **Branding:** Konsequente Nutzung des grünen `has-source` Stylings für alle Ressourcen-Links.
-*   **Content Patch (E03 Meta):** Aktualisierung der Quellenverlinkung für die Trustpilot-Analyse auf den spezifischen Enthüllungsbericht.
+*   **Content Patch (E03 Meta):** Aktualisierung der Quellenverlinkung für die Trustpilot-Analyse auf den spezifischen Enthüllungsbericht (Einzelseite & Index).
 *   **Link-Fix (Index):** Umstellung der Fork-Links von Repositories auf GitHub-Pages-URLs für direkten Zugriff auf die Live-Demos.
 *   **Mobile Widget:** Optimierung der iPhone-Player-Anzeige durch synchronisierte Audiobook-Cover-Metadaten.
 
