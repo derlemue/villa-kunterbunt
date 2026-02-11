@@ -3,126 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index - Die Villa Kunterbunt (Loudness War Edition)</title>
+    <title>Master Index - Die Villa Kunterbunt (Loudness War Edition)</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --container-bg: #1e1e1e;
-            --text-main: #e0e0e0;
-            --text-dim: #b0b0b0;
-            --accent: #bb86fc;
-            --accent-dim: #3700b3;
-            --border: #333;
-            --code-bg: #2d2d2d;
+            --bg-color: #0f0f0f;
+            --container-bg: #181818;
+            --text-main: #f0f0f0;
+            --text-dim: #a0a0a0;
+            --accent: #d4af37; /* Gold Akzent für Epos-Charakter */
+            --accent-dim: #5c4d1a;
+            --border: #2a2a2a;
+            --code-bg: #000000;
+            --success: #4caf50;
         }
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Consolas', 'Monaco', monospace; 
             line-height: 1.6; 
             background-color: var(--bg-color); 
             color: var(--text-main); 
             padding: 40px 20px;
-            max-width: 900px;
+            max-width: 1100px;
             margin: auto;
         }
-        h1 { color: var(--accent); border-bottom: 2px solid var(--accent-dim); padding-bottom: 10px; }
+        h1 { color: var(--accent); border-bottom: 2px solid var(--accent-dim); padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
         h2 { color: var(--accent); margin-top: 0; }
         .release-item { 
             background: var(--container-bg); 
             border: 1px solid var(--border); 
-            padding: 25px; 
-            margin-bottom: 30px; 
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            padding: 30px; 
+            margin-bottom: 35px; 
+            border-radius: 4px;
+            position: relative;
         }
         .tech-specs { 
-            font-size: 0.9em; 
+            font-size: 0.85em; 
             color: var(--text-dim); 
             background: var(--code-bg); 
-            padding: 15px; 
-            margin-top: 15px; 
-            border-radius: 4px;
-            border-left: 4px solid var(--accent);
+            padding: 20px; 
+            margin-top: 20px; 
+            border: 1px solid var(--border);
         }
         .macro-box {
             font-family: 'Courier New', monospace;
-            font-size: 0.8em;
-            background: #000;
-            color: #0f0;
-            padding: 10px;
+            font-size: 0.75em;
+            color: var(--success);
+            padding: 12px;
             margin-top: 10px;
             overflow-x: auto;
             white-space: pre-wrap;
-            border-radius: 4px;
+            border: 1px dashed var(--accent-dim);
         }
         .file-link { 
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold; 
-            color: var(--accent); 
+            color: #000; 
+            background-color: var(--accent);
             text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 2px;
+            transition: opacity 0.2s;
+        }
+        .file-link:hover { opacity: 0.8; }
+        .resource-list { list-style-type: none; padding: 0; }
+        .resource-list li { padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .resource-list a { color: var(--accent); text-decoration: none; }
+        hr { border: 0; border-top: 1px solid var(--border); margin: 50px 0; }
+        .status-badge { 
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
+            font-size: 0.7em; 
+            background: var(--accent-dim); 
+            padding: 5px 10px; 
+            color: #fff;
             border: 1px solid var(--accent);
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: all 0.3s;
         }
-        .file-link:hover {
-            background: var(--accent);
-            color: #000;
-        }
-        hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
     </style>
 </head>
 <body>
 
-    <h1>Die Villa Kunterbunt: Master Index</h1>
-    <p style="color: var(--text-dim);">Konfiguration: <strong>Loudness War Edition</strong> | Stand: Februar 2026</p>
+    <h1>Die Villa Kunterbunt: Post-Production Index</h1>
+    <p style="color: var(--text-dim);">Globale Mastering-Strategie: <strong>Loudness War</strong> (-14.0 LUFS)</p>
 
     <hr>
 
     <div class="release-item">
-        <h2>Episode IV: Das Erwachen des Feedbacks</h2>
-        <p>Ein Korrespondenz-Epos über Ticket-Systeme, Presse-Abteilungen und die prozessuale Kreativität moderner Konzerne.</p>
+        <div class="status-badge">POST-PROD: SCREEN 1-3</div>
+        <h2>Episode VI: Das Erwachen des Feedbacks</h2>
+        <p>Postproduktion abgeschlossen gemäß den Spezifikationen aus Screen 1-3. Aggressives Mastering für maximale Durchsetzungskraft.</p>
         
-        <a href="core/data/cowork/audio/villa_kunterbunt_anthologie_episode_iv.mp3" class="file-link">AUDIO HERUNTERLADEN (MP3)</a>
+        <a href="villa_kunterbunt_anthologie_episode_iv.mp3" class="file-link">DOWNLOAD EPISODE VI (.MP3)</a>
         
         <div class="tech-specs">
-            <strong>Mastering Scopes:</strong><br>
-            * Ziel-Lautheit: -14.0 LUFS (Maximum Impact)<br>
-            * Peak-Limit: -0.1 dB Hard Limit<br>
-            * EQ: Hoerbuch_Expert_V1 (150Hz Warmth / 3.5kHz Presence)
+            <strong>Mastering Scopes (Sprecher):</strong><br>
+            * EQ: 150Hz Warmth Boost / 3.5kHz Presence Peak<br>
+            * Dynamik: Ratio 6:1 / Threshold -26dB / Hard Limit -0.1dB
             <div class="macro-box">
-                FilterCurve:f0="20" f1="80" f2="150" f3="300" f4="2000" f5="3500" f6="8000" FilterLength="8191" InterpolateLin="0" InterpolationMethod="B-spline" v0="-30" v1="0" v2="3" v3="0" v4="0" v5="3" v6="0"
+FilterCurve:f0="20" f1="80" f2="150" f3="300" f4="2000" f5="3500" f6="8000" FilterLength="8191" InterpolateLin="0" InterpolationMethod="B-spline" v0="-30" v1="0" v2="3" v3="0" v4="0" v5="3" v6="0"
             </div>
         </div>
     </div>
 
     <div class="release-item">
-        <h2>Asset: Jingle (Background & Outro)</h2>
-        <p>Optimiertes Hintergrund-Thema mit Frequenz-Gap für maximale Sprachverständlichkeit.</p>
+        <div class="status-badge">PATH: SCREEN 4</div>
+        <h2>Background Asset: Jingle & Outro</h2>
+        <p>Hintergrundmusik für das Korrespondenz-Epos. Optimiert für mobile Endgeräte und Vocal-Transparency.</p>
         
-        <a href="core/website/global/audio/villa_kunterbunt_jingle_in_outro_background.mp3" class="file-link">JINGLE HERUNTERLADEN (MP3)</a>
+        <a href="villa_kunterbunt_jingle_in_outro_background.mp3" class="file-link">DOWNLOAD JINGLE (.MP3)</a>
         
         <div class="tech-specs">
-            <strong>Mastering Scopes:</strong><br>
-            * Mobile-Integrität: Brickwall Cut-Off @ 13.5 kHz<br>
-            * Vocal-Gap: -4dB Dip @ 3.5 kHz<br>
-            * Dynamik: Aggressive Kompression (Ratio 6:1)
+            <strong>Mastering Scopes (Music):</strong><br>
+            * Mobile-Safe: Brickwall Cut-Off @ 13.5 kHz (Screen 1-3)<br>
+            * Vocal-Gap: -3.5dB Dip @ 3.5 kHz zur Frequenzmaskierung
             <div class="macro-box">
-                FilterCurve:f0="39.69" f1="49.33" f2="1736.72" f3="3500.0" f4="7952.15" f5="11487.56" f6="12806.33" f7="15000.0" FilterLength="8191" InterpolateLin="0" InterpolationMethod="B-spline" v0="-30.24" v1="0.12" v2="0.12" v3="-3.5" v4="0.12" v5="0.12" v6="-30.24" v7="-30.24"
+FilterCurve:f0="39.69" f1="49.33" f2="1736.72" f3="3500.0" f4="7952.15" f5="11487.56" f6="12806.33" f7="15000.0" FilterLength="8191" InterpolateLin="0" InterpolationMethod="B-spline" v0="-30.24" v1="0.12" v2="0.12" v3="-3.5" v4="0.12" v5="0.12" v6="-30.24" v7="-30.24"
             </div>
         </div>
     </div>
 
     <hr>
 
-    <div class="release-item" style="background: none; border: 1px dashed var(--accent-dim);">
-        <h2>System-Ressourcen (XML Presets)</h2>
-        <p>Zur manuellen Wiederherstellung der Filterkurven in Audacity.</p>
-        <ul style="list-style-type: none; padding: 0;">
-            <li>📂 <a href="hoerbuch_v1.xml" style="color: var(--accent);">hoerbuch_v1.xml</a> (Vocal Master)</li>
-            <li>📂 <a href="intro_safe.xml" style="color: var(--accent);">intro_safe.xml</a> (Background Master)</li>
+    <div class="release-item">
+        <h2>System-Ressourcen & Dokumente</h2>
+        <p>Zentrale Projektdateien und Audacity-Presets zur Wiederherstellung der Mastering-Umgebung.</p>
+        <ul class="resource-list">
+            <li>📁 <a href="Die Villa Kunterbunt - Das Hörbuch">Die Villa Kunterbunt - Das Hörbuch</a> (Zentrales Manuskript)</li>
+            <li>📂 <a href="hoerbuch_v1.xml">hoerbuch_v1.xml</a> (Sprecher-EQ Preset)</li>
+            <li>📂 <a href="intro_safe.xml">intro_safe.xml</a> (Hintergrund-EQ Preset)</li>
+            <li>📄 <a href="test">test.txt</a> (Roh-Export Macro String)</li>
         </ul>
     </div>
+
+    <footer style="text-align: center; color: var(--text-dim); font-size: 0.7em; margin-top: 60px;">
+        AUDACITY MASTERING SUITE | DEBIAN DEPLOYMENT | © 2026
+    </footer>
 
 </body>
 </html>
